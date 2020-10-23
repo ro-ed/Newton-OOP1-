@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Logic.Entities
 {
-    public class Stock
+    public class Admin
     {
     }
 }
