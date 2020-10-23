@@ -22,5 +22,18 @@ namespace GUI.Home
         {
             InitializeComponent();
         }
+
+        private void signOutButton_Click(object sender, RoutedEventArgs e)
+        {
+            //LoginPage loginPage = new LoginPage();
+            //this.NavigationService.Navigate(loginPage);
+            Login.LoginPage loginPage = new Login.LoginPage();
+            this.NavigationService.Navigate(loginPage);
+        }
+
+        private void closeButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }

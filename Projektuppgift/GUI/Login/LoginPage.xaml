@@ -21,9 +21,9 @@
 
                         </PasswordBox>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                            <Button x:Name="closeButton" Margin="15 50"  Content="CLOSE" Click="Close_Button"/>
-                            <Button x:Name="signInButton" Margin="15 50" Content="SIGN IN" Click="SignIn_Button"/>
-                        </StackPanel>
+                        <Button x:Name="signInButton" Margin="15 50" Content="SIGN IN" Click="SignIn_Button"/>
+                        <Button x:Name="closeButton" Margin="15 50"  Content="CLOSE" Click="Close_Button"/>
+                    </StackPanel>
                     </StackPanel>
 
                 </Border>
