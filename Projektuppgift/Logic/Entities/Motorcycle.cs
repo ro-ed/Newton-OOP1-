@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Logic.Entities
 {
-    public class Motorcycle
+    public class Motorcycle:Vehicle
     {
     }
 }

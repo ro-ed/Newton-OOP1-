@@ -6,5 +6,11 @@ namespace Logic.Entities
 {
     public class Vehicle
     {
+        public string ModelName { get; set; }
+        public string RegistrationNumber { get; set; }
+        public int Matare { get; set; }
+        public DateTime RegistrationDate { get; set; }
+        public string Propellant { get; set; }
+
     }
 }
