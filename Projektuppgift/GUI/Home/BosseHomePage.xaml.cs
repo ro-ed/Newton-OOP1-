@@ -34,6 +34,14 @@ namespace GUI.Home
         private void closeButton_Click(object sender, RoutedEventArgs e)
         {
             //Hej
+            Application.Current.Shutdown();
         }
+
+        private void Lägg_Till_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+    
     }
 }

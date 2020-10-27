@@ -12,14 +12,21 @@
 
     <Grid Visibility="Visible">
         <Image Source="/Assets/Verkstad.png" ScrollViewer.VerticalScrollBarVisibility="Hidden" Stretch="UniformToFill" Margin="0,0,316,535"/>
-        <StackPanel Margin="84,65,10,10" Background="White"/>
+        <Grid  Margin="84,65,10,10" Background="White">
+            <Grid x:Name="BosseMainView" HorizontalAlignment="Center" VerticalAlignment="Center">
+                
+                
+            </Grid>
+
+        </Grid>
+        
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Margin="195,523,0,0" Width="208">
             <Button x:Name="signOutButton" Margin="5 20"  Content="SIGN OUT" Click="signOutButton_Click"/>
             <Button x:Name="closeButton" Margin="5 20" Content="CLOSE" Click="closeButton_Click"/>
         </StackPanel>
         <TextBox HorizontalAlignment="Left" Height="65" Margin="84,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="306" FontWeight="Bold" FontSize="16"/>
         <Label Content="Funktion" HorizontalAlignment="Left" Margin="185,17,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.233,0.042" FontSize="18" FontWeight="Bold"/>
-        <Button Content="Lägg till" HorizontalAlignment="Right" Margin="0,67,317,0" VerticalAlignment="Top" Background="#FF0F0F1B" Height="38" Width="82"/>
+        <Button x:Name="Lägg_Till" Content="Lägg till" HorizontalAlignment="Right" Margin="0,67,317,0" VerticalAlignment="Top" Background="#FF0F0F1B" Height="38" Width="82" Click="Lägg_Till_Click"/>
         <Button Content="Button" HorizontalAlignment="Right" Margin="0,105,317,0" VerticalAlignment="Top" Background="#FF0F0F1B" Height="38" Width="82"/>
         <Button Content="Button" HorizontalAlignment="Right" Margin="0,143,317,0" VerticalAlignment="Top" Background="#FF0F0F1B" Height="38" Width="82"/>
         <Button Content="Button" HorizontalAlignment="Right" Margin="0,181,317,0" VerticalAlignment="Top" Background="#FF0F0F1B" Height="38" Width="82"/>
