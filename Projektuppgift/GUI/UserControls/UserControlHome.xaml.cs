@@ -11,16 +11,21 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace GUI.UserControl
+namespace Projektuppgift.GUI.UserControls
 {
     /// <summary>
     /// Interaction logic for UserControl1.xaml
     /// </summary>
-    public partial class UserControl : UserControlBosse
+    public partial class UserControlHome : UserControl
     {
-        public UserControl()
+        public UserControlHome()
         {
             InitializeComponent();
+        }
+
+        private void InitializeComponent()
+        {
+            throw new NotImplementedException();
         }
     }
 }

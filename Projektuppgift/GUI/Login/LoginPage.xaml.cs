@@ -41,16 +41,14 @@ namespace GUI.Login
             bool successful = _loginService.Login(username, password);
 
             if (successful)
-            {
-                if (username == "Bosse" && password == "Meckarn123")
-                {
-                    BossesHemsida bossesHemsida = new BossesHemsida();
-                    this.NavigationService.Navigate(bossesHemsida);
-                }
-
-                //HomePage homePage = new HomePage();
-
-                //this.NavigationService.Navigate(homePage);
+            {             
+                BosseHomePage bossesHemsida = new BosseHomePage();
+                
+                
+                this.NavigationService.Navigate(bossesHemsida);
+              
+              //HomePage homePage = new HomePage();
+              //this.NavigationService.Navigate(homePage);
             }
             else
             {
@@ -65,8 +63,8 @@ namespace GUI.Login
         {
             //Home.HomePage homePage = new HomePage();
             //homePage.Visibility = Visibility.Hidden; 
-            
-            this.Visibility = Visibility.Hidden;
+
+            Application.Current.Shutdown();
         }
         
 

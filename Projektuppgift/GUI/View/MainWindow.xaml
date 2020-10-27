@@ -4,4 +4,4 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
-        mc:Ignorable="d" Height="600" Width="400" Source="/Login/LoginPage.xaml" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None"/>
+        mc:Ignorable="d" Width="400" Height="600" Source="/Login/LoginPage.xaml" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" SizeToContent="WidthAndHeight"/>
