@@ -16,16 +16,13 @@ namespace Projektuppgift.GUI.UserControls
     /// <summary>
     /// Interaction logic for UserControl1.xaml
     /// </summary>
-    public partial class UserControlHome : UserControl
+    public partial class HomeTab : UserControl
     {
-        public UserControlHome()
+        public HomeTab()
         {
             InitializeComponent();
         }
 
-        private void InitializeComponent()
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

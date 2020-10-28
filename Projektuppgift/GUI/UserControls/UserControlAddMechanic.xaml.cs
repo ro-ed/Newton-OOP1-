@@ -11,23 +11,20 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using GUI.Home;
-using GUI.UserControls;
+using System.Linq;
 
 namespace Projektuppgift.GUI.UserControls
 {
     /// <summary>
     /// Interaction logic for UserControlAddMechanic.xaml
     /// </summary>
-    public partial class UserControlAddMechanic : UserControl
+    public partial class AddMechanic : UserControl
     {
-        public UserControlAddMechanic()
+        public AddMechanic()
         {
             InitializeComponent();
         }
 
-        private void InitializeComponent()
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

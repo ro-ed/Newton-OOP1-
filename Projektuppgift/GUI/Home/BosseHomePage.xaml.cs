@@ -1,5 +1,4 @@
-﻿using GUI.UserControls;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -11,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Projektuppgift.GUI.UserControls;
 
 namespace GUI.Home
 {
@@ -52,11 +52,11 @@ namespace GUI.Home
             {
                 case 0:
                     MainViewGrid.Children.Clear();
-                    MainViewGrid.Children.Add(new UserControlHome());
+                    MainViewGrid.Children.Add(new HomeTab());
                     break;
                 case 1:
                     MainViewGrid.Children.Clear();
-                    MainViewGrid.Children.Add(new UserControlAddMechanic());
+                    MainViewGrid.Children.Add(new AddMechanic());
                     break;
                 default:
                     break;
