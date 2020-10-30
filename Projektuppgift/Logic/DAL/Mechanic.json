@@ -1,3 +1,58 @@
-{
-  
-}
+[
+  {
+    "FirstName": "Julia",
+    "Surname": "Jonsson",
+    "DateOfBirth": "12312312",
+    "DateOfEmployment": "21312312",
+    "EndDate": "123123123123",
+    "MechID": "b3819139-3f0c-4241-9a43-291d64412f4e",
+    "UserID": null,
+    "CanFixMotor": false,
+    "CanFixTires": false,
+    "CanFixBrakes": false,
+    "CanFixWindshield": false,
+    "CanFixVehicleBody": false
+  },
+  {
+    "FirstName": "Robin",
+    "Surname": "Edin",
+    "DateOfBirth": "123213213",
+    "DateOfEmployment": "213123213",
+    "EndDate": "123123213123",
+    "MechID": "0ac297e1-83f9-4f48-8107-bb30a0225d0b",
+    "UserID": null,
+    "CanFixMotor": false,
+    "CanFixTires": false,
+    "CanFixBrakes": false,
+    "CanFixWindshield": false,
+    "CanFixVehicleBody": false
+  },
+  {
+    "FirstName": "Timmy",
+    "Surname": "Mela",
+    "DateOfBirth": "123123213",
+    "DateOfEmployment": "123123213",
+    "EndDate": "123123123123",
+    "MechID": "6a925c2a-747d-4c21-b636-a7e43a457e77",
+    "UserID": null,
+    "CanFixMotor": false,
+    "CanFixTires": false,
+    "CanFixBrakes": false,
+    "CanFixWindshield": false,
+    "CanFixVehicleBody": false
+  },
+  {
+    "FirstName": "Bob",
+    "Surname": "Bobson",
+    "DateOfBirth": "12312321",
+    "DateOfEmployment": "12312312",
+    "EndDate": "123123123",
+    "MechID": "9d6adabc-f258-49be-8e66-bc94b7e32476",
+    "UserID": null,
+    "CanFixMotor": false,
+    "CanFixTires": false,
+    "CanFixBrakes": false,
+    "CanFixWindshield": false,
+    "CanFixVehicleBody": false
+  }
+]

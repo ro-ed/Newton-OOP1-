@@ -34,8 +34,8 @@
 
         <Grid Margin="260 60 10 10">
             <Grid.RowDefinitions>
-                <RowDefinition Height="367*"/>
-                <RowDefinition Height="163*"/>
+                <RowDefinition Height="530*"/>
+                
             </Grid.RowDefinitions>
             <Grid x:Name="MainViewGrid" HorizontalAlignment="Center" VerticalAlignment="Top">
 

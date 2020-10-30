@@ -22,7 +22,7 @@ namespace Logic.DAL
 
             string jsonString = File.ReadAllText(path);
             List<User> users = JsonSerializer.Deserialize<List<User>>(jsonString);
-
+            
             return users;
         }
     }
