@@ -40,6 +40,7 @@ namespace Projektuppgift.GUI.UserControls
             var readFromJson = JsonConvert.DeserializeObject<List<Mechanic>>(jsonFromFile);
             //Lägg till i listan.
             mechanics.AddRange(readFromJson);
+            //Kollar om det funkar.
 
         }
 
