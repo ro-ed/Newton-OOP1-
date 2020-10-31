@@ -6,5 +6,7 @@ namespace Logic.Entities
 {
     public class Competence
     {
+   
+
     }
 }

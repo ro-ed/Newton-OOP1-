@@ -12,6 +12,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 
 
+
 namespace Logic.Services
 {
     public class AddMechanicService
@@ -22,40 +23,14 @@ namespace Logic.Services
 
        
 
-            //    File.WriteAllText(mechpath, JsonConvert.SerializeObject(mechanicsToSave));
+          
         }
     }
     
     
-    //public static void JsonSerialize(List<Mechanic> mechanicsToSave2, string filePath)
-    //{
-    //    JsonSerializer jsonSerializer = new JsonSerializer();
-    //    StreamWriter sw = new StreamWriter(mechpath);
-    //    JsonWriter jsonWriter = new JsonTextWriter(sw);
+    
 
-    //    jsonSerializer.Serialize(jsonWriter, mechanicsToSave2);
-
-    //    jsonWriter.Close();
-    //    sw.Close();
-
-
-    //}
-
-    //public static object JsonDeserialize(Type dataType, string filePath)
-    //{
-    //    JObject obj = null;
-    //    JsonSerializer jsonSerializer = new JsonSerializer();
-    //    if (File.Exists(mechpath))
-    //    {
-    //        StreamReader sr = new StreamReader(mechpath);
-    //        JsonReader jsonReader = new JsonTextReader(sr);
-    //        obj = jsonSerializer.Deserialize(jsonReader) as JObject;
-    //        jsonReader.Close();
-    //        sr.Close();
-    //    }
-    //    return obj.ToObject(dataType);
-    //}
-
+   
 
 
 

@@ -47,12 +47,17 @@ namespace Projektuppgift.GUI.UserControls
         public void AddMechanicButton_Click(object sender, RoutedEventArgs e)
         {
 
-            
+
             string firstName = this.tbFirstName.Text;
             string surName = this.tbSurName.Text;
             string dateOfBirth = this.tbDateOfBirth.Text;
             string dateOfEmployment = this.tbDateOfEmployment.Text;
             string employmentEnds = this.tbEmploymentEnds.Text;
+            string MotorIsChecked = ((bool)cbMotorYes.IsChecked) ? "Yes" : "No";
+            string TiresAreChecked = ((bool)cbTiresYes.IsChecked) ? "Yes" : "No";
+            string BrakesAreChecked = ((bool)cbBrakesYes.IsChecked) ? "Yes" : "No";
+            string WindshieldsAreChecked = ((bool)cbWindshieldsYes.IsChecked) ? "Yes" : "No";
+            string VehicleBodyIsChecked = ((bool)cbVehicleBodyYes.IsChecked) ? "Yes" : "No";
 
             Mechanic mechanic = new Mechanic
             {
@@ -62,9 +67,14 @@ namespace Projektuppgift.GUI.UserControls
                 DateOfEmployment = dateOfEmployment,
                 EndDate = employmentEnds,
                 MechID = Guid.NewGuid(),
+                CanFixMotor = MotorIsChecked,
+                CanFixTires = TiresAreChecked,
+                CanFixBrakes = BrakesAreChecked,
+                CanFixWindshield = WindshieldsAreChecked,
+                CanFixVehicleBody = VehicleBodyIsChecked
 
             };
-
+       
             //READ
             if (mechanics.Count >= 1)
             {
@@ -99,6 +109,10 @@ namespace Projektuppgift.GUI.UserControls
            
             MessageBox.Show(AddMessage);
         }
+       
+            
+            
+       
     }
 }
         

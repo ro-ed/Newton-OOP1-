@@ -17,6 +17,8 @@ namespace Logic.DAL
         /// https://docs.microsoft.com/en-us/dotnet/standard/serialization/system-text-json-how-to
         /// </summary>
         /// <returns></returns>
+
+        
         public List<User> GetUsers()
         {
 

@@ -17,12 +17,12 @@ namespace Logic.Entities
         public string EndDate { get; set; }
         //public string Id { get; set; } = Guid.NewGuid().ToString();
         public Guid MechID { get; set; }
-        public string UserID { get; set; }
-        public bool CanFixMotor { get; set; }
-        public bool CanFixTires { get; set; }
-        public bool CanFixBrakes { get; set; }
-        public bool CanFixWindshield { get; set; }
-        public bool CanFixVehicleBody { get; set; }
+        public string CanFixMotor { get; set; }
+        public string CanFixTires { get; set; }
+        public string CanFixBrakes { get; set; }
+        public string CanFixWindshield { get; set; }
+        public string CanFixVehicleBody { get; set; }
+
 
 
 
