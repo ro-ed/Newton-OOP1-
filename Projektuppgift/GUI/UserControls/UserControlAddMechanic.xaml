@@ -14,11 +14,16 @@
         </Grid.ColumnDefinitions>
 
 
-        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2" Margin="-10,0,0,0" Height="530" Width="774">
+        <StackPanel x:Name="AddMechView" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2" Margin="-10,0,0,0" Height="530" Width="774">
             <StackPanel Width="754" Height="530" Margin="10">
                 <TextBlock Text="Add new mechanics" FontFamily="Century Gothic" FontSize="35" Margin="25" HorizontalAlignment="Center">
 
                 </TextBlock>
+                <Button x:Name="GoBackButton" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="#FFFF5500" Margin="-650 -80 0 0" Click="GoBackButton_Click">
+                    <materialDesign:PackIcon Kind="ArrowBackCircle" Width="30" Height="30" Foreground="#FFFF5500" ></materialDesign:PackIcon> 
+                    
+                </Button>
+                <TextBlock Width="100" Height="20" Margin="-510 -80 0 0" Text="GO BACK"></TextBlock>
                 <StackPanel Height="440" Width="754" HorizontalAlignment="Center">
                     <TextBox x:Name="tbFirstName" HorizontalAlignment="Left" Margin="20" Width="300" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="First Name" FontSize="14"/>
                     <TextBox x:Name="tbSurName" HorizontalAlignment="Left" Margin="20" Width="300" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Surname" FontSize="14"/>
@@ -58,7 +63,9 @@
                         </StackPanel>
                         <Button x:Name="AddMechanicButton" Margin="250 -60 10 10" Width="100" Content="ADD" Foreground="#FF222222" FontFamily="Century Gothic" FontSize="14" FontWeight="Bold" Click="AddMechanicButton_Click"></Button>
                     </StackPanel>
+                    
                 </StackPanel>
+                
 
 
             </StackPanel>

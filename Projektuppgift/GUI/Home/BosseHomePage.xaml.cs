@@ -10,7 +10,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using GUI.UserControls;
 using Projektuppgift.GUI.UserControls;
+using GUI.Login;
 
 namespace GUI.Home
 {
@@ -56,7 +58,11 @@ namespace GUI.Home
                     break;
                 case 1:
                     MainViewGrid.Children.Clear();
-                    MainViewGrid.Children.Add(new AddMechanic());
+                    MainViewGrid.Children.Add(new MechanicHome());
+                    break;
+                case 4:
+                    LoginPage loginPage = new LoginPage();
+                    this.NavigationService.Navigate(loginPage);
                     break;
                 default:
                     break;
@@ -66,8 +72,11 @@ namespace GUI.Home
         {
             TransitionContentSlide.OnApplyTemplate();
             GridCursor.Margin = new Thickness(0, (170 + (60 * index)), 0, 0);
+        }     
+
+        private void Settings_Click(object sender, RoutedEventArgs e)
+        {
+
         }
-
-
     }
 }

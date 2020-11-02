@@ -11,7 +11,7 @@ namespace Logic.Entities
 
 
         public string FirstName { get; set; }
-        public string Surname { get; set; }
+        public string SurName { get; set; }
         public string DateOfBirth { get; set; }
         public string DateOfEmployment { get; set; }
         public string EndDate { get; set; }

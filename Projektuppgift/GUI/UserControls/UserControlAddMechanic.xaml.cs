@@ -19,6 +19,7 @@ using Newtonsoft.Json;
 using System.Xml.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using static Logic.Services.AddMechanicService;
+using GUI.UserControls;
 
 namespace Projektuppgift.GUI.UserControls
 {
@@ -62,7 +63,7 @@ namespace Projektuppgift.GUI.UserControls
             Mechanic mechanic = new Mechanic
             {
                 FirstName = firstName,
-                Surname = surName,
+                SurName = surName,
                 DateOfBirth = dateOfBirth,
                 DateOfEmployment = dateOfEmployment,
                 EndDate = employmentEnds,
@@ -109,10 +110,13 @@ namespace Projektuppgift.GUI.UserControls
            
             MessageBox.Show(AddMessage);
         }
-       
+
+        private void GoBackButton_Click(object sender, RoutedEventArgs e)
+        {
+            AddMechView.Children.Clear();
+            AddMechView.Children.Add(new MechanicHome());
             
-            
-       
+        }
     }
 }
         

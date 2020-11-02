@@ -21,8 +21,9 @@
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10 0">
 
-                    <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="LightGray" Margin="0 0 10 0">
+                    <Button x:Name="Settings" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="LightGray" Margin="0 0 10 0" Click="Settings_Click">
                         <materialDesign:PackIcon Kind="Settings" Height="30" Width="30"/>
+                        
                     </Button>
                     <Button x:Name="CloseButton" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="#FFFF5500" Click="CloseButton_Click">
                         <materialDesign:PackIcon Kind="CloseCircle" Height="30" Width="30"/>
@@ -57,13 +58,13 @@
                 <ListViewItem Height="60" Foreground="LightGray" FontFamily="Century Gothic">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="Wrench" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
-                        <TextBlock Text="Add mechanic" FontSize="22" VerticalAlignment="Center" Margin="10 0"/>
+                        <TextBlock Text="Mechanics" FontSize="22" VerticalAlignment="Center" Margin="10 0"/>
                     </StackPanel>
                 </ListViewItem>
                 <ListViewItem Height="60" Foreground="LightGray" FontFamily="Century Gothic">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="Users" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
-                        <TextBlock Text="Users" FontSize="22" VerticalAlignment="Center" Margin="10 0"/>
+                        <TextBlock Text="Workers" FontSize="22" VerticalAlignment="Center" Margin="10 0"/>
                     </StackPanel>
                 </ListViewItem>
                 <ListViewItem Height="60" Foreground="LightGray" FontFamily="Century Gothic">
@@ -72,22 +73,12 @@
                         <TextBlock Text="Errands" FontSize="22" VerticalAlignment="Center" Margin="10 0"/>
                     </StackPanel>
                 </ListViewItem>
-                <ListViewItem Height="60" Foreground="LightGray" FontFamily="Century Gothic">
+                
+                
+                <ListViewItem Height="60" Foreground="LightGray" FontFamily="Century Gothic" Margin="0 0 0 0">
                     <StackPanel Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind="Check" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
-                        <TextBlock Text="Work Status" FontSize="22" VerticalAlignment="Center" Margin="10 0"/>
-                    </StackPanel>
-                </ListViewItem>
-                <ListViewItem Height="60" Foreground="LightGray" FontFamily="Century Gothic">
-                    <StackPanel Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind="GraduationCap" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
-                        <TextBlock Text="Competences" FontSize="22" VerticalAlignment="Center" Margin="10 0"/>
-                    </StackPanel>
-                </ListViewItem>
-                <ListViewItem Height="60" Foreground="LightGray" FontFamily="Century Gothic">
-                    <StackPanel Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind="Worker" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
-                        <TextBlock Text="Available" FontSize="22" VerticalAlignment="Center" Margin="10 0"/>
+                        <materialDesign:PackIcon Kind="Logout" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
+                        <TextBlock Text="Logout" FontSize="22" VerticalAlignment="Center" Margin="10 0"/>
                     </StackPanel>
                 </ListViewItem>
 

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Logic.Entities
 {
-    public class Vehicle
+    public abstract class Vehicle
     {
         public string ModelName { get; set; }
         public string RegistrationNumber { get; set; }
