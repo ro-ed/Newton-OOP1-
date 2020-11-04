@@ -94,7 +94,7 @@ namespace Projektuppgift.GUI.UserControls
                 var readFromJson = JsonConvert.DeserializeObject<List<Mechanic>>(jsonFromFile);
                 mechanics.Add(mechanic);
                 var jsonToWrite = JsonConvert.SerializeObject(mechanics, Formatting.Indented);
-                using (var writer = new StreamWriter(mechpath))
+                using (var writer = new StreamWriter(mechpath)) 
                 {   
                 writer.Write(jsonToWrite);
                 

@@ -19,7 +19,7 @@ namespace Logic.Services
     {
         public static List<Mechanic> mechanics = new List<Mechanic>();
 
-        public const string mechpath = @"C:\Users\sandr\source\repos\NewRepos\Projektuppgift\Logic\DAL\Mechanic.json";
+        public const string mechpath = @"C:\Users\julia\Documents\GitHub\Newton-OOP1-\Projektuppgift\Logic\DAL";
 
        
 

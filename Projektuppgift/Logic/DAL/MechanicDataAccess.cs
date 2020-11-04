@@ -11,19 +11,19 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace Logic.DAL
 {
-    //public class MechanicDataAccess
-    //{
-    //    private const string mechpath = @"DAL\Mechanic.json";
+    public class MechanicDataAccess
+    {
+        private const string mechpath = @"DAL\Mechanic.json";
 
-    //    public List<Mechanic> GetMechanics()
-    //    {
-    //        string GetString = File.ReadAllText(mechpath);
-    //        List<Mechanic> mechanics = JsonSerializer.Deserialize<List<Mechanic>>(GetString);
-            
-    //        return mechanics;
-    //    }
+        public List<Mechanic> GetMechanics()
+        {
+            string GetString = File.ReadAllText(mechpath);
+            List<Mechanic> mechanics = JsonSerializer.Deserialize<List<Mechanic>>(GetString);
 
-        
+            return mechanics;
+        }
 
-    //}
+
+
+    }
 }
