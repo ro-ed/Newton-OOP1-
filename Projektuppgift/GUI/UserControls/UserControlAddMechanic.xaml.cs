@@ -32,16 +32,23 @@ namespace Projektuppgift.GUI.UserControls
         public AddMechanic()
         {
             InitializeComponent();
-            //Hämta mekaniker från JSON.
+            //Hämta mekaniker från JSON.           
             string jsonFromFile;
-            using (var reader = new StreamReader(mechpath))
-            {
-                jsonFromFile = reader.ReadToEnd();
-            }
-            var readFromJson = JsonConvert.DeserializeObject<List<Mechanic>>(jsonFromFile);
+                using (var reader = new StreamReader(mechpath))
+                {
+                    jsonFromFile = reader.ReadToEnd();
+                }
+                var readFromJson = JsonConvert.DeserializeObject<List<Mechanic>>(jsonFromFile);
             //Lägg till i listan.
             mechanics.AddRange(readFromJson);
-            //Kollar om det funkar.
+            
+                
+            
+
+            
+               
+            
+           
 
         }
 

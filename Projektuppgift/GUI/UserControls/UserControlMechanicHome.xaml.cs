@@ -6,6 +6,10 @@ using static Logic.Services.AddMechanicService;
 using System.IO;
 using System.Windows;
 using Projektuppgift.GUI.UserControls;
+using System.Linq;
+using System.Diagnostics;
+using System.Collections.ObjectModel;
+using System.Data;
 
 namespace GUI.UserControls
 {
@@ -14,25 +18,57 @@ namespace GUI.UserControls
     /// </summary>
     public partial class MechanicHome : UserControl
     {
-        public List<Mechanic> listToRead { get; set; }
+        //public ObservableCollection<Mechanic> listToRead = new ObservableCollection<Mechanic>();
         public MechanicHome()
         {
             InitializeComponent();
 
-            listToRead = new List<Mechanic>();
+            //string jsonFromFile;
+            //using (var reader = new StreamReader(mechpath))
+            //{
+            //    jsonFromFile = reader.ReadToEnd();
+            //}
+            //var readFromJson = JsonConvert.DeserializeObject<List<Mechanic>>(jsonFromFile);
 
-            string jsonFromFile;
-            using (var reader = new StreamReader(mechpath))
-            {
-                jsonFromFile = reader.ReadToEnd();
-            }
-            var readFromJson = JsonConvert.DeserializeObject<List<Mechanic>>(jsonFromFile);
-            //Lägg till i listan.
-            listToRead.AddRange(readFromJson);
-            //Kollar om det funkar.
-            DataContext = this;
+            //if (mechanics.Count >= 1)
+            //{
+            //    mechanics.AddRange(readFromJson);
+            //}
 
-           
+
+            //if (mechanics.Count >= 1)
+            //{
+
+            //    //Lägg till i listan.
+            //    foreach (var item in readFromJson)
+            //    {
+
+
+            //        listToRead.Add(new Mechanic
+            //        {
+            //            FirstName = item.FirstName,
+            //            SurName = item.SurName,
+            //            DateOfBirth = item.DateOfBirth,
+            //            DateOfEmployment = item.DateOfEmployment,
+            //            EndDate = item.EndDate,
+            //            MechID = item.MechID,
+            //            CanFixMotor = item.CanFixMotor,
+            //            CanFixTires = item.CanFixBrakes,
+            //            CanFixBrakes = item.CanFixBrakes,
+            //            CanFixWindshield = item.CanFixWindshield,
+            //            CanFixVehicleBody = item.CanFixVehicleBody
+
+            //        });
+            //    }
+
+
+
+
+
+            //}
+            ////Kollar om det funkar.
+            //DataContext = this;
+            //lv_data.ItemsSource = listToRead;
         }
 
         private void ChangeToAdd_Click(object sender, RoutedEventArgs e)
@@ -43,14 +79,44 @@ namespace GUI.UserControls
 
         private void DeleteMech_Click(object sender, RoutedEventArgs e)
         {
-            //var itemToRemove = Mechanic.mechanics.FirstOrDefault(r => r.id == ddl.SelectedValue);
-            //if (itemToRemove != null)
-            //    bookList.bookList.Remove(itemToRemove);
+            if (MessageBox.Show("Sure ??", "DELETE", MessageBoxButton.OKCancel, MessageBoxImage.Warning) == MessageBoxResult.OK)
+            {
+                //Mechanic selectedMechanic = lv_data.SelectedItem as Mechanic;
+                //if (selectedMechanic != null)
+                //{
+                //listToRead.Remove(selectedMechanic);
+                //}
+                //Overrite();  
+
+            }
+
+           
+
         }
 
         private void ChangeToEdit_Click(object sender, RoutedEventArgs e)
         {
 
         }
+
+        private void lv_data_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Mechanic m = (Mechanic)lv_data.SelectedItem;
+            
+            
+        }     
+
+        private void Update_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        //Metod som används när man tar bort mekaniker.
+        //private void Overrite()
+        //{
+        //    File.WriteAllText(mechpath, mechanics.ToString());
+        //}
+
+       
     }
 }

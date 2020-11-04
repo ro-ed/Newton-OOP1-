@@ -1,45 +1,41 @@
 [
   {
-    "FirstName": "Julia",
-    "SurName": "Jonsson",
-    "DateOfBirth": "12312312",
-    "DateOfEmployment": "21312312",
-    "EndDate": "123123123123",
-    "MechID": "b3819139-3f0c-4241-9a43-291d64412f4e",
-    "CanFixMotor": "false",
-    "CanFixTires": "false",
-    "CanFixBrakes": "false",
-    "CanFixWindshield": "false",
-    "CanFixVehicleBody": "false"
-  },
-  {
     "FirstName": "Robin",
     "SurName": "Edin",
-    "DateOfBirth": "123213213",
-    "DateOfEmployment": "213123213",
-    "EndDate": "123123213123",
-    "MechID": "0ac297e1-83f9-4f48-8107-bb30a0225d0b",
-    "CanFixMotor": "false",
-    "CanFixTires": "false",
-    "CanFixBrakes": "false",
-    "CanFixWindshield": "false",
-    "CanFixVehicleBody": "false"
+    "DateOfBirth": "2131232131212",
+    "DateOfEmployment": "3123123123",
+    "EndDate": "123123123",
+    "MechID": "4a68570d-3a11-45dc-be11-5e56cf87680d",
+    "CanFixMotor": "Yes",
+    "CanFixTires": "No",
+    "CanFixBrakes": "Yes",
+    "CanFixWindshield": "No",
+    "CanFixVehicleBody": "Yes"
+  },
+  {
+    "FirstName": "Julia",
+    "SurName": "Jonsson",
+    "DateOfBirth": "123213213213",
+    "DateOfEmployment": "213123123",
+    "EndDate": "123123123",
+    "MechID": "6babb4d4-b4d3-48e0-9b69-78f6ee1eb068",
+    "CanFixMotor": "Yes",
+    "CanFixTires": "Yes",
+    "CanFixBrakes": "Yes",
+    "CanFixWindshield": "Yes",
+    "CanFixVehicleBody": "Yes"
   },
   {
     "FirstName": "Timmy",
     "SurName": "Mela",
-    "DateOfBirth": "123123213",
-    "DateOfEmployment": "123123213",
-    "EndDate": "123123123123",
-    "MechID": "6a925c2a-747d-4c21-b636-a7e43a457e77",
-    "CanFixMotor": "false",
-    "CanFixTires": "false",
-    "CanFixBrakes": "false",
-    "CanFixWindshield": "false",
-    "CanFixVehicleBody": "false"
+    "DateOfBirth": "213123213123",
+    "DateOfEmployment": "123123123",
+    "EndDate": "123123123",
+    "MechID": "ca3d33e2-f40a-442f-bed3-dbe9b2f0074b",
+    "CanFixMotor": "Yes",
+    "CanFixTires": "No",
+    "CanFixBrakes": "Yes",
+    "CanFixWindshield": "No",
+    "CanFixVehicleBody": "Yes"
   }
-  
- 
-    
-  
 ]
