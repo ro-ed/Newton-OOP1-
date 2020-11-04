@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="GUI.UserControls.UserControlAddUser"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:GUI.UserControls"
+             mc:Ignorable="d" 
+           d:DesignHeight="530" d:DesignWidth="754" VerticalAlignment="Center" HorizontalAlignment="Center" MaxWidth="754" MaxHeight="530">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="193*"/>
+
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.ColumnSpan="3" Margin="-15,0,0,0" Height="530" Width="774">
+            <StackPanel Width="754" Height="530" Margin="10">
+                <TextBlock Text="Add New User" FontFamily="Century Gothic" FontSize="35" Margin="25" HorizontalAlignment="Center">
+
+                </TextBlock>
+
+
+
+
+            </StackPanel>
+
+        </StackPanel>
+
+        <ListView Margin="12,97,12,53" Name="lvUsers">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" Width="110" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="UserName" Width="130" DisplayMemberBinding="{Binding UserName}" />
+                    <GridViewColumn Header="SSN" Width="110" DisplayMemberBinding="{Binding Ssn}" />
+                    <GridViewColumn Header="Mail" Width="150" DisplayMemberBinding="{Binding Mail}" />
+                    <GridViewColumn Header="Phonenumber" Width="150" DisplayMemberBinding="{Binding Phonenumber}" />
+
+
+
+                </GridView>
+            </ListView.View>
+
+        </ListView>
+
+
+        <Button x:Name="DeleteUser" Content="DELETE USER" HorizontalAlignment="Left" Margin="176,482,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="AddUser" Content="ADD USER" HorizontalAlignment="Left" Margin="26,482,0,0" VerticalAlignment="Top" Width="110"/>
+        <Button Content="CHANGE COMPETENCES" HorizontalAlignment="Left" Margin="335,482,0,0" VerticalAlignment="Top" Width="200"/>
+        
+
+
+
+
+
+
+    </Grid>
+</UserControl>
