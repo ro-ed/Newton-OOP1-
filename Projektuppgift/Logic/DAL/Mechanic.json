@@ -1,41 +1,16 @@
 [
+  
   {
     "FirstName": "Robin",
     "SurName": "Edin",
-    "DateOfBirth": "2131232131212",
-    "DateOfEmployment": "3123123123",
-    "EndDate": "123123123",
-    "MechID": "4a68570d-3a11-45dc-be11-5e56cf87680d",
-    "CanFixMotor": "Yes",
+    "DateOfBirth": "213123123",
+    "DateOfEmployment": "213123",
+    "EndDate": "213123123",
+    "MechID": "8a67dca0-419d-4f15-95e1-32933d117c87",
+    "CanFixMotor": "No",
     "CanFixTires": "No",
-    "CanFixBrakes": "Yes",
+    "CanFixBrakes": "No",
     "CanFixWindshield": "No",
-    "CanFixVehicleBody": "Yes"
-  },
-  {
-    "FirstName": "Julia",
-    "SurName": "Jonsson",
-    "DateOfBirth": "123213213213",
-    "DateOfEmployment": "213123123",
-    "EndDate": "123123123",
-    "MechID": "6babb4d4-b4d3-48e0-9b69-78f6ee1eb068",
-    "CanFixMotor": "Yes",
-    "CanFixTires": "Yes",
-    "CanFixBrakes": "Yes",
-    "CanFixWindshield": "Yes",
-    "CanFixVehicleBody": "Yes"
-  },
-  {
-    "FirstName": "Timmy",
-    "SurName": "Mela",
-    "DateOfBirth": "213123213123",
-    "DateOfEmployment": "123123123",
-    "EndDate": "123123123",
-    "MechID": "ca3d33e2-f40a-442f-bed3-dbe9b2f0074b",
-    "CanFixMotor": "Yes",
-    "CanFixTires": "No",
-    "CanFixBrakes": "Yes",
-    "CanFixWindshield": "No",
-    "CanFixVehicleBody": "Yes"
+    "CanFixVehicleBody": "No"
   }
 ]

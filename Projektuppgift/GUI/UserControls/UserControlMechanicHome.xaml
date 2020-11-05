@@ -14,7 +14,7 @@
 
                 </TextBlock>
                 
-                    <ListView Name="lv_data" Width="auto" Height="310" Margin="10 20 10 0" SelectionChanged="lv_data_SelectionChanged">
+                    <ListView Name="lv_data" Width="730" Height="310" Margin="10 20 10 0" SelectionChanged="lv_data_SelectionChanged">
                 <ListView.View>
                     <GridView x:Name="List_Item">
                         <GridViewColumn DisplayMemberBinding="{Binding FirstName}" Header="First name" Width="150"></GridViewColumn>

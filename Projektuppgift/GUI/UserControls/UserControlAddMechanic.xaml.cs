@@ -1,23 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using GUI.Home;
-using System.Linq;
 using Logic.Entities;
-using Logic.Services;
 using System.IO;
 using Newtonsoft.Json;
-using System.Xml.Serialization;
-using System.Runtime.Serialization.Formatters.Binary;
 using static Logic.Services.AddMechanicService;
 using GUI.UserControls;
 
@@ -33,22 +20,15 @@ namespace Projektuppgift.GUI.UserControls
         {
             InitializeComponent();
             //Hämta mekaniker från JSON.           
-            string jsonFromFile;
-                using (var reader = new StreamReader(mechpath))
-                {
-                    jsonFromFile = reader.ReadToEnd();
-                }
-                var readFromJson = JsonConvert.DeserializeObject<List<Mechanic>>(jsonFromFile);
+            //string jsonFromFile;
+            //    using (var reader = new StreamReader(mechpath))
+            //    {
+            //        jsonFromFile = reader.ReadToEnd();
+            //    }
+            //    var readFromJson = JsonConvert.DeserializeObject<List<Mechanic>>(jsonFromFile);
             //Lägg till i listan.
-            mechanics.AddRange(readFromJson);
             
-                
-            
-
-            
-               
-            
-           
+            //mechanics.AddRange(readFromJson);
 
         }
 
@@ -111,9 +91,7 @@ namespace Projektuppgift.GUI.UserControls
 
                 }
             }
-            
-            
-            
+                       
            
             MessageBox.Show(AddMessage);
         }
@@ -122,7 +100,7 @@ namespace Projektuppgift.GUI.UserControls
         {
             AddMechView.Children.Clear();
             AddMechView.Children.Add(new MechanicHome());
-            
+
         }
     }
 }

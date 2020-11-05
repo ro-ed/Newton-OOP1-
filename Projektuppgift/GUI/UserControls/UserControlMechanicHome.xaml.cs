@@ -22,53 +22,20 @@ namespace GUI.UserControls
         public MechanicHome()
         {
             InitializeComponent();
-
-            //string jsonFromFile;
-            //using (var reader = new StreamReader(mechpath))
-            //{
-            //    jsonFromFile = reader.ReadToEnd();
-            //}
-            //var readFromJson = JsonConvert.DeserializeObject<List<Mechanic>>(jsonFromFile);
-
-            //if (mechanics.Count >= 1)
-            //{
-            //    mechanics.AddRange(readFromJson);
-            //}
-
-
-            //if (mechanics.Count >= 1)
-            //{
-
-            //    //Lägg till i listan.
-            //    foreach (var item in readFromJson)
-            //    {
-
-
-            //        listToRead.Add(new Mechanic
-            //        {
-            //            FirstName = item.FirstName,
-            //            SurName = item.SurName,
-            //            DateOfBirth = item.DateOfBirth,
-            //            DateOfEmployment = item.DateOfEmployment,
-            //            EndDate = item.EndDate,
-            //            MechID = item.MechID,
-            //            CanFixMotor = item.CanFixMotor,
-            //            CanFixTires = item.CanFixBrakes,
-            //            CanFixBrakes = item.CanFixBrakes,
-            //            CanFixWindshield = item.CanFixWindshield,
-            //            CanFixVehicleBody = item.CanFixVehicleBody
-
-            //        });
-            //    }
+            // Läser från JSON.
+            string jsonFromFile;
+            using (var reader = new StreamReader(mechpath))
+            {
+                jsonFromFile = reader.ReadToEnd();
+            }
+            var readFromJson = JsonConvert.DeserializeObject<List<Mechanic>>(jsonFromFile);
+            //// Lägger till i listan.
+            //mechanics.AddRange(readFromJson);
 
 
 
-
-
-            //}
-            ////Kollar om det funkar.
-            //DataContext = this;
-            //lv_data.ItemsSource = listToRead;
+            DataContext = this;
+            lv_data.ItemsSource = mechanics;
         }
 
         private void ChangeToAdd_Click(object sender, RoutedEventArgs e)
@@ -81,19 +48,18 @@ namespace GUI.UserControls
         {
             if (MessageBox.Show("Sure ??", "DELETE", MessageBoxButton.OKCancel, MessageBoxImage.Warning) == MessageBoxResult.OK)
             {
-                //Mechanic selectedMechanic = lv_data.SelectedItem as Mechanic;
-                //if (selectedMechanic != null)
-                //{
-                //listToRead.Remove(selectedMechanic);
-                //}
-                //Overrite();  
+               
+                Mechanic selectedMechanic = lv_data.SelectedItem as Mechanic;
+                if (selectedMechanic != null)
+                {
+                    mechanics.Remove(selectedMechanic);
+                }
+                Overrite();
+                MechanicView.Children.Clear();
+                MechanicView.Children.Add(new MechanicHome());
 
             }
-
-           
-
         }
-
         private void ChangeToEdit_Click(object sender, RoutedEventArgs e)
         {
 
@@ -108,15 +74,21 @@ namespace GUI.UserControls
 
         private void Update_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         //Metod som används när man tar bort mekaniker.
-        //private void Overrite()
-        //{
-        //    File.WriteAllText(mechpath, mechanics.ToString());
-        //}
+        private void Overrite()
+        {
+            File.WriteAllText(mechpath, JsonConvert.SerializeObject(mechanics));
+            string jsonFromFile;
+            using (var reader = new StreamReader(mechpath))
+            {
+                jsonFromFile = reader.ReadToEnd();
+            }
+            var readFromJson = JsonConvert.DeserializeObject<List<Mechanic>>(jsonFromFile);
+        }
 
-       
+
     }
 }

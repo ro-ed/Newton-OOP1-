@@ -13,6 +13,10 @@ using System.Windows.Shapes;
 using GUI.UserControls;
 using Projektuppgift.GUI.UserControls;
 using GUI.Login;
+using System.IO;
+using Newtonsoft.Json;
+using static Logic.Services.AddMechanicService;
+using Logic.Entities;
 
 namespace GUI.Home
 {
@@ -24,6 +28,15 @@ namespace GUI.Home
         public BosseHomePage()
         {
             InitializeComponent();
+            // Läser från JSON.
+            string jsonFromFile;
+            using (var reader = new StreamReader(mechpath))
+            {
+                jsonFromFile = reader.ReadToEnd();
+            }
+            var readFromJson = JsonConvert.DeserializeObject<List<Mechanic>>(jsonFromFile);
+            // Lägger till i listan.
+            mechanics.AddRange(readFromJson);
         }
 
         private void SignOutButton_Click(object sender, RoutedEventArgs e)
