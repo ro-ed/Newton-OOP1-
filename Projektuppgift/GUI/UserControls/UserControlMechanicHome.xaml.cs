@@ -52,7 +52,7 @@ namespace GUI.UserControls
                 Mechanic selectedMechanic = lv_data.SelectedItem as Mechanic;
                 if (selectedMechanic != null)
                 {
-                    mechanics.Remove(selectedMechanic);
+                    mechanics.Remove(selectedMechanic);                  
                 }
                 Overrite();
                 MechanicView.Children.Clear();
@@ -62,6 +62,8 @@ namespace GUI.UserControls
         }
         private void ChangeToEdit_Click(object sender, RoutedEventArgs e)
         {
+            MechanicView.Children.Clear();
+            MechanicView.Children.Add(new EditMechanic());
 
         }
 
@@ -70,12 +72,7 @@ namespace GUI.UserControls
             Mechanic m = (Mechanic)lv_data.SelectedItem;
             
             
-        }     
-
-        private void Update_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
+        }          
 
         //Metod som används när man tar bort mekaniker.
         private void Overrite()
