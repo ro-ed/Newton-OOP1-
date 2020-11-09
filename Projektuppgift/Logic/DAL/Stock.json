@@ -1,9 +1,1 @@
-[
-  
-  {
-    "Tires": 6,
-    "Brakes": 0,
-    "Motors": 0,
-    "Windshields": 0
-  }
-]
+{"Tires":22,"Brakes":2,"Motors":12,"Windshields":2}

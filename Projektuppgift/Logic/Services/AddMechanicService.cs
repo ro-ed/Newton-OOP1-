@@ -17,9 +17,11 @@ namespace Logic.Services
 {
     public class AddMechanicService
     {
+        
+
         public static List<Mechanic> mechanics = new List<Mechanic>();
 
-        public const string mechpath = @"C:\Users\Adm\Documents\GitHub\Newton-OOP1-\Projektuppgift\Logic\DAL\Mechanic.json";
+        public const string mechpath = @"C:\Users\sandr\source\repos\NewRepos\Projektuppgift\Logic\DAL\Mechanic.json";
 
 
 

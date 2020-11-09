@@ -22,7 +22,7 @@ namespace Projektuppgift.GUI.UserControls
         {
             InitializeComponent();
         }
-
+        
        
     }
 }

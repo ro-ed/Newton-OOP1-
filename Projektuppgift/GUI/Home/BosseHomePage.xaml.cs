@@ -44,9 +44,9 @@ namespace GUI.Home
             {
                 jsonFromFile2 = reader.ReadToEnd();
             }
-            var readFromJson2 = JsonConvert.DeserializeObject<List<Stock>>(jsonFromFile2);
+            var readFromJson2 = JsonConvert.DeserializeObject<Stock>(jsonFromFile2);
             //// Lägger till i listan.
-            thestock.AddRange(readFromJson2);
+            stockobject = readFromJson2;
         }
 
         private void SignOutButton_Click(object sender, RoutedEventArgs e)

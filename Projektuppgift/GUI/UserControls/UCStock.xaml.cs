@@ -36,44 +36,13 @@ namespace GUI.UserControls
             {
                 jsonFromFile = reader.ReadToEnd();
             }
-            var readFromJson = JsonConvert.DeserializeObject<List<Stock>>(jsonFromFile);
-            ////// Lägger till i listan.
-            //thestock.AddRange(readFromJson);
-
-
-
-
-            DataContext = this;
-            lv_stockdata.ItemsSource = thestock;
+            var stockread = JsonConvert.DeserializeObject<Stock>(jsonFromFile);
+           
+            DataContext = stockread;    
         }
-
-
-        //public void AddStockManually()
-
-        //{
-
-        
-        //Stock stock = new Stock
-        //{
-        //    Tires = 20,
-        //    Brakes = 20,
-        //    Motors = 10,
-        //    Windshields = 15
-        //};
-
-        //    thestock.Add(stock);
-        //    var jsonToWrite = JsonConvert.SerializeObject(thestock, Formatting.Indented);
-        //    var fs = File.OpenWrite(stockpath);
-        //    using (var writer = new StreamWriter(fs))
-        //    {
-        //        writer.Write(jsonToWrite);
-
-        //    }
-        //}
-
         private void lv_stockdata_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Stock s = (Stock)lv_stockdata.SelectedItem;
+            
 
         }
 
@@ -84,23 +53,13 @@ namespace GUI.UserControls
             {
                 jsonFromFile = reader.ReadToEnd();
             }
-            var readFromJson = JsonConvert.DeserializeObject<List<Stock>>(jsonFromFile);
- 
-            Stock stock = new Stock();
+            var stock = JsonConvert.DeserializeObject<Stock>(jsonFromFile);
 
             switch (_selectedIndex)
             {
                 
                 case 0:
-                    if(stock.Tires == 0)
-                    {
                     stock.Tires += int.Parse(tbAmount.Text);
-                    }
-                    else
-                    {
-                    stock.
-                    }
-                    
                     break;
                 case 1:
                     stock.Brakes += int.Parse(tbAmount.Text);
@@ -112,10 +71,8 @@ namespace GUI.UserControls
                     stock.Windshields += int.Parse(tbAmount.Text);
                     break;
             }
-            thestock.Clear();
-            thestock.Add(stock);
 
-            File.WriteAllText(stockpath, JsonConvert.SerializeObject(thestock));
+            File.WriteAllText(stockpath, JsonConvert.SerializeObject(stock));
 
             MessageBox.Show(AddStockMessage);
 
