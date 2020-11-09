@@ -13,6 +13,19 @@
     "CanFixVehicleBody": "No"
   },
   {
+    "FirstName": "Dennis",
+    "SurName": "Vahid",
+    "DateOfBirth": "12312312",
+    "DateOfEmployment": "232131",
+    "EndDate": "123123123",
+    "MechID": "02c9ec6d-2b90-49bb-a9ce-a8e1a73ece54",
+    "CanFixMotor": "Yes",
+    "CanFixTires": "No",
+    "CanFixBrakes": "Yes",
+    "CanFixWindshield": "No",
+    "CanFixVehicleBody": "Yes"
+  },
+  {
     "FirstName": "Timmy",
     "SurName": "kjfwkajf",
     "DateOfBirth": "312312",

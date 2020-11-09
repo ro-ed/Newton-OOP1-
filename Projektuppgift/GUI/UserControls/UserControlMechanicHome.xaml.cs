@@ -62,8 +62,22 @@ namespace GUI.UserControls
         }
         private void ChangeToEdit_Click(object sender, RoutedEventArgs e)
         {
+            Mechanic selectedMechanic = lv_data.SelectedItem as Mechanic;          
+           
             MechanicView.Children.Clear();
-            MechanicView.Children.Add(new EditMechanic());
+            var child = new EditMechanic();
+            child.DataContext = selectedMechanic;
+            MechanicView.Children.Add(child); 
+                
+            
+            
+            
+            
+            
+                
+            
+           
+            
 
         }
 

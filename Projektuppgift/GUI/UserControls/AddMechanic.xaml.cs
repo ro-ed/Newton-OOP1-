@@ -85,7 +85,8 @@ namespace Projektuppgift.GUI.UserControls
             {
                 mechanics.Add(mechanic);
                 var jsonToWrite = JsonConvert.SerializeObject(mechanics, Formatting.Indented);
-                using (var writer = new StreamWriter(mechpath))
+                var fs = File.OpenWrite(mechpath);
+                using (var writer = new StreamWriter(fs))
                 {
                     writer.Write(jsonToWrite);
 
