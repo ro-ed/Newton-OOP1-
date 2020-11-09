@@ -1,5 +1,4 @@
 [
-  
   {
     "FirstName": "Robin",
     "SurName": "Edin",
@@ -11,6 +10,19 @@
     "CanFixTires": "No",
     "CanFixBrakes": "No",
     "CanFixWindshield": "No",
+    "CanFixVehicleBody": "No"
+  },
+  {
+    "FirstName": "Timmy",
+    "SurName": "kjfwkajf",
+    "DateOfBirth": "312312",
+    "DateOfEmployment": "21312",
+    "EndDate": "123123",
+    "MechID": "4378e631-cec9-46b9-880f-fa044a0dc4cc",
+    "CanFixMotor": "No",
+    "CanFixTires": "Yes",
+    "CanFixBrakes": "No",
+    "CanFixWindshield": "Yes",
     "CanFixVehicleBody": "No"
   }
 ]

@@ -73,6 +73,10 @@ namespace GUI.Home
                     MainViewGrid.Children.Clear();
                     MainViewGrid.Children.Add(new MechanicHome());
                     break;
+                case 3:
+                    MainViewGrid.Children.Clear();
+                    MainViewGrid.Children.Add(new UserControlNewErrand());
+                    break;
                 case 4:
                     LoginPage loginPage = new LoginPage();
                     this.NavigationService.Navigate(loginPage);

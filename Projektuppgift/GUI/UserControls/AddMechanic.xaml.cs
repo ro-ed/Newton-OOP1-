@@ -91,8 +91,9 @@ namespace Projektuppgift.GUI.UserControls
 
                 }
             }
-                       
-           
+            AddMechView.Children.Clear();
+            AddMechView.Children.Add(new AddMechanic());
+
             MessageBox.Show(AddMessage);
         }
 
