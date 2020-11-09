@@ -19,10 +19,12 @@ namespace GUI.UserControls
     public partial class MechanicHome : UserControl
     {
         //public ObservableCollection<Mechanic> listToRead = new ObservableCollection<Mechanic>();
+
+        public static Mechanic _selectedMechanic;
         public MechanicHome()
         {
             InitializeComponent();
-            // Läser från JSON.
+            //Läser från JSON.
             string jsonFromFile;
             using (var reader = new StreamReader(mechpath))
             {
@@ -62,22 +64,14 @@ namespace GUI.UserControls
         }
         private void ChangeToEdit_Click(object sender, RoutedEventArgs e)
         {
-            Mechanic selectedMechanic = lv_data.SelectedItem as Mechanic;          
-           
+            Mechanic selectedMechanic = lv_data.SelectedItem as Mechanic;
+            _selectedMechanic = selectedMechanic;
+            
             MechanicView.Children.Clear();
             var child = new EditMechanic();
             child.DataContext = selectedMechanic;
             MechanicView.Children.Add(child); 
-                
-            
-            
-            
-            
-            
-                
-            
-           
-            
+                      
 
         }
 

@@ -18,7 +18,6 @@ namespace Logic.Services
     public class AddMechanicService
     {
         
-
         public static List<Mechanic> mechanics = new List<Mechanic>();
 
         public const string mechpath = @"C:\Users\sandr\source\repos\NewRepos\Projektuppgift\Logic\DAL\Mechanic.json";

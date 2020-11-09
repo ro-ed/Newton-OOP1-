@@ -10,8 +10,10 @@ namespace Logic.Entities
         public int Brakes { get; set; }
         public int Motors { get; set; }
         public int Windshields { get; set; }
+        public int VehicleBodies { get; set; }
 
-        
+
+
 
     }
 }

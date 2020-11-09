@@ -70,6 +70,9 @@ namespace GUI.UserControls
                 case 3:
                     stock.Windshields += int.Parse(tbAmount.Text);
                     break;
+                case 4:
+                    stock.VehicleBodies += int.Parse(tbAmount.Text);
+                    break;
             }
 
             File.WriteAllText(stockpath, JsonConvert.SerializeObject(stock));

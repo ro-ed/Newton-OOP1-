@@ -7,7 +7,7 @@
              xmlns:local="clr-namespace:GUI.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="530" d:DesignWidth="754" HorizontalAlignment="Center" VerticalAlignment="Center">
-    <Grid>
+    <Grid x:Name="EditMechanicView">
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2" Height="2030" Width="754">
             <StackPanel x:Name="spOldView" VerticalAlignment="Center" Width="380" HorizontalAlignment="Left" Margin="20 -50 10 10" Height="410">
                 <TextBlock Width="100" Text="Old" TextAlignment="Center" FontSize="26"></TextBlock>
@@ -34,6 +34,11 @@
                 <TextBlock Width="150" Text="CFVB:" TextAlignment="Left" FontSize="20" Margin="-200 10 0 0"></TextBlock>
                 <TextBlock x:Name="tboldCFVB" Width="150" Text="{Binding CanFixVehicleBody}" TextAlignment="Left" FontSize="20" Margin="200 -26 0 0"></TextBlock>
             </StackPanel>
+            <Button x:Name="EditGoBackButton" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="#FFFF5500" Margin="-750 -450 0 0" Click="EditGoBackButton_Click">
+                <materialDesign:PackIcon Kind="ArrowBackCircle" Width="30" Height="30" Foreground="#FFFF5500" ></materialDesign:PackIcon>
+
+            </Button>
+            <TextBlock Width="100" Height="20" Margin="-600 -450 0 0" Text="GO BACK"></TextBlock>
             <ScrollViewer>
                 <StackPanel VerticalAlignment="Top" Width="380" HorizontalAlignment="Right" Margin="20 720 -10 10" Height="1530">
 
