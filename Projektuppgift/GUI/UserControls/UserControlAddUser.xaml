@@ -9,44 +9,22 @@
            d:DesignHeight="530" d:DesignWidth="754" VerticalAlignment="Center" HorizontalAlignment="Center" MaxWidth="754" MaxHeight="530">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="193*"/>
-
+            <ColumnDefinition Width="201*"/>
+            <ColumnDefinition Width="553*"/>
         </Grid.ColumnDefinitions>
+        <Label Content=" Add New User" FontFamily="Century Gothic" FontSize="35" Margin="5,27,0,454" HorizontalAlignment="Left" Width="258" Grid.Column="1"/>
+        <TextBlock  Grid.Column="1" HorizontalAlignment="Left" Margin="75,143,0,0" Text="Username" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="120" FontFamily="Century Gothic" FontSize="20"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="75,259,0,0" Text="Password" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="120" FontFamily="Century Gothic" FontSize="20"/>
+        <TextBox x:Name="textBoxEmail" Grid.Column="1" HorizontalAlignment="Left" Margin="59,184,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="165" Height="25"/>
+        <PasswordBox x:Name="PasswordBox" Grid.Column="1" HorizontalAlignment="Left" Margin="59,299,0,0" VerticalAlignment="Top" Width="163" Height="25"/>
+        <ComboBox x:Name="MechanicCb" DisplayMemberPath="FirstName" Margin="31,148,45,0" VerticalAlignment="Top" Height="28"/>
 
-        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.ColumnSpan="3" Margin="-15,0,0,0" Height="530" Width="774">
-            <StackPanel Width="754" Height="530" Margin="10">
-                <TextBlock Text="Add New User" FontFamily="Century Gothic" FontSize="35" Margin="25" HorizontalAlignment="Center">
-
-                </TextBlock>
-
-
-
-
-            </StackPanel>
-
-        </StackPanel>
-
-        <ListView Margin="12,97,12,53" Name="lvUsers">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Name" Width="110" DisplayMemberBinding="{Binding Name}" />
-                    <GridViewColumn Header="UserName" Width="130" DisplayMemberBinding="{Binding UserName}" />
-                    <GridViewColumn Header="SSN" Width="110" DisplayMemberBinding="{Binding Ssn}" />
-                    <GridViewColumn Header="Mail" Width="150" DisplayMemberBinding="{Binding Mail}" />
-                    <GridViewColumn Header="Phonenumber" Width="150" DisplayMemberBinding="{Binding Phonenumber}" />
+        <Button x:Name="AddUser" Content="ADD USER" Click="Button_Click" Margin="66,396,349,102" Grid.Column="1"/>
+        <Button x:Name="DeleteUser" Content="DELETE USER" Click="Button_Click" Margin="350,397,86,101" Grid.Column="1"/>
+        <ComboBox x:Name="UserCb" DisplayMemberPath="Username" Grid.Column="1" HorizontalAlignment="Left" Margin="369,147,0,0" VerticalAlignment="Top" Width="120"/>
 
 
 
-                </GridView>
-            </ListView.View>
-
-        </ListView>
-
-
-        <Button x:Name="DeleteUser" Content="DELETE USER" HorizontalAlignment="Left" Margin="176,482,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="AddUser" Content="ADD USER" HorizontalAlignment="Left" Margin="26,482,0,0" VerticalAlignment="Top" Width="110"/>
-        <Button Content="CHANGE COMPETENCES" HorizontalAlignment="Left" Margin="335,482,0,0" VerticalAlignment="Top" Width="200"/>
-        
 
 
 

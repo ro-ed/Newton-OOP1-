@@ -10,7 +10,11 @@
       Title="MekanikernasHemsida">
 
     <Grid Background="#FFEEEEEE">
-        <StackPanel VerticalAlignment="Top" Background="#FF222222">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="189*"/>
+            <ColumnDefinition Width="323*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel VerticalAlignment="Top" Background="#FF222222" Grid.ColumnSpan="2">
             <Grid Background="#FFFF5500" Height="10"/>
             <Grid Margin="5">
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
@@ -34,7 +38,7 @@
 
         </StackPanel>
 
-        <Grid Margin="260 60 10 10">
+        <Grid Margin="260 60 10 10" Grid.ColumnSpan="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="530*"/>
 

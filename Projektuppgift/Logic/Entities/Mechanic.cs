@@ -17,6 +17,7 @@ namespace Logic.Entities
         public string EndDate { get; set; }
         //public string Id { get; set; } = Guid.NewGuid().ToString();
         public Guid MechID { get; set; }
+        public Guid? UserID { get; set; }
         public string CanFixMotor { get; set; }
         public string CanFixTires { get; set; }
         public string CanFixBrakes { get; set; }

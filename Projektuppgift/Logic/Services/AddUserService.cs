@@ -11,27 +11,12 @@ using System.Xml.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 
 
-
-
-
 namespace Logic.Services
 {
-    public class AddMechanicService
+    public class AddUserService
     {
-        public static List<Mechanic> mechanics = new List<Mechanic>();
+        public static List<User> usersList = new List<User>();
 
-        public const string mechpath = @"C:\Users\julia\Documents\GitHub\Newton-OOP1-\Projektuppgift\Logic\DAL\Mechanic.json";
-
-       
-
-          
-        }
+        public const string userpath = @"C:\Users\julia\Documents\GitHub\Newton-OOP1-\Projektuppgift\Logic\DAL\User.json";
     }
-
-
-
-
-
-
-
-
+}

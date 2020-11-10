@@ -1,15 +1,11 @@
-﻿using Newtonsoft.Json;
+﻿using Logic.Entities;
+using Newtonsoft.Json;
+using Projektuppgift.GUI.UserControls;
 using System.Collections.Generic;
-using System.Windows.Controls;
-using Logic.Entities;
-using static Logic.Services.AddMechanicService;
 using System.IO;
 using System.Windows;
-using Projektuppgift.GUI.UserControls;
-using System.Linq;
-using System.Diagnostics;
-using System.Collections.ObjectModel;
-using System.Data;
+using System.Windows.Controls;
+using static Logic.Services.AddMechanicService;
 
 namespace GUI.UserControls
 {

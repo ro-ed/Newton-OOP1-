@@ -1,5 +1,4 @@
 [
-  
   {
     "FirstName": "Robin",
     "SurName": "Edin",
@@ -7,6 +6,7 @@
     "DateOfEmployment": "213123",
     "EndDate": "213123123",
     "MechID": "8a67dca0-419d-4f15-95e1-32933d117c87",
+    "UserID": "ec8e9b7b-084e-4ec5-a2bc-8205e9475990",
     "CanFixMotor": "No",
     "CanFixTires": "No",
     "CanFixBrakes": "No",
