@@ -9,7 +9,7 @@
       d:DesignHeight="600" d:DesignWidth="400"
       Foreground="Black" Background="#FFFF5500">
 
-    <Grid Visibility="Visible">
+    <Grid Visibility="Visible" x:Name="LoginView">
             <StackPanel Margin="50">
                 <Image Source="/Assets/Verkstad.png" Height="240" Width="300" ScrollViewer.VerticalScrollBarVisibility="Hidden" Stretch="UniformToFill"/>
                 <Border Background="White" Margin="0 -5" CornerRadius="5">

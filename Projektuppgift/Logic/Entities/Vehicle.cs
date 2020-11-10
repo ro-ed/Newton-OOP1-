@@ -11,6 +11,8 @@ namespace Logic.Entities
         public int Matare { get; set; }
         public DateTime RegistrationDate { get; set; }
         public string Propellant { get; set; }
+        public string TypeOfCar { get; set; }
+
 
     }
 }

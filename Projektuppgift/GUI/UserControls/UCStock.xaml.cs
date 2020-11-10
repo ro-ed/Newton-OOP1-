@@ -59,20 +59,66 @@ namespace GUI.UserControls
             {
                 
                 case 0:
-                    stock.Tires += int.Parse(tbAmount.Text);
+                    stock.CarTires += int.Parse(tbAmount.Text);
                     break;
                 case 1:
-                    stock.Brakes += int.Parse(tbAmount.Text);
+                    stock.CarBrakes += int.Parse(tbAmount.Text);
                     break;
                 case 2:
-                    stock.Motors += int.Parse(tbAmount.Text);
+                    stock.CarMotors += int.Parse(tbAmount.Text);
                     break;
                 case 3:
-                    stock.Windshields += int.Parse(tbAmount.Text);
+                    stock.CarWindshields += int.Parse(tbAmount.Text);
                     break;
                 case 4:
-                    stock.VehicleBodies += int.Parse(tbAmount.Text);
+                    stock.CarVehicleBodies += int.Parse(tbAmount.Text);
                     break;
+                case 5:
+                    stock.MCTires += int.Parse(tbAmount.Text);
+                    break;
+                case 6:
+                    stock.MCBrakes += int.Parse(tbAmount.Text);
+                    break;
+                case 7:
+                    stock.MCMotors += int.Parse(tbAmount.Text);
+                    break;
+                case 8:
+                    stock.MCWindshields += int.Parse(tbAmount.Text);
+                    break;
+                case 9:
+                    stock.MCVehicleBodies += int.Parse(tbAmount.Text);
+                    break;
+                case 10:
+                    stock.BusTires += int.Parse(tbAmount.Text);
+                    break;
+                case 11:
+                    stock.BusBrakes += int.Parse(tbAmount.Text);
+                    break;
+                case 12:
+                    stock.BusMotors += int.Parse(tbAmount.Text);
+                    break;
+                case 13:
+                    stock.BusWindshields += int.Parse(tbAmount.Text);
+                    break;
+                case 14:
+                    stock.BusVehicleBodies += int.Parse(tbAmount.Text);
+                    break;
+                case 15:
+                    stock.TruckTires += int.Parse(tbAmount.Text);
+                    break;
+                case 16:
+                    stock.TruckBrakes += int.Parse(tbAmount.Text);
+                    break;
+                case 17:
+                    stock.TruckMotors += int.Parse(tbAmount.Text);
+                    break;
+                case 18:
+                    stock.TruckWindshields += int.Parse(tbAmount.Text);
+                    break;
+                case 19:
+                    stock.TruckVehicleBodies += int.Parse(tbAmount.Text);
+                    break;
+
             }
 
             File.WriteAllText(stockpath, JsonConvert.SerializeObject(stock));

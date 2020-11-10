@@ -1,1 +1,1 @@
-{"Tires":26,"Brakes":4,"Motors":12,"Windshields":2,"VehicleBodies":9}
+{"CarTires":26,"CarBrakes":8,"CarMotors":12,"CarWindshields":2,"CarVehicleBodies":9,"MCTires":6,"MCBrakes":2,"MCMotors":3,"MCWindshields":4,"MCVehicleBodies":5,"BusTires":6,"BusBrakes":7,"BusMotors":8,"BusWindshields":9,"BusVehicleBodies":10,"TruckTires":18,"TruckBrakes":12,"TruckMotors":13,"TruckWindshields":14,"TruckVehicleBodies":15}

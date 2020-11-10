@@ -1,9 +1,12 @@
 ﻿using GUI.Home;
+using GUI.View;
 using Logic.Services;
 using Microsoft.Windows.Themes;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -41,14 +44,28 @@ namespace GUI.Login
             bool successful = _loginService.Login(username, password);
 
             if (successful)
-            {             
+            {
+                //LoadingScreen loadingScreen = new LoadingScreen();
+
+                //this.NavigationService.Navigate(loadingScreen);
+
+                //await LoadingScreenMethod();
+
+
+
                 BosseHomePage bossesHemsida = new BosseHomePage();
-                
-                
                 this.NavigationService.Navigate(bossesHemsida);
-              
-              //HomePage homePage = new HomePage();
-              //this.NavigationService.Navigate(homePage);
+
+
+
+                //await LoadingScreenMethod();
+
+
+
+
+
+                //HomePage homePage = new HomePage();
+                //this.NavigationService.Navigate(homePage);
             }
             else
             {
@@ -57,6 +74,9 @@ namespace GUI.Login
                 this.tbUsername.Clear();
                 this.pbPassword.Clear();
             }
+           
+            
+               
             
         }
         private void Close_Button(object sender, RoutedEventArgs e)
@@ -66,7 +86,15 @@ namespace GUI.Login
 
             Application.Current.Shutdown();
         }
-        
+        public async Task LoadingScreenMethod()
+        {
+            await Task.Run(() =>
+            {
+                Thread.Sleep(2000);
 
+            });
+        }
+        
+        
     }
 }
