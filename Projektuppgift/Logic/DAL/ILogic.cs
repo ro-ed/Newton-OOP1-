@@ -8,5 +8,7 @@ namespace Logic.DAL
    public interface ILogic
     {
         public static Dictionary<string, string> AllMechanics = new Dictionary<string, string>();
+
+        
     }
 }

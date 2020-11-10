@@ -73,7 +73,12 @@
                         <TextBlock Text="Errands" FontSize="22" VerticalAlignment="Center" Margin="10 0"/>
                     </StackPanel>
                 </ListViewItem>
-                
+                <ListViewItem Height="60" Foreground="LightGray" FontFamily="Century Gothic" Margin="0 0 0 0">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="Warehouse" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
+                        <TextBlock Text="Stock" FontSize="22" VerticalAlignment="Center" Margin="10 0"/>
+                    </StackPanel>
+                </ListViewItem>
                 
                 <ListViewItem Height="60" Foreground="LightGray" FontFamily="Century Gothic" Margin="0 0 0 0">
                     <StackPanel Orientation="Horizontal">

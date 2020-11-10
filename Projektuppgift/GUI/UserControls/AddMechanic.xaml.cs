@@ -21,14 +21,14 @@ namespace Projektuppgift.GUI.UserControls
             InitializeComponent();
             //Hämta mekaniker från JSON.           
             //string jsonFromFile;
-            //    using (var reader = new StreamReader(mechpath))
-            //    {
-            //        jsonFromFile = reader.ReadToEnd();
-            //    }
-            //    var readFromJson = JsonConvert.DeserializeObject<List<Mechanic>>(jsonFromFile);
-            //Lägg till i listan.
+            //using (var reader = new StreamReader(mechpath))
+            //{
+            //    jsonFromFile = reader.ReadToEnd();
+            //}
+            //var readFromJson = JsonConvert.DeserializeObject<List<Mechanic>>(jsonFromFile);
             
-            //mechanics.AddRange(readFromJson);
+            
+            
 
         }
 
@@ -46,6 +46,8 @@ namespace Projektuppgift.GUI.UserControls
             string BrakesAreChecked = ((bool)cbBrakesYes.IsChecked) ? "Yes" : "No";
             string WindshieldsAreChecked = ((bool)cbWindshieldsYes.IsChecked) ? "Yes" : "No";
             string VehicleBodyIsChecked = ((bool)cbVehicleBodyYes.IsChecked) ? "Yes" : "No";
+
+           
 
             Mechanic mechanic = new Mechanic
             {
@@ -85,14 +87,16 @@ namespace Projektuppgift.GUI.UserControls
             {
                 mechanics.Add(mechanic);
                 var jsonToWrite = JsonConvert.SerializeObject(mechanics, Formatting.Indented);
-                using (var writer = new StreamWriter(mechpath))
+                var fs = File.OpenWrite(mechpath);
+                using (var writer = new StreamWriter(fs))
                 {
                     writer.Write(jsonToWrite);
 
                 }
             }
-                       
-           
+            AddMechView.Children.Clear();
+            AddMechView.Children.Add(new AddMechanic());
+
             MessageBox.Show(AddMessage);
         }
 

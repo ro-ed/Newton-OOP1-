@@ -4,8 +4,10 @@ using System.Text;
 
 namespace Logic.Entities
 {
-    public class Car:Vehicle
+    public class Car : Vehicle
     {
         public bool HaveTowbar { get; set; }
+        public string KindOfCar { get; set; }
+
     }
 }

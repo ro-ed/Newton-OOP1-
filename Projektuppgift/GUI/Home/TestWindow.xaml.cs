@@ -8,17 +8,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace GUI.UserControls
+namespace GUI.Home
 {
     /// <summary>
-    /// Interaction logic for TestControl.xaml
+    /// Interaction logic for TestWindow.xaml
     /// </summary>
-    public partial class TestControl : UserControl
+    public partial class TestWindow : Window
     {
-        public TestControl()
+        public TestWindow()
         {
             InitializeComponent();
         }

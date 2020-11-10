@@ -15,7 +15,12 @@
                 </TextBlock>
                 
                     <ListView Name="lv_data" Width="730" Height="310" Margin="10 20 10 0" SelectionChanged="lv_data_SelectionChanged">
-                <ListView.View>
+                    <ListView.Resources>
+                        <Style TargetType="{x:Type GridViewColumnHeader}">
+                            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                        </Style>
+                    </ListView.Resources>
+                    <ListView.View>
                     <GridView x:Name="List_Item">
                         <GridViewColumn DisplayMemberBinding="{Binding FirstName}" Header="First name" Width="150"></GridViewColumn>
                         <GridViewColumn DisplayMemberBinding="{Binding SurName}" Header="Surname" Width="150"></GridViewColumn>
@@ -49,7 +54,7 @@
         </StackPanel>
         <Button x:Name="DeleteMech" Width="160" Height="40" Margin="0 430 140 0" Content="DELETE MECHANIC" Foreground="#FF222222" Click="DeleteMech_Click"></Button>
         <Button x:Name="ChangeToEdit" Width="110" Height="40" Margin="0 430 -250 0" Content="EDIT MENU" Foreground="#FF222222" Click="ChangeToEdit_Click"></Button>
-        <Button x:Name="Update" Width="110" Height="40" Margin="0 430 -550 0" Content="UPDATE" Foreground="#FF222222" Click="Update_Click"></Button>
+       
 
 
 

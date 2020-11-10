@@ -17,6 +17,7 @@ using System.IO;
 using Newtonsoft.Json;
 using static Logic.Services.AddMechanicService;
 using Logic.Entities;
+using static Logic.DAL.StockDataAccess;
 
 namespace GUI.Home
 {
@@ -37,6 +38,15 @@ namespace GUI.Home
             var readFromJson = JsonConvert.DeserializeObject<List<Mechanic>>(jsonFromFile);
             // Lägger till i listan.
             mechanics.AddRange(readFromJson);
+            // Läser från JSON.
+            string jsonFromFile2;
+            using (var reader = new StreamReader(stockpath))
+            {
+                jsonFromFile2 = reader.ReadToEnd();
+            }
+            var readFromJson2 = JsonConvert.DeserializeObject<Stock>(jsonFromFile2);
+            //// Lägger till i listan.
+            stockobject = readFromJson2;
         }
 
         private void SignOutButton_Click(object sender, RoutedEventArgs e)
@@ -73,11 +83,15 @@ namespace GUI.Home
                     MainViewGrid.Children.Clear();
                     MainViewGrid.Children.Add(new MechanicHome());
                     break;
-                case 2:
+                case 3:
                     MainViewGrid.Children.Clear();
-                    MainViewGrid.Children.Add(new UserControlAddUser());
+                    MainViewGrid.Children.Add(new UserControlNewErrand());
                     break;
                 case 4:
+                    MainViewGrid.Children.Clear();
+                    MainViewGrid.Children.Add(new UCStock());
+                    break;
+                case 5:
                     LoginPage loginPage = new LoginPage();
                     this.NavigationService.Navigate(loginPage);
                     break;
