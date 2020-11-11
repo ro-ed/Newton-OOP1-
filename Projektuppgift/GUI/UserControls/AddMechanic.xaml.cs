@@ -104,32 +104,9 @@ namespace Projektuppgift.GUI.UserControls
 
         }
     }
-}
-        
-        
-        
+}     
 
-    
-
-
-
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+   
 
 
             //if (File.Exists(mechpath))

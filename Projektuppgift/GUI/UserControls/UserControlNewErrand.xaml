@@ -47,7 +47,7 @@
                             <ListView.View>
                                 <GridView x:Name="Errand_List">
                                     <GridViewColumn DisplayMemberBinding="{Binding ErrandName}" Header="Errand" Width="150"/>
-                                    <GridViewColumn Header="Mechanic" Width="200"/>
+                                    <GridViewColumn x:Name="hehe" DisplayMemberBinding="{Binding FirstName}" Header="Mechanic" Width="200"/>
                                     <GridViewColumn DisplayMemberBinding="{Binding ErrandStatus}" Header="Status" Width="150"/>
                                     <GridViewColumn DisplayMemberBinding="{Binding ErrandStartDate}" Header="Start date" Width="150"/>
                                     <GridViewColumn DisplayMemberBinding="{Binding ErrandEndDate}" Header="End date" Width="150"/>
