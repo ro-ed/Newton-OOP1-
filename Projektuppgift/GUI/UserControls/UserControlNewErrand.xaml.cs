@@ -14,8 +14,12 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using static Logic.Services.AddErrandService;
+using static Logic.Services.AddMechanicService;
 using GUI.UserControls;
 using Projektuppgift.GUI.UserControls;
+using System.Linq;
+using Microsoft.VisualBasic;
+using Newtonsoft.Json.Serialization;
 
 namespace GUI.UserControls
 {
@@ -25,11 +29,20 @@ namespace GUI.UserControls
     public partial class UserControlNewErrand : UserControl
     {
         // public List<Errands> listRead { get; set; }
+        private string _test;
         public UserControlNewErrand()
         {
             InitializeComponent();
 
             // listRead = new List<Errands>();
+
+            string jsonFromFile;
+            using (var reader = new StreamReader(mechpath))
+            {
+                jsonFromFile = reader.ReadToEnd();
+            }
+            var readFromJson = JsonConvert.DeserializeObject<List<Mechanic>>(jsonFromFile);
+            mechanics = readFromJson;
 
             string jsonFile;
 
@@ -39,12 +52,24 @@ namespace GUI.UserControls
             }
 
             var jsonRead = JsonConvert.DeserializeObject<List<Errands>>(jsonFile);
+            jsonRead.ForEach(x => {
+                var m = mechanics.FirstOrDefault(y => y.ErrandIDs.Contains(x.ErrandID));
+                x.FirstName = m?.FirstName ?? "";
+                x.LastName = m?.SurName ?? "";
+
+            });
+
+            
+            
+
 
             //errands.AddRange(jsonRead);
             //listRead.AddRange(jsonRead);
 
             DataContext = this;
             ErrandView.ItemsSource = errands;
+
+           
         }
 
         public void CreateErrand_Click(object sender, RoutedEventArgs e)
@@ -53,7 +78,8 @@ namespace GUI.UserControls
             string errandStart = this.tbErrandStart.Text;
             string errandEnd = this.tbErrandEnd.Text;
             string errandStatus = ((bool)cbStatusStart.IsChecked) ? "Started" : "Finished";
-
+            string firstName = this._test;
+            
 
             Errands errand = new Errands
             {
@@ -61,10 +87,11 @@ namespace GUI.UserControls
                 ErrandStartDate = errandStart,
                 ErrandEndDate = errandEnd,
                 ErrandID = Guid.NewGuid(),
-                ErrandStatus = errandStatus
-
-
+                ErrandStatus = errandStatus, 
+                FirstName = firstName
             };
+
+            
 
             if (errands.Count >= 1)
             {
@@ -160,9 +187,15 @@ namespace GUI.UserControls
 
         private void AssignMechanicToErrand_Click(object sender, RoutedEventArgs e)
         {
+            Errands errands = ErrandView.SelectedItem as Errands;
+
             ErrandViewer.Children.Clear();
-            ErrandViewer.Children.Add(new ChooseMechanicToErrand());
+            ErrandViewer.Children.Add(new ChooseMechanicToErrand(errands));
+
+            
         }
+
+       
     }
 }
 

@@ -51,18 +51,10 @@ namespace GUI.Login
 
                 //await LoadingScreenMethod();
 
-
-
                 BosseHomePage bossesHemsida = new BosseHomePage();
                 this.NavigationService.Navigate(bossesHemsida);
 
-
-
                 //await LoadingScreenMethod();
-
-
-
-
 
                 //HomePage homePage = new HomePage();
                 //this.NavigationService.Navigate(homePage);
@@ -74,10 +66,7 @@ namespace GUI.Login
                 this.tbUsername.Clear();
                 this.pbPassword.Clear();
             }
-           
-            
-               
-            
+
         }
         private void Close_Button(object sender, RoutedEventArgs e)
         {
@@ -91,7 +80,7 @@ namespace GUI.Login
             await Task.Run(() =>
             {
                 Thread.Sleep(2000);
-
+               
             });
         }
         

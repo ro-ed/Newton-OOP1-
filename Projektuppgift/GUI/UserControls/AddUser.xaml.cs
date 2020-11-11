@@ -151,6 +151,9 @@ namespace GUI.UserControls
 
                 AddUserView.Children.Clear();
                 AddUserView.Children.Add(new UserControlAddUser());
+
+                
+
             }
         }
     }

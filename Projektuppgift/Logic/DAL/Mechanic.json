@@ -11,7 +11,10 @@
     "CanFixTires": "No",
     "CanFixBrakes": "No",
     "CanFixWindshield": "No",
-    "CanFixVehicleBody": "No"
+    "CanFixVehicleBody": "No",
+    "ErrandIDs": [
+      "00000000-0000-0000-0000-000000000000"
+    ]
   },
   {
     "FirstName": "Timmy",
@@ -22,6 +25,12 @@
     "MechID": "4378e631-cec9-46b9-880f-fa044a0dc4cc",
     "UserID": "f5ce2869-bd8f-4087-a6d5-cc1ac86e732f",
     "CanFixMotor": "Yes",
+    "SurName": "test",
+    "DateOfBirth": "3432",
+    "DateOfEmployment": "234",
+    "EndDate": "3242",
+    "MechID": "382ce2a9-5cbf-42f2-bcad-c2339ffb3e47",
+    "CanFixMotor": "No",
     "CanFixTires": "Yes",
     "CanFixBrakes": "No",
     "CanFixWindshield": "No",
@@ -53,6 +62,41 @@
     "CanFixTires": "Yes",
     "CanFixBrakes": "Yes",
     "CanFixWindshield": "Yes",
-    "CanFixVehicleBody": "Yes"
+    "CanFixVehicleBody": "No",
+    "ErrandIDs": [
+      "00000000-0000-0000-0000-000000000000"
+    ]
+  },
+  {
+    "FirstName": "Olle",
+    "SurName": "Teeee",
+    "DateOfBirth": "2432423",
+    "DateOfEmployment": "42342",
+    "EndDate": "34234",
+    "MechID": "3b4ccaca-3d87-406b-a93d-ca26d5ca973f",
+    "CanFixMotor": "Yes",
+    "CanFixTires": "No",
+    "CanFixBrakes": "Yes",
+    "CanFixWindshield": "No",
+    "CanFixVehicleBody": "Yes",
+    "ErrandIDs": [
+      "00000000-0000-0000-0000-000000000000"
+    ]
+  },
+  {
+    "FirstName": "Kalle",
+    "SurName": "teoooo",
+    "DateOfBirth": "3123123",
+    "DateOfEmployment": "2412412",
+    "EndDate": "12412412",
+    "MechID": "3dd0af67-0754-48e1-9950-e95c01134d5a",
+    "CanFixMotor": "Yes",
+    "CanFixTires": "No",
+    "CanFixBrakes": "Yes",
+    "CanFixWindshield": "No",
+    "CanFixVehicleBody": "Yes",
+    "ErrandIDs": [
+      "00000000-0000-0000-0000-000000000000"
+    ]
   }
 ]

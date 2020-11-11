@@ -44,10 +44,15 @@
 
                         </StackPanel>
                         <ListView Name="ErrandView" Height="200" Margin="20,0,20,0" SelectionChanged="ErrandView_SelectionChanged">
+                            <ListView.Resources>
+                                <Style TargetType="{x:Type GridViewColumnHeader}">
+                                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                                </Style>
+                            </ListView.Resources>
                             <ListView.View>
                                 <GridView x:Name="Errand_List">
                                     <GridViewColumn DisplayMemberBinding="{Binding ErrandName}" Header="Errand" Width="150"/>
-                                    <GridViewColumn Header="Mechanic" Width="200"/>
+                                    <GridViewColumn x:Name="hehe" DisplayMemberBinding="{Binding FirstName}" Header="Mechanic" Width="200"/>
                                     <GridViewColumn DisplayMemberBinding="{Binding ErrandStatus}" Header="Status" Width="150"/>
                                     <GridViewColumn DisplayMemberBinding="{Binding ErrandStartDate}" Header="Start date" Width="150"/>
                                     <GridViewColumn DisplayMemberBinding="{Binding ErrandEndDate}" Header="End date" Width="150"/>
