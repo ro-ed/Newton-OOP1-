@@ -4,35 +4,5 @@
     "Password": "Meckarn123",
     "IsAdmin": true,
     "UserID": null
-  },
-  {
-    "Username": null,
-    "Password": null,
-    "IsAdmin": false,
-    "UserID": "704ea295-5993-4fca-87ec-2605b6017dad"
-  },
-  {
-    "Username": "hej@gmail.com",
-    "Password": "hej",
-    "IsAdmin": false,
-    "UserID": "9bb92494-703c-4822-bb04-12baefaf262e"
-  },
-  {
-    "Username": "Robin@gmail.com",
-    "Password": "hej",
-    "IsAdmin": false,
-    "UserID": "b83e1f9d-a4ba-4807-8cb5-64ccb48f021c"
-  },
-  {
-    "Username": "Julia@hej.com",
-    "Password": "hej",
-    "IsAdmin": false,
-    "UserID": "bd913838-a7e9-4832-8d7a-443924e7c9ac"
-  },
-  {
-    "Username": "Julia@hej.com",
-    "Password": "hej",
-    "IsAdmin": false,
-    "UserID": "ec8e9b7b-084e-4ec5-a2bc-8205e9475990"
   }
 ]

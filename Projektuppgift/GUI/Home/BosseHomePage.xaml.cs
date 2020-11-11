@@ -18,6 +18,7 @@ using Newtonsoft.Json;
 using static Logic.Services.AddMechanicService;
 using Logic.Entities;
 using static Logic.DAL.StockDataAccess;
+using static Logic.Services.AddUserService;
 
 namespace GUI.Home
 {
@@ -47,6 +48,15 @@ namespace GUI.Home
             var readFromJson2 = JsonConvert.DeserializeObject<Stock>(jsonFromFile2);
             //// Lägger till i listan.
             stockobject = readFromJson2;
+
+            string jsonFromFile3;
+            using (var reader = new StreamReader(userpath))
+            {
+                jsonFromFile3 = reader.ReadToEnd();
+            }
+            var readFromJson3 = JsonConvert.DeserializeObject<List<User>>(jsonFromFile3);
+            // Lägger till i listan.
+            usersList.AddRange(readFromJson3);
         }
 
         private void SignOutButton_Click(object sender, RoutedEventArgs e)
@@ -82,6 +92,10 @@ namespace GUI.Home
                 case 1:
                     MainViewGrid.Children.Clear();
                     MainViewGrid.Children.Add(new MechanicHome());
+                    break;
+                case 2:
+                    MainViewGrid.Children.Clear();
+                    MainViewGrid.Children.Add(new UserControlAddUser());
                     break;
                 case 3:
                     MainViewGrid.Children.Clear();
