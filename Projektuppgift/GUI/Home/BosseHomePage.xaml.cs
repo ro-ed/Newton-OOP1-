@@ -83,6 +83,10 @@ namespace GUI.Home
                     MainViewGrid.Children.Clear();
                     MainViewGrid.Children.Add(new MechanicHome());
                     break;
+                case 2:
+                    MainViewGrid.Children.Clear();
+                    MainViewGrid.Children.Add(new UserControlAddUser());
+                    break;
                 case 3:
                     MainViewGrid.Children.Clear();
                     MainViewGrid.Children.Add(new UserControlNewErrand());

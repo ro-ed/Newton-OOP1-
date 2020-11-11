@@ -13,7 +13,8 @@ namespace Logic.Entities
         public Guid ErrandID { get; set; }
 
         //Test
-        public string FirstName { get; set; }
+        public string FirstName1 { get; set; }
+
         public string LastName { get; set; }      
 
         

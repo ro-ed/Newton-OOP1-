@@ -5,8 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:GUI.Home"
       mc:Ignorable="d" 
-      d:DesignHeight="600" d:DesignWidth="400"
-      Title="LoadingScreen">
+      d:DesignHeight="600" d:DesignWidth="400">
 
     <Grid Background="White" Width="400" Height="600" x:Name="LoadingView">
         <Image Source="/Assets/Verkstad.png" ></Image>

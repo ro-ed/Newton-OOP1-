@@ -5,12 +5,7 @@
     "IsAdmin": true,
     "UserID": null
   },
-  {
-    "Username": null,
-    "Password": null,
-    "IsAdmin": false,
-    "UserID": "704ea295-5993-4fca-87ec-2605b6017dad"
-  },
+  
   {
     "Username": "hej@gmail.com",
     "Password": "hej",

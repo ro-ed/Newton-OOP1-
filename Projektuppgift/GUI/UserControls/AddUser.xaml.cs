@@ -157,6 +157,9 @@ namespace GUI.UserControls
                 //    var readFromJson = JsonConvert.DeserializeObject<List<Mechanic>>(jsonFromFile);
                 //}
                 MessageBox.Show("User Removed!");
+
+                
+
             }
         }
 

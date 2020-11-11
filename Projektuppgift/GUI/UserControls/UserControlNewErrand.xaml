@@ -44,6 +44,11 @@
 
                         </StackPanel>
                         <ListView Name="ErrandView" Height="200" Margin="20,0,20,0" SelectionChanged="ErrandView_SelectionChanged">
+                            <ListView.Resources>
+                                <Style TargetType="{x:Type GridViewColumnHeader}">
+                                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                                </Style>
+                            </ListView.Resources>
                             <ListView.View>
                                 <GridView x:Name="Errand_List">
                                     <GridViewColumn DisplayMemberBinding="{Binding ErrandName}" Header="Errand" Width="150"/>
