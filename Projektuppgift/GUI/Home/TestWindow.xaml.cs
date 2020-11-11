@@ -8,21 +8,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Projektuppgift.GUI.UserControls
+namespace GUI.Home
 {
     /// <summary>
-    /// Interaction logic for UserControl1.xaml
+    /// Interaction logic for TestWindow.xaml
     /// </summary>
-    public partial class HomeTab : UserControl
+    public partial class TestWindow : Window
     {
-        public HomeTab()
+        public TestWindow()
         {
             InitializeComponent();
         }
-        
-       
     }
 }

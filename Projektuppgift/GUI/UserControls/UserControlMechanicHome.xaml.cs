@@ -1,15 +1,11 @@
-﻿using Newtonsoft.Json;
+﻿using Logic.Entities;
+using Newtonsoft.Json;
+using Projektuppgift.GUI.UserControls;
 using System.Collections.Generic;
-using System.Windows.Controls;
-using Logic.Entities;
-using static Logic.Services.AddMechanicService;
 using System.IO;
 using System.Windows;
-using Projektuppgift.GUI.UserControls;
-using System.Linq;
-using System.Diagnostics;
-using System.Collections.ObjectModel;
-using System.Data;
+using System.Windows.Controls;
+using static Logic.Services.AddMechanicService;
 
 namespace GUI.UserControls
 {
@@ -19,10 +15,12 @@ namespace GUI.UserControls
     public partial class MechanicHome : UserControl
     {
         //public ObservableCollection<Mechanic> listToRead = new ObservableCollection<Mechanic>();
+
+        public static Mechanic _selectedMechanic;
         public MechanicHome()
         {
             InitializeComponent();
-            // Läser från JSON.
+            //Läser från JSON.
             string jsonFromFile;
             using (var reader = new StreamReader(mechpath))
             {
@@ -62,8 +60,14 @@ namespace GUI.UserControls
         }
         private void ChangeToEdit_Click(object sender, RoutedEventArgs e)
         {
+            Mechanic selectedMechanic = lv_data.SelectedItem as Mechanic;
+            _selectedMechanic = selectedMechanic;
+            
             MechanicView.Children.Clear();
-            MechanicView.Children.Add(new EditMechanic());
+            var child = new EditMechanic();
+            child.DataContext = selectedMechanic;
+            MechanicView.Children.Add(child); 
+                      
 
         }
 

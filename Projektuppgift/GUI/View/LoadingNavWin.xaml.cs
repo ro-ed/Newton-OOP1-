@@ -11,18 +11,17 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Projektuppgift.GUI.UserControls
+namespace GUI.View
 {
     /// <summary>
-    /// Interaction logic for UserControl1.xaml
+    /// Interaction logic for LoadingNavWin.xaml
     /// </summary>
-    public partial class HomeTab : UserControl
+    public partial class LoadingNavWin : NavigationWindow
     {
-        public HomeTab()
+        public LoadingNavWin()
         {
             InitializeComponent();
         }
-        
        
     }
 }

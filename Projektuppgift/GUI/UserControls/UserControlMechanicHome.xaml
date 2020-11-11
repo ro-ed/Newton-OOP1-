@@ -15,7 +15,12 @@
                 </TextBlock>
                 
                     <ListView Name="lv_data" Width="730" Height="310" Margin="10 20 10 0" SelectionChanged="lv_data_SelectionChanged">
-                <ListView.View>
+                    <ListView.Resources>
+                        <Style TargetType="{x:Type GridViewColumnHeader}">
+                            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                        </Style>
+                    </ListView.Resources>
+                    <ListView.View>
                     <GridView x:Name="List_Item">
                         <GridViewColumn DisplayMemberBinding="{Binding FirstName}" Header="First name" Width="150"></GridViewColumn>
                         <GridViewColumn DisplayMemberBinding="{Binding SurName}" Header="Surname" Width="150"></GridViewColumn>

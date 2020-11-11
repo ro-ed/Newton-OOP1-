@@ -7,31 +7,38 @@
              xmlns:local="clr-namespace:GUI.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="530" d:DesignWidth="754" HorizontalAlignment="Center" VerticalAlignment="Center">
-    <Grid>
+    <Grid x:Name="EditMechanicView">
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2" Height="2030" Width="754">
-            <StackPanel VerticalAlignment="Center" Width="380" HorizontalAlignment="Left" Margin="20 -50 10 10" Height="410">
+            <StackPanel x:Name="spOldView" VerticalAlignment="Center" Width="380" HorizontalAlignment="Left" Margin="20 -50 10 10" Height="410">
                 <TextBlock Width="100" Text="Old" TextAlignment="Center" FontSize="26"></TextBlock>
-                <TextBlock Width="150" Text="Firstname:" TextAlignment="Center" FontSize="20" Margin="-200 10 0 0"></TextBlock>
-                <TextBlock Width="150" Text="1" TextAlignment="Left" FontSize="20" Margin="200 -26 0 0"></TextBlock>
-                <TextBlock Width="150" Text="Surname:" TextAlignment="Center" FontSize="20" Margin="-200 10 0 0"></TextBlock>
-                <TextBlock Width="150" Text="2" TextAlignment="Left" FontSize="20" Margin="200 -26 0 0"></TextBlock>
-                <TextBlock Width="150" Text="Date of birth:" TextAlignment="Center" FontSize="20" Margin="-200 10 0 0"></TextBlock>
-                <TextBlock Width="150" Text="3" TextAlignment="Left" FontSize="20" Margin="200 -26 0 0"></TextBlock>
-                <TextBlock Width="200" Text="Date of employment:" TextAlignment="Center" FontSize="20" Margin="-160 10 0 0"></TextBlock>
-                <TextBlock Width="150" Text="4" TextAlignment="Left" FontSize="20" Margin="200 -26 0 0"></TextBlock>
-                <TextBlock Width="150" Text="MechID:" TextAlignment="Center" FontSize="20" Margin="-200 10 0 0"></TextBlock>
-                <TextBlock Width="150" Text="5" TextAlignment="Left" FontSize="20" Margin="200 -26 0 0"></TextBlock>
-                <TextBlock Width="150" Text="CFM:" TextAlignment="Center" FontSize="20" Margin="-200 10 0 0"></TextBlock>
-                <TextBlock Width="150" Text="6" TextAlignment="Left" FontSize="20" Margin="200 -26 0 0"></TextBlock>
-                <TextBlock Width="150" Text="CFT:" TextAlignment="Center" FontSize="20" Margin="-200 10 0 0"></TextBlock>
-                <TextBlock Width="150" Text="7" TextAlignment="Left" FontSize="20" Margin="200 -26 0 0"></TextBlock>
-                <TextBlock Width="150" Text="CFB:" TextAlignment="Center" FontSize="20" Margin="-200 10 0 0"></TextBlock>
-                <TextBlock Width="150" Text="8" TextAlignment="Left" FontSize="20" Margin="200 -26 0 0"></TextBlock>
-                <TextBlock Width="150" Text="CFWS:" TextAlignment="Center" FontSize="20" Margin="-200 10 0 0"></TextBlock>
-                <TextBlock Width="150" Text="9" TextAlignment="Left" FontSize="20" Margin="200 -26 0 0"></TextBlock>
-                <TextBlock Width="150" Text="CFVB:" TextAlignment="Center" FontSize="20" Margin="-200 10 0 0"></TextBlock>
-                <TextBlock Width="150" Text="10" TextAlignment="Left" FontSize="20" Margin="200 -26 0 0"></TextBlock>
+                <TextBlock Width="150" Text="Firstname:" TextAlignment="Left" FontSize="20" Margin="-200 10 0 0"></TextBlock>
+                <TextBlock x:Name="tboldFirst" Width="150" TextAlignment="Left" FontSize="20" Margin="200 -26 0 0">               
+                    <Run Text="{Binding FirstName}"/>
+                </TextBlock>
+                <TextBlock Width="150" Text="Surname:" TextAlignment="Left" FontSize="20" Margin="-200 10 0 0"></TextBlock>
+                <TextBlock x:Name="tboldSur" Width="150" Text="{Binding SurName}" TextAlignment="Left" FontSize="20" Margin="200 -26 0 0"></TextBlock>
+                <TextBlock Width="150" Text="Date of birth:" TextAlignment="Left" FontSize="20" Margin="-200 10 0 0"></TextBlock>
+                <TextBlock x:Name="tboldBirth" Width="150" Text="{Binding DateOfBirth}" TextAlignment="Left" FontSize="20" Margin="200 -26 0 0"></TextBlock>
+                <TextBlock Width="200" Text="Date of employment:" TextAlignment="Left" FontSize="20" Margin="-160 10 0 0"></TextBlock>
+                <TextBlock x:Name="tboldEmploy" Width="150" Text="{Binding DateOfEmployment}" TextAlignment="Left" FontSize="20" Margin="200 -26 0 0"></TextBlock>
+                <TextBlock Width="150" Text="MechID:" TextAlignment="Left" FontSize="20" Margin="-200 10 0 0"></TextBlock>
+                <TextBlock x:Name="tboldMechID" Width="250" Text="{Binding MechID}" TextAlignment="Left" FontSize="12" Margin="130 -26 0 0"></TextBlock>
+                <TextBlock Width="150" Text="CFM:" TextAlignment="Left" FontSize="20" Margin="-200 10 0 0"></TextBlock>
+                <TextBlock x:Name="tboldCFM" Width="150" Text="{Binding CanFixMotor}" TextAlignment="Left" FontSize="20" Margin="200 -26 0 0"></TextBlock>
+                <TextBlock Width="150" Text="CFT:" TextAlignment="Left" FontSize="20" Margin="-200 10 0 0"></TextBlock>
+                <TextBlock x:Name="tboldCFT" Width="150" Text="{Binding CanFixTires}" TextAlignment="Left" FontSize="20" Margin="200 -26 0 0"></TextBlock>
+                <TextBlock Width="150" Text="CFB:" TextAlignment="Left" FontSize="20" Margin="-200 10 0 0"></TextBlock>
+                <TextBlock x:Name="tboldCFB" Width="150" Text="{Binding CanFixBrakes}" TextAlignment="Left" FontSize="20" Margin="200 -26 0 0"></TextBlock>
+                <TextBlock Width="150" Text="CFWS:" TextAlignment="Left" FontSize="20" Margin="-200 10 0 0"></TextBlock>
+                <TextBlock x:Name="tboldCFWS" Width="150" Text="{Binding CanFixWindshield}" TextAlignment="Left" FontSize="20" Margin="200 -26 0 0"></TextBlock>
+                <TextBlock Width="150" Text="CFVB:" TextAlignment="Left" FontSize="20" Margin="-200 10 0 0"></TextBlock>
+                <TextBlock x:Name="tboldCFVB" Width="150" Text="{Binding CanFixVehicleBody}" TextAlignment="Left" FontSize="20" Margin="200 -26 0 0"></TextBlock>
             </StackPanel>
+            <Button x:Name="EditGoBackButton" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="#FFFF5500" Margin="-750 -450 0 0" Click="EditGoBackButton_Click">
+                <materialDesign:PackIcon Kind="ArrowBackCircle" Width="30" Height="30" Foreground="#FFFF5500" ></materialDesign:PackIcon>
+
+            </Button>
+            <TextBlock Width="100" Height="20" Margin="-600 -450 0 0" Text="GO BACK"></TextBlock>
             <ScrollViewer>
                 <StackPanel VerticalAlignment="Top" Width="380" HorizontalAlignment="Right" Margin="20 720 -10 10" Height="1530">
 
@@ -97,7 +104,7 @@
 
 
 
-        <Button x:Name="EditMechanicButton" Margin="-80 450 10 10" Width="100" Content="DONE" Foreground="#FF222222" FontFamily="Century Gothic" FontSize="14" FontWeight="Bold"></Button>
+        <Button x:Name="EditMechanicButton" Margin="-80 450 10 10" Width="100" Content="DONE" Foreground="#FF222222" FontFamily="Century Gothic" FontSize="14" FontWeight="Bold" Click="EditMechanicButton_Click"></Button>
            
     
     </Grid>

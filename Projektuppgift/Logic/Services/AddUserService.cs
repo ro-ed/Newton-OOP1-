@@ -13,10 +13,10 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Logic.Services
 {
-    public class AddErrandService
+    public class AddUserService
     {
-        public static List<Errands> errands = new List<Errands>();
+        public static List<User> usersList = new List<User>();
 
-        public const string pathforErrand = @"C:\Users\sandr\source\repos\NewRepos\Projektuppgift\Logic\DAL\Errand.json";
+        public const string userpath = @"C:\Users\julia\Documents\GitHub\Newton-OOP1-\Projektuppgift\Logic\DAL\User.json";
     }
 }
