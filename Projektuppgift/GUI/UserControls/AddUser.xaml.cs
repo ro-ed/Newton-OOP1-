@@ -36,7 +36,7 @@ namespace GUI.UserControls
             }
             var readFromJson = JsonConvert.DeserializeObject<List<User>>(jsonFromFile);
             // Lägger till i listan.
-            usersList.AddRange(readFromJson);
+            //usersList.AddRange(readFromJson);
 
             using (var reader = new StreamReader(mechpath))
             {
@@ -44,11 +44,14 @@ namespace GUI.UserControls
             }
             var mechanics = JsonConvert.DeserializeObject<List<Mechanic>>(jsonFromFile);
             // Lägger till i listan.
-            mechanics.AddRange(mechanics);
+            //mechanics.AddRange(mechanics);
 
             MechanicCb.ItemsSource = mechanics;
             UserCb.ItemsSource = usersList;
 
+            //listview för att kunna se vilka mek som har user och vilka som inte har
+
+           
 
         }
 
@@ -115,8 +118,8 @@ namespace GUI.UserControls
 
                 MessageBox.Show("User Added!");
 
-
-
+                AddUserView.Children.Clear();
+                AddUserView.Children.Add(new UserControlAddUser());
 
             }
 
@@ -124,8 +127,9 @@ namespace GUI.UserControls
         }
         
 
-        private void DeleteUser_Click(object sender, RoutedEventArgs e)
+        private void DeleteUser_Click_1(object sender, RoutedEventArgs e)
         {
+
             if (MessageBox.Show("Sure ??", "DELETE", MessageBoxButton.OKCancel, MessageBoxImage.Warning) == MessageBoxResult.OK)
             {
 
@@ -142,28 +146,16 @@ namespace GUI.UserControls
                     writer.Write(jsonToWrite);
 
                 }
-                //Overrite();
-                //MechanicView.Children.Clear();
-                //MechanicView.Children.Add(new MechanicHome());
-
-                //private void Overrite()
-                //{
-                //    File.WriteAllText(mechpath, JsonConvert.SerializeObject(mechanics));
-                //    string jsonFromFile;
-                //    using (var reader = new StreamReader(mechpath))
-                //    {
-                //        jsonFromFile = reader.ReadToEnd();
-                //    }
-                //    var readFromJson = JsonConvert.DeserializeObject<List<Mechanic>>(jsonFromFile);
-                //}
+                
                 MessageBox.Show("User Removed!");
+
+                AddUserView.Children.Clear();
+                AddUserView.Children.Add(new UserControlAddUser());
 
                 
 
             }
         }
-
-
     }
 }
 

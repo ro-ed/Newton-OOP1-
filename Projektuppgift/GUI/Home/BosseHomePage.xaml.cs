@@ -18,6 +18,7 @@ using Newtonsoft.Json;
 using static Logic.Services.AddMechanicService;
 using Logic.Entities;
 using static Logic.DAL.StockDataAccess;
+using static Logic.Services.AddUserService;
 using static Logic.Services.AddErrandService;
 
 namespace GUI.Home
@@ -48,6 +49,15 @@ namespace GUI.Home
             var readFromJson2 = JsonConvert.DeserializeObject<Stock>(jsonFromFile2);
             //// Lägger till i listan.
             stockobject = readFromJson2;
+
+            string jsonFromFile3;
+            using (var reader = new StreamReader(userpath))
+            {
+                jsonFromFile3 = reader.ReadToEnd();
+            }
+            var readFromJson3 = JsonConvert.DeserializeObject<List<User>>(jsonFromFile3);
+            // Lägger till i listan.
+            usersList.AddRange(readFromJson3);
             string jsonFromFile4;
             using (var reader = new StreamReader(pathforErrand))
             {

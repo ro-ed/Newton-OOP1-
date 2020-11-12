@@ -7,21 +7,28 @@
              xmlns:local="clr-namespace:GUI.UserControls"
              mc:Ignorable="d" 
            d:DesignHeight="530" d:DesignWidth="754" VerticalAlignment="Center" HorizontalAlignment="Center" MaxWidth="754" MaxHeight="530">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="201*"/>
-            <ColumnDefinition Width="553*"/>
-        </Grid.ColumnDefinitions>
-        <Label Content=" Add New User" FontFamily="Century Gothic" FontSize="35" Margin="5,27,0,454" HorizontalAlignment="Left" Width="258" Grid.Column="1"/>
-        <TextBlock  Grid.Column="1" HorizontalAlignment="Left" Margin="75,143,0,0" Text="Username" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="120" FontFamily="Century Gothic" FontSize="20"/>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="75,259,0,0" Text="Password" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="120" FontFamily="Century Gothic" FontSize="20"/>
-        <TextBox x:Name="textBoxEmail" Grid.Column="1" HorizontalAlignment="Left" Margin="59,184,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="165" Height="25"/>
-        <PasswordBox x:Name="PasswordBox" Grid.Column="1" HorizontalAlignment="Left" Margin="59,299,0,0" VerticalAlignment="Top" Width="163" Height="25"/>
-        <ComboBox x:Name="MechanicCb" DisplayMemberPath="FirstName" Margin="31,148,45,0" VerticalAlignment="Top" Height="28"/>
+    <Grid x:Name="AddUserView">
 
-        <Button x:Name="AddUser" Content="ADD USER" Click="Button_Click" Margin="66,396,349,102" Grid.Column="1"/>
-        <Button x:Name="DeleteUser" Content="DELETE USER" Click="Button_Click" Margin="350,397,86,101" Grid.Column="1"/>
-        <ComboBox x:Name="UserCb" DisplayMemberPath="Username" Grid.Column="1" HorizontalAlignment="Left" Margin="369,147,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content=" Add New User" FontFamily="Century Gothic" FontSize="35" Margin="210,25,0,456" HorizontalAlignment="Left" Width="258"/>
+        <TextBlock HorizontalAlignment="Left" Margin="274,100,0,0" Text="Username" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="120" FontFamily="Century Gothic" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Margin="273,194,0,0" Text="Password" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="120" FontFamily="Century Gothic" FontSize="20"/>
+        <TextBox x:Name="textBoxEmail" HorizontalAlignment="Left" Margin="255,141,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="165" Height="25"/>
+        <PasswordBox x:Name="PasswordBox" HorizontalAlignment="Left" Margin="255,235,0,0" VerticalAlignment="Top" Width="163" Height="25"/>
+        <ComboBox x:Name="MechanicCb" DisplayMemberPath="FirstName" Margin="41,136,613,0" VerticalAlignment="Top" Height="28" Width="100"/>
+
+        <Button x:Name="AddUser" Content="ADD USER" Click="Button_Click" Margin="267,290,355,208"/>
+        <ComboBox x:Name="UserCb" DisplayMemberPath="Username" HorizontalAlignment="Left" Margin="532,133,0,0" VerticalAlignment="Top" Width="120" Height="28"/>
+        <Button x:Name="DeleteUser" Content="DELETE USER" HorizontalAlignment="Left" Margin="540,290,0,0" VerticalAlignment="Top" Click="DeleteUser_Click_1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="22,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="185"><Run Language="sv-se" Text="Select Mechanic" FontFamily="Century Gothic" FontSize="20"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="531,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121"><Run Language="sv-se" Text="Delete User" FontFamily="Century Gothic" FontSize="20"/></TextBlock>
+        <ListView  Name="MechUserView" Margin="17,341,23,16">
+            <ListView.View>
+                <GridView>
+
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
 
 
 

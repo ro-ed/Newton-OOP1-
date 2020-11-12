@@ -64,7 +64,7 @@
                 <ListViewItem Height="60" Foreground="LightGray" FontFamily="Century Gothic">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="Users" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
-                        <TextBlock Text="Workers" FontSize="22" VerticalAlignment="Center" Margin="10 0"/>
+                        <TextBlock FontSize="22" VerticalAlignment="Center" Margin="10 0"><Run Language="sv-se" Text="Users"/></TextBlock>
                     </StackPanel>
                 </ListViewItem>
                 <ListViewItem Height="60" Foreground="LightGray" FontFamily="Century Gothic">
