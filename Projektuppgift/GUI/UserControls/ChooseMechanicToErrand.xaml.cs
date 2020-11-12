@@ -24,6 +24,7 @@ using System.Data;
 using Logic.Services;
 using static Logic.Entities.Errands;
 
+
 namespace GUI.UserControls
 {
     /// <summary>
@@ -31,6 +32,8 @@ namespace GUI.UserControls
     /// </summary>
     public partial class ChooseMechanicToErrand : UserControl
     {
+        public static Errands _test;
+
         private readonly Errands _selectedErrand;
         public ChooseMechanicToErrand(Errands errands)
         {
@@ -84,7 +87,8 @@ namespace GUI.UserControls
                 }
             }
 
-            
+
+
 
             //MechanicChoose.Children.Clear();
             //MechanicChoose.Children.Add(new UserControlNewErrand());
@@ -150,6 +154,9 @@ namespace GUI.UserControls
 
         private void GoBackButton_Click(object sender, RoutedEventArgs e)
         {
+            Errands selectedErrand = MechanicChoose.SelectedItem as Errands;
+            _test = selectedErrand;
+
             ChooseMechanic.Children.Clear();
             ChooseMechanic.Children.Add(new UserControlNewErrand());
         }

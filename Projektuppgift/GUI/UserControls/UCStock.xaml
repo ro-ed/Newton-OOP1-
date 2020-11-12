@@ -22,7 +22,7 @@
                     </TextBlock>
                     <TextBlock Width="150" Text="Brakes:" TextAlignment="Left" FontSize="20" Margin="-550 10 0 0"></TextBlock>
                     <TextBlock x:Name="tbBrakes" Width="100" Text="{Binding CarBrakes}" TextAlignment="Center" FontSize="20" Margin="-150 -26 0 0"></TextBlock>
-                    <TextBlock Width="150" Text="Motors:" TextAlignment="Left" FontSize="20" Margin="-550 10 0 0"></TextBlock>
+                    <TextBlock Width="150" Text="Engines:" TextAlignment="Left" FontSize="20" Margin="-550 10 0 0"></TextBlock>
                     <TextBlock x:Name="tbMotors" Width="100" Text="{Binding CarMotors}" TextAlignment="Center" FontSize="20" Margin="-150 -26 0 0"></TextBlock>
                     <TextBlock Width="150" Text="Windshields:" TextAlignment="Left" FontSize="20" Margin="-550 10 0 0"></TextBlock>
                     <TextBlock x:Name="tbWS" Width="100" Text="{Binding CarWindshields}" TextAlignment="Center" FontSize="20" Margin="-150 -26 0 0"></TextBlock>

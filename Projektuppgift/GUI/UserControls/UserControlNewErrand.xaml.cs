@@ -29,7 +29,7 @@ namespace GUI.UserControls
     public partial class UserControlNewErrand : UserControl
     {
         // public List<Errands> listRead { get; set; }
-        private string _test;
+        public static Errands _newSelectedErrandTest;
         public UserControlNewErrand()
         {
             InitializeComponent();
@@ -52,22 +52,23 @@ namespace GUI.UserControls
             }
 
             var jsonRead = JsonConvert.DeserializeObject<List<Errands>>(jsonFile);
-            jsonRead.ForEach(x => {
-                var m = mechanics.FirstOrDefault(y => y.ErrandIDs.Contains(x.ErrandID));
-                x.FirstName = m?.FirstName ?? "";
-                x.LastName = m?.SurName ?? "";
 
-            });
+            //jsonRead.ForEach(x => {
+            //    var m = mechanics.FirstOrDefault(y => y.ErrandIDs.Contains(x.ErrandID));
+            //    x.FirstName = m?.FirstName ?? "";
+            //    x.LastName = m?.SurName ?? "";
 
-            
-            
+            //});
+
+
+
 
 
             //errands.AddRange(jsonRead);
             //listRead.AddRange(jsonRead);
 
             DataContext = this;
-            ErrandView.ItemsSource = errands;
+            lv_Errand.ItemsSource = errands;
 
            
         }
@@ -77,9 +78,22 @@ namespace GUI.UserControls
             string errandName = this.tbErrandName.Text;
             string errandStart = this.tbErrandStart.Text;
             string errandEnd = this.tbErrandEnd.Text;
-            string errandStatus = ((bool)cbStatusStart.IsChecked) ? "Started" : "Finished";
-            string firstName = this._test;
-            
+            //string errandStatus = ((bool)cbStatusStart.IsChecked) ? "New" : "Finished";
+            string errandStatus = "";
+            if ((bool)cbStatusNew.IsChecked)
+            {
+                errandStatus = "New";
+            }
+            else if ((bool)cbStatusOnGoing.IsChecked)
+            {
+                errandStatus = "Ongoing";
+            }
+            else if ((bool)cbStatusFinished.IsChecked)
+            {
+                errandStatus = "Finished";
+            }
+
+
 
             Errands errand = new Errands
             {
@@ -88,7 +102,7 @@ namespace GUI.UserControls
                 ErrandEndDate = errandEnd,
                 ErrandID = Guid.NewGuid(),
                 ErrandStatus = errandStatus, 
-                FirstName = firstName
+                
             };
 
             
@@ -137,7 +151,7 @@ namespace GUI.UserControls
             //ErrandView.Children.Add(new UserControlNewErrand());
 
 
-            Errands errandSelected = ErrandView.SelectedItem as Errands;
+            Errands errandSelected = lv_Errand.SelectedItem as Errands;
             if (errandSelected != null)
             {
                 errands.Remove(errandSelected);
@@ -170,7 +184,7 @@ namespace GUI.UserControls
 
         private void ErrandView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Errands errands = (Errands)ErrandView.SelectedItem;
+            Errands errands = (Errands)lv_Errand.SelectedItem;
         }
 
 
@@ -187,7 +201,8 @@ namespace GUI.UserControls
 
         private void AssignMechanicToErrand_Click(object sender, RoutedEventArgs e)
         {
-            Errands errands = ErrandView.SelectedItem as Errands;
+            Errands errands = lv_Errand.SelectedItem as Errands;
+
 
             ErrandViewer.Children.Clear();
             ErrandViewer.Children.Add(new ChooseMechanicToErrand(errands));
@@ -195,7 +210,16 @@ namespace GUI.UserControls
             
         }
 
-       
+        private void Edit_Click(object sender, RoutedEventArgs e)
+        {
+            Errands selectedErrand = lv_Errand.SelectedItem as Errands;
+            _newSelectedErrandTest = selectedErrand;
+
+            ErrandViewer.Children.Clear();
+            var child = new EditErrand();
+            child.DataContext = selectedErrand;
+            ErrandViewer.Children.Add(child);
+        }
     }
 }
 

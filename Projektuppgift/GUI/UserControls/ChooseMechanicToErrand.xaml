@@ -18,7 +18,7 @@
                 </Button>
                 <TextBlock Width="100" Height="20" Margin="-510 -40 0 0" Text="GO BACK"></TextBlock>
                 <StackPanel Height="462" Width="754" HorizontalAlignment="Center" Margin="0,20,0,0">
-                    <ListView Name="MechanicChoose" Height="380" Margin="20,0,20,0" SelectionChanged="MechanicChoose_SelectionChanged">
+                    <ListView x:Name="MechanicChoose"  Height="380" Margin="20,0,20,0" SelectionChanged="MechanicChoose_SelectionChanged">
                         <ListView.View>
                         <GridView x:Name="Mechanic_List">
                                 <GridViewColumn DisplayMemberBinding="{Binding FirstName}" Header="First name" Width="150"></GridViewColumn>
