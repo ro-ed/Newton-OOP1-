@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Logic.Services
 {
-    public class LoginService
+    public class LoginService : ILoginService
     {
         private UserDataAccess _db;
 

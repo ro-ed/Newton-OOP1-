@@ -15,8 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using static Logic.Services.AddUserService;
-using static Logic.Services.AddMechanicService;
+using static Logic.Services.StaticLists;
 
 
 namespace GUI.UserControls

@@ -27,7 +27,7 @@
 
                             <TextBlock Text="Status:" FontFamily="Century Gothic" FontSize="14" Margin="5"></TextBlock>
                             <StackPanel Orientation="Horizontal">
-                                <CheckBox x:Name="cbStatusStart" HorizontalAlignment="Left" Margin="5" Width="60" Content="Start" FontSize="14" Height="50"/>
+                                <CheckBox x:Name="cbStatusNew" HorizontalAlignment="Left" Margin="5" Width="60" Content="New" FontSize="14" Height="50"/>
                                 <CheckBox x:Name="cbStatusOnGoing" HorizontalAlignment="Left" Margin="5" Width="80" Content="Ongoing" FontSize="14" Height="50"/>
                                 <CheckBox x:Name="cbStatusFinished" HorizontalAlignment="Left" Margin="5" Width="80" Content="Finished" FontSize="14" Height="50"/>
                             </StackPanel>
@@ -43,7 +43,7 @@
 
 
                         </StackPanel>
-                        <ListView Name="ErrandView" Height="200" Margin="20,0,20,0" SelectionChanged="ErrandView_SelectionChanged">
+                        <ListView Name="lv_Errand" Height="200" Margin="20,0,20,0" SelectionChanged="ErrandView_SelectionChanged">
                             <ListView.Resources>
                                 <Style TargetType="{x:Type GridViewColumnHeader}">
                                     <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
@@ -52,7 +52,7 @@
                             <ListView.View>
                                 <GridView x:Name="Errand_List">
                                     <GridViewColumn DisplayMemberBinding="{Binding ErrandName}" Header="Errand" Width="150"/>
-                                    <GridViewColumn x:Name="hehe" DisplayMemberBinding="{Binding FirstName}" Header="Mechanic" Width="200"/>
+                                    
                                     <GridViewColumn DisplayMemberBinding="{Binding ErrandStatus}" Header="Status" Width="150"/>
                                     <GridViewColumn DisplayMemberBinding="{Binding ErrandStartDate}" Header="Start date" Width="150"/>
                                     <GridViewColumn DisplayMemberBinding="{Binding ErrandEndDate}" Header="End date" Width="150"/>
@@ -61,7 +61,7 @@
                             </ListView.View>
                         </ListView>
                         <Button x:Name="AssignMechanicToErrand" Margin="0 12 60 0" Width="150" Content="Assign mechanic" Foreground="#FF222222" FontFamily="Century Gothic" FontSize="14" FontWeight="Bold" Click="AssignMechanicToErrand_Click"></Button>
-                        <Button x:Name="Edit" Margin="320 -32 50 0" Width="150" Content="Edit" Foreground="#FF222222" FontFamily="Century Gothic" FontSize="14" FontWeight="Bold"></Button>
+                        <Button x:Name="Edit" Margin="320 -32 50 0" Width="150" Content="Edit and Details" Foreground="#FF222222" FontFamily="Century Gothic" FontSize="14" FontWeight="Bold" Click="Edit_Click"></Button>
                         <Button x:Name="Delete" Margin="590 -32 0 0" Width="150" Content="Delete" Foreground="#FF222222" FontFamily="Century Gothic" FontSize="14" FontWeight="Bold" Click="Delete_Click"></Button>
                     </StackPanel>
                 </StackPanel>

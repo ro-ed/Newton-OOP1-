@@ -12,6 +12,11 @@ namespace Logic.Entities
         public string ErrandStatus { get; set; }
         public Guid ErrandID { get; set; }
 
+        public string TypeOfProblem { get; set; }
+        public string ComponentsNeeded { get; set; }
+        public string TypeOfVehicle { get; set; }
+
+
         //Test
         public string FirstName { get; set; }
 

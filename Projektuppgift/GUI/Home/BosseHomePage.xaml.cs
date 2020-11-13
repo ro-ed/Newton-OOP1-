@@ -15,10 +15,8 @@ using Projektuppgift.GUI.UserControls;
 using GUI.Login;
 using System.IO;
 using Newtonsoft.Json;
-using static Logic.Services.AddMechanicService;
 using Logic.Entities;
-using static Logic.DAL.StockDataAccess;
-using static Logic.Services.AddUserService;
+using static Logic.Services.StaticLists;
 
 namespace GUI.Home
 {
@@ -58,6 +56,14 @@ namespace GUI.Home
             var readFromJson3 = JsonConvert.DeserializeObject<List<User>>(jsonFromFile3);
             // Lägger till i listan.
             usersList.AddRange(readFromJson3);
+            string jsonFromFile4;
+            using (var reader = new StreamReader(pathforErrand))
+            {
+                jsonFromFile4 = reader.ReadToEnd();
+            }
+            var readFromJson4 = JsonConvert.DeserializeObject<List<Errands>>(jsonFromFile4);
+            //// Lägger till i listan.
+             errands.AddRange(readFromJson4);
         }
 
         private void SignOutButton_Click(object sender, RoutedEventArgs e)

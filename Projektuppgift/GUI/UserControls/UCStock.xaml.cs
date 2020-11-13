@@ -12,7 +12,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using Newtonsoft.Json;
-using static Logic.DAL.StockDataAccess;
+using static Logic.Services.StaticLists;
 using Logic.Entities;
 
 namespace GUI.UserControls
@@ -65,7 +65,7 @@ namespace GUI.UserControls
                     stock.CarBrakes += int.Parse(tbAmount.Text);
                     break;
                 case 2:
-                    stock.CarMotors += int.Parse(tbAmount.Text);
+                    stock.CarEngines += int.Parse(tbAmount.Text);
                     break;
                 case 3:
                     stock.CarWindshields += int.Parse(tbAmount.Text);
@@ -80,7 +80,7 @@ namespace GUI.UserControls
                     stock.MCBrakes += int.Parse(tbAmount.Text);
                     break;
                 case 7:
-                    stock.MCMotors += int.Parse(tbAmount.Text);
+                    stock.MCEngines += int.Parse(tbAmount.Text);
                     break;
                 case 8:
                     stock.MCWindshields += int.Parse(tbAmount.Text);
@@ -95,7 +95,7 @@ namespace GUI.UserControls
                     stock.BusBrakes += int.Parse(tbAmount.Text);
                     break;
                 case 12:
-                    stock.BusMotors += int.Parse(tbAmount.Text);
+                    stock.BusEngines += int.Parse(tbAmount.Text);
                     break;
                 case 13:
                     stock.BusWindshields += int.Parse(tbAmount.Text);
@@ -110,7 +110,7 @@ namespace GUI.UserControls
                     stock.TruckBrakes += int.Parse(tbAmount.Text);
                     break;
                 case 17:
-                    stock.TruckMotors += int.Parse(tbAmount.Text);
+                    stock.TruckEngines += int.Parse(tbAmount.Text);
                     break;
                 case 18:
                     stock.TruckWindshields += int.Parse(tbAmount.Text);
