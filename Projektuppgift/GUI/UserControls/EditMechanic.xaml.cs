@@ -34,7 +34,7 @@ namespace GUI.UserControls
 
         }
 
-        private void EditMechanicButton_Click(object sender, System.Windows.RoutedEventArgs e)
+        private async void EditMechanicButton_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             Mechanic selectedMechanic = _selectedMechanic;
 
@@ -63,7 +63,7 @@ namespace GUI.UserControls
                 DateOfEmployment = dateOfEmployment,
                 EndDate = employmentEnds,
                 MechID = CurrentMechID,
-                CanFixEngines = EnginesAreChecked,
+                CanFixEngines = MotorIsChecked,
                 CanFixTires = TiresAreChecked,
                 CanFixBrakes = BrakesAreChecked,
                 CanFixWindshields = WindshieldsAreChecked,
@@ -84,7 +84,7 @@ namespace GUI.UserControls
                 var jsonToWrite = JsonConvert.SerializeObject(mechanics, Formatting.Indented);
                 using (var writer = new StreamWriter(mechpath))
                 {
-                    writer.Write(jsonToWrite);
+                   await writer.WriteAsync(jsonToWrite);
 
                 }
 
@@ -98,7 +98,7 @@ namespace GUI.UserControls
                 var fs = File.OpenWrite(mechpath);
                 using (var writer = new StreamWriter(fs))
                 {
-                    writer.Write(jsonToWrite);
+                   await writer.WriteAsync(jsonToWrite);
 
                 }
 

@@ -44,7 +44,7 @@ namespace GUI.UserControls
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-            string MotorIsChecked = ((bool)cbMotorYes3.IsChecked) ? "Yes" : "No";
+            string EnginesAreChecked = ((bool)cbMotorYes3.IsChecked) ? "Yes" : "No";
             string TiresAreChecked = ((bool)cbTiresYes3.IsChecked) ? "Yes" : "No";
             string BrakesAreChecked = ((bool)cbBrakesYes3.IsChecked) ? "Yes" : "No";
             string WindshieldsAreChecked = ((bool)cbWindshieldsYes3.IsChecked) ? "Yes" : "No";
@@ -57,16 +57,6 @@ namespace GUI.UserControls
             LoggedInMechanic.CanFixBrakes = BrakesAreChecked;
             LoggedInMechanic.CanFixWindshields = WindshieldsAreChecked;
             LoggedInMechanic.CanFixVehicleBody = VehicleBodyIsChecked;
-
-
-            //Mechanic mechanic = new Mechanic
-            //{
-            //    CanFixMotor = MotorIsChecked,
-            //    CanFixTires = TiresAreChecked,
-            //    CanFixBrakes = BrakesAreChecked,
-            //    CanFixWindshield = WindshieldsAreChecked,
-            //    CanFixVehicleBody = VehicleBodyIsChecked
-            //};
 
             var index = mechanics.FindIndex(x => x.MechID == LoggedInMechanic.MechID);
             mechanics[index] = LoggedInMechanic;

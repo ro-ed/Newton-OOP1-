@@ -53,15 +53,14 @@ namespace GUI.Login
             {
                 if (userLogIn.IsAdmin)
                 {
+   
                     BosseHomePage bossesHemsida = new BosseHomePage();
                     this.NavigationService.Navigate(bossesHemsida);
 
+
+
                 }
-                //LoadingScreen loadingScreen = new LoadingScreen();
-
-                //this.NavigationService.Navigate(loadingScreen);
-
-                //await LoadingScreenMethod();
+                
 
                 else
                 {
@@ -92,14 +91,7 @@ namespace GUI.Login
 
             Application.Current.Shutdown();
         }
-        public async Task LoadingScreenMethod()
-        {
-            await Task.Run(() =>
-            {
-                Thread.Sleep(2000);
-               
-            });
-        }
+        
         
         
     }
