@@ -57,7 +57,7 @@ namespace Projektuppgift.GUI.UserControls
                 DateOfEmployment = dateOfEmployment,
                 EndDate = employmentEnds,
                 MechID = Guid.NewGuid(),
-                CanFixEngines = EnginesAreChecked,
+                CanFixMotor = MotorIsChecked,
                 CanFixTires = TiresAreChecked,
                 CanFixBrakes = BrakesAreChecked,
                 CanFixWindshields = WindshieldsAreChecked,

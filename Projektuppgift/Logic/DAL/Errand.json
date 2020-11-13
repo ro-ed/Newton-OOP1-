@@ -1,20 +1,23 @@
 [
   {
     "ErrandName": "Test",
-    "ErrandStartDate": "213213",
-    "ErrandEndDate": "2131231",
+    "ErrandStartDate": "213123",
+    "ErrandEndDate": "1321",
     "ErrandStatus": "New",
-    "ErrandID": "bf468a19-329f-4bc1-ad84-2cdacae9396b",
-    "FirstName": null,
-    "LastName": null
-  },
-  {
-    "ErrandName": "Robin",
-    "ErrandStartDate": "12213213",
-    "ErrandEndDate": "123123213",
-    "ErrandStatus": "Ongoing",
-    "ErrandID": "ace47071-38c3-4bc1-b9c4-435a869add92",
-    "FirstName": null,
-    "LastName": null
+    "ErrandID": "35baa9c6-8e28-45ab-b9d2-825ba9ae2388",
+    "ComponentsNeeded": "CarTires",
+    "TypeOfVehicle": "Car",
+    "TypOfCar": "Sedan",
+    "ModelName": "Volvo",
+    "RegistrationNumber": "abc123",
+    "Odometer": 213123,
+    "RegistrationDate": "1989-05-06T00:00:00",
+    "Propellant": "Electric",
+    "MaxLoad": 1233,
+    "HasTowbar": "No",
+    "MaxNrPassengers": 4,
+    "FirstName": "Robin Edin",
+    "LastName": null,
+    "Description": "Neeeeej"
   }
 ]
