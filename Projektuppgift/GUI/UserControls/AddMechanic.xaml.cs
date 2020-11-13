@@ -5,7 +5,7 @@ using System.Windows.Controls;
 using Logic.Entities;
 using System.IO;
 using Newtonsoft.Json;
-using static Logic.Services.AddMechanicService;
+using static Logic.Services.StaticLists;
 using GUI.UserControls;
 
 namespace Projektuppgift.GUI.UserControls

@@ -2,7 +2,7 @@
 using System.Data;
 using System.IO;
 using Newtonsoft.Json;
-using static Logic.Services.AddMechanicService;
+using static Logic.Services.StaticLists;
 using Logic.Entities;
 using System.Collections.Generic;
 using static GUI.UserControls.MechanicHome;

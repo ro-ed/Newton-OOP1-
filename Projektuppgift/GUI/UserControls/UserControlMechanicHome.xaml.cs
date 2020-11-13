@@ -7,7 +7,7 @@ using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
-using static Logic.Services.AddMechanicService;
+using static Logic.Services.StaticLists;
 
 namespace GUI.UserControls
 {
