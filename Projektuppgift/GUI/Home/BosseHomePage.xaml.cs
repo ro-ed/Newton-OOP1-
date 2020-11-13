@@ -30,6 +30,7 @@ namespace GUI.Home
         public BosseHomePage()
         {
             InitializeComponent();
+            ShowsNavigationUI = false;
             // Läser från JSON.
             string jsonFromFile;
             using (var reader = new StreamReader(mechpath))

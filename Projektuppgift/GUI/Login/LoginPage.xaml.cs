@@ -1,4 +1,5 @@
 ﻿using GUI.Home;
+using GUI.UserControls;
 using GUI.View;
 using Logic.Services;
 using Microsoft.Windows.Themes;
@@ -41,19 +42,31 @@ namespace GUI.Login
             string username = this.tbUsername.Text;
             string password = this.pbPassword.Password;
 
-            bool successful = _loginService.Login(username, password);
+            var userLogIn = _loginService.Login(username, password);
+            
 
-            if (successful)
+            if (userLogIn !=null)
             {
+                if (userLogIn.IsAdmin)
+                {
+                    BosseHomePage bossesHemsida = new BosseHomePage();
+                    this.NavigationService.Navigate(bossesHemsida);
+
+                }
                 //LoadingScreen loadingScreen = new LoadingScreen();
 
                 //this.NavigationService.Navigate(loadingScreen);
 
                 //await LoadingScreenMethod();
 
-                BosseHomePage bossesHemsida = new BosseHomePage();
-                this.NavigationService.Navigate(bossesHemsida);
+                else
+                {
+                    LoggedInUserService.LoggedInUser = userLogIn;
+                    MekanikernasHemsida MekanikernasHemsida = new MekanikernasHemsida();
+                    this.NavigationService.Navigate(MekanikernasHemsida);
 
+
+                }
                 //await LoadingScreenMethod();
 
                 //HomePage homePage = new HomePage();

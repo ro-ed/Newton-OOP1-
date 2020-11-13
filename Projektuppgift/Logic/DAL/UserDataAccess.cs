@@ -27,5 +27,16 @@ namespace Logic.DAL
             
             return users;
         }
+
+        internal void Save(List<User> userss)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        //internal void Save(List<User> tmpUsers)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

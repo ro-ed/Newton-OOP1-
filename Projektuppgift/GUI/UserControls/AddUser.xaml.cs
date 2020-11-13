@@ -51,7 +51,7 @@ namespace GUI.UserControls
 
             //listview för att kunna se vilka mek som har user och vilka som inte har
 
-           
+
 
         }
 
@@ -109,7 +109,7 @@ namespace GUI.UserControls
 
                 }
 
-               jsonToWrite = JsonConvert.SerializeObject(mechanics, Formatting.Indented);
+                jsonToWrite = JsonConvert.SerializeObject(mechanics, Formatting.Indented);
                 using (var writer = new StreamWriter(mechpath))
                 {
                     writer.Write(jsonToWrite);
@@ -125,7 +125,7 @@ namespace GUI.UserControls
 
 
         }
-        
+
 
         private void DeleteUser_Click_1(object sender, RoutedEventArgs e)
         {
@@ -146,37 +146,18 @@ namespace GUI.UserControls
                     writer.Write(jsonToWrite);
 
                 }
-                
+
                 MessageBox.Show("User Removed!");
 
                 AddUserView.Children.Clear();
                 AddUserView.Children.Add(new UserControlAddUser());
 
-                
+
 
             }
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
