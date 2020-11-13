@@ -28,10 +28,10 @@
                     <TextBox x:Name="tbDateOfEmployment" HorizontalAlignment="Left" Margin="20" Width="300" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Date of employment (YYYY-MM-DD)" FontSize="14"/>
                     <TextBox x:Name="tbEmploymentEnds" HorizontalAlignment="Left" Margin="20" Width="300" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Employment ends (YYYY-MM-DD)" FontSize="14"/>
                     <StackPanel Height="440" Width="377" HorizontalAlignment="Right" Margin="0 -430 0 0">
-                        <TextBlock Text="Experienced with motors:" FontFamily="Century Gothic" FontSize="14" Margin="5"></TextBlock>
+                        <TextBlock Text="Experienced with engines:" FontFamily="Century Gothic" FontSize="14" Margin="5"></TextBlock>
                         <StackPanel Orientation="Horizontal">
-                            <CheckBox x:Name="cbMotorYes" HorizontalAlignment="Left" Margin="5" Width="50" Content="Yes" FontSize="14" Height="50"/>
-                            <CheckBox x:Name="cbMotorNo" HorizontalAlignment="Left" Margin="5" Width="50" Content="No" FontSize="14" Height="50"/>
+                            <CheckBox x:Name="cbEnginesYes" HorizontalAlignment="Left" Margin="5" Width="50" Content="Yes" FontSize="14" Height="50"/>
+                            <CheckBox x:Name="cbEnginesNo" HorizontalAlignment="Left" Margin="5" Width="50" Content="No" FontSize="14" Height="50"/>
 
                         </StackPanel>
                         <TextBlock Text="Experienced with tires:" FontFamily="Century Gothic" FontSize="14" Margin="5"></TextBlock>

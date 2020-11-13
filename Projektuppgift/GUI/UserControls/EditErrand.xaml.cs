@@ -12,7 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using static GUI.UserControls.UserControlNewErrand;
-using static Logic.Services.AddErrandService;
+using static Logic.Services.StaticLists;
 
 namespace GUI.UserControls
 {

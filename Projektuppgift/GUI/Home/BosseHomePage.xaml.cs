@@ -15,11 +15,8 @@ using Projektuppgift.GUI.UserControls;
 using GUI.Login;
 using System.IO;
 using Newtonsoft.Json;
-using static Logic.Services.AddMechanicService;
 using Logic.Entities;
-using static Logic.DAL.StockDataAccess;
-using static Logic.Services.AddUserService;
-using static Logic.Services.AddErrandService;
+using static Logic.Services.StaticLists;
 
 namespace GUI.Home
 {
@@ -31,6 +28,7 @@ namespace GUI.Home
         public BosseHomePage()
         {
             InitializeComponent();
+            ShowsNavigationUI = false;
             // Läser från JSON.
             string jsonFromFile;
             using (var reader = new StreamReader(mechpath))

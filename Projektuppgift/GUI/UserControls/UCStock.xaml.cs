@@ -12,7 +12,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using Newtonsoft.Json;
-using static Logic.DAL.StockDataAccess;
+using static Logic.Services.StaticLists;
 using Logic.Entities;
 
 namespace GUI.UserControls

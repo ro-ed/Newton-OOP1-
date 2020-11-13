@@ -13,9 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using static Logic.Services.AddErrandService;
-using static Logic.Services.AddMechanicService;
-using static Logic.DAL.StockDataAccess;
+using static Logic.Services.StaticLists;
 using GUI.UserControls;
 using Projektuppgift.GUI.UserControls;
 using System.Linq;
@@ -82,8 +80,8 @@ namespace GUI.UserControls
 
             DataContext = this;
             lv_Errand.ItemsSource = errands;
+            
 
-           
         }
 
         public void CreateErrand_Click(object sender, RoutedEventArgs e)
@@ -95,33 +93,20 @@ namespace GUI.UserControls
             string errandName = this.tbErrandName.Text;
             string errandStart = this.tbErrandStart.Text;
             string errandEnd = this.tbErrandEnd.Text;
-            string componentsNeed = this.InvComboBox.Text;
-            //string typeCar = this.tbTypeOfCar.Text;
             //string errandStatus = ((bool)cbStatusStart.IsChecked) ? "New" : "Finished";
-            string vehicleType = this.VehicleComboBox.Text;
-            string carType = this.TypeCarComboBox.Text;
-            
-            string modelType = this.tbModel.Text;
-            string regNr = this.tbRegistrationNumber.Text;
-            int odoMeterm = int.Parse(this.tbOdometer.Text);
-            DateTime regDate = DateTime.Parse(this.tbRegistrationDate.Text);
-            string typePropellant = this.TypePropellantComboBox.Text;
-            string hasTow = this.tbHasTowbar.Text;
-            int maxPass = int.Parse(this.tbMaxNrPass.Text);
-            int loadMax = int.Parse(this.tbMaxLoad.Text);
-            string writeDescription = this.tbDescription.Text;
-            //if ((bool)cbStatusNew.IsChecked)
-            //{
-            //    errandStatus = "New";
-            //}
-            //else if ((bool)cbStatusOnGoing.IsChecked)
-            //{
-            //    errandStatus = "Ongoing";
-            //}
-            //else if ((bool)cbStatusFinished.IsChecked)
-            //{
-            //    errandStatus = "Finished";
-            //}
+            string errandStatus = "";
+            if ((bool)cbStatusNew.IsChecked)
+            {
+                errandStatus = "New";
+            }
+            else if ((bool)cbStatusOnGoing.IsChecked)
+            {
+                errandStatus = "Ongoing";
+            }
+            else if ((bool)cbStatusFinished.IsChecked)
+            {
+                errandStatus = "Finished";
+            }
 
 
 
@@ -131,21 +116,8 @@ namespace GUI.UserControls
                 ErrandStartDate = errandStart,
                 ErrandEndDate = errandEnd,
                 ErrandID = Guid.NewGuid(),
-                ErrandStatus = "New",
-                ComponentsNeeded = componentsNeed,
-                TypeOfVehicle = vehicleType,
-                TypOfCar = carType,
-                ModelName = modelType,
-                RegistrationNumber = regNr,
-                Odometer = odoMeterm,
-                RegistrationDate = regDate,
-                Propellant = typePropellant,
-                HasTowbar = hasTow,
-                MaxNrPassengers = maxPass,
-                MaxLoad = loadMax,
-                Description = writeDescription
-
-
+                ErrandStatus = errandStatus, 
+                
             };
 
 
