@@ -52,22 +52,22 @@
             <ComboBox x:Name="InvComboBox" Margin="-990 250 0 0" Width="100" SelectionChanged="InvComboBox_SelectionChanged">
                 <ComboBoxItem Content="CarTires"></ComboBoxItem>
                 <ComboBoxItem Content="CarBrakes"></ComboBoxItem>
-                <ComboBoxItem Content="CarMotors"></ComboBoxItem>
+                <ComboBoxItem Content="CarEngines"></ComboBoxItem>
                 <ComboBoxItem Content="CarWindshields"></ComboBoxItem>
                 <ComboBoxItem Content="CarVehicle bodies"></ComboBoxItem>
                 <ComboBoxItem Content="MCTires"></ComboBoxItem>
                 <ComboBoxItem Content="MCBrakes"></ComboBoxItem>
-                <ComboBoxItem Content="MCMotors"></ComboBoxItem>
+                <ComboBoxItem Content="MCEngines"></ComboBoxItem>
                 <ComboBoxItem Content="MCWindshields"></ComboBoxItem>
                 <ComboBoxItem Content="MCVehicle bodies"></ComboBoxItem>
                 <ComboBoxItem Content="BusTires"></ComboBoxItem>
                 <ComboBoxItem Content="BusBrakes"></ComboBoxItem>
-                <ComboBoxItem Content="BusMotors"></ComboBoxItem>
+                <ComboBoxItem Content="BusEngines"></ComboBoxItem>
                 <ComboBoxItem Content="BusWindshields"></ComboBoxItem>
                 <ComboBoxItem Content="BusVehicle bodies"></ComboBoxItem>
                 <ComboBoxItem Content="TruckTires"></ComboBoxItem>
                 <ComboBoxItem Content="TruckBrakes"></ComboBoxItem>
-                <ComboBoxItem Content="TruckMotors"></ComboBoxItem>
+                <ComboBoxItem Content="TruckEngines"></ComboBoxItem>
                 <ComboBoxItem Content="TruckWindshields"></ComboBoxItem>
                 <ComboBoxItem Content="TruckVehicle bodies"></ComboBoxItem>
             </ComboBox>

@@ -10,36 +10,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using GUI.Login;
-using System.Threading.Tasks;
-using System.Threading;
 
-
-namespace GUI.Home
+namespace GUI.UserControls
 {
     /// <summary>
-    /// Interaction logic for LoadingScreen.xaml
+    /// Interaction logic for UCErrandsMech.xaml
     /// </summary>
-    public partial class LoadingScreen : Page
+    public partial class UCErrandsMech : UserControl
     {
-        public LoadingScreen()
+        public UCErrandsMech()
         {
             InitializeComponent();
-
-            LoadingScreenMethod();
-
-
         }
-        public void LoadingScreenMethod()
-        {
-            Thread.Sleep(2000);
-
-
-
-
-
-        }
-
-
     }
 }

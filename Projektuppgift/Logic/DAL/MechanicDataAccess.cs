@@ -13,7 +13,7 @@ namespace Logic.DAL
 {
     public class MechanicDataAccess
     {
-        private const string mechpath = @"DAL\Mechanic.json";
+        private const string mechpath = @"C:\Users\julia\Documents\GitHub\Newton-OOP1-\Projektuppgift\Logic\DAL\Mechanic.json";
 
         public List<Mechanic> GetMechanics()
         {
@@ -22,8 +22,6 @@ namespace Logic.DAL
 
             return mechanics;
         }
-
-
 
     }
 }

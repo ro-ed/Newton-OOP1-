@@ -9,7 +9,7 @@
              d:DesignHeight="530" d:DesignWidth="754" HorizontalAlignment="Center" VerticalAlignment="Center">
     <Grid x:Name="EditMechanicView">
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2" Height="2030" Width="754">
-            <StackPanel x:Name="spOldView" VerticalAlignment="Center" Width="380" HorizontalAlignment="Left" Margin="20 -50 10 10" Height="410">
+            <StackPanel x:Name="spOldView" VerticalAlignment="Center" Width="380" HorizontalAlignment="Left" Margin="20 -50 10 10" Height="450">
                 <TextBlock Width="100" Text="Old" TextAlignment="Center" FontSize="26"></TextBlock>
                 <TextBlock Width="150" Text="Firstname:" TextAlignment="Left" FontSize="20" Margin="-200 10 0 0"></TextBlock>
                 <TextBlock x:Name="tboldFirst" Width="150" TextAlignment="Left" FontSize="20" Margin="200 -26 0 0">               
@@ -19,18 +19,20 @@
                 <TextBlock x:Name="tboldSur" Width="150" Text="{Binding SurName}" TextAlignment="Left" FontSize="20" Margin="200 -26 0 0"></TextBlock>
                 <TextBlock Width="150" Text="Date of birth:" TextAlignment="Left" FontSize="20" Margin="-200 10 0 0"></TextBlock>
                 <TextBlock x:Name="tboldBirth" Width="150" Text="{Binding DateOfBirth}" TextAlignment="Left" FontSize="20" Margin="200 -26 0 0"></TextBlock>
-                <TextBlock Width="200" Text="Date of employment:" TextAlignment="Left" FontSize="20" Margin="-160 10 0 0"></TextBlock>
+                <TextBlock Width="200" Text="Date of employment:" TextAlignment="Left" FontSize="20" Margin="-150 10 0 0"></TextBlock>
                 <TextBlock x:Name="tboldEmploy" Width="150" Text="{Binding DateOfEmployment}" TextAlignment="Left" FontSize="20" Margin="200 -26 0 0"></TextBlock>
+                <TextBlock Width="200" Text="Employment ends:" TextAlignment="Left" FontSize="20" Margin="-150 10 0 0"></TextBlock>
+                <TextBlock x:Name="tboldEmployEnd" Width="150" Text="{Binding EndDate}" TextAlignment="Left" FontSize="20" Margin="200 -26 0 0"></TextBlock>
                 <TextBlock Width="150" Text="MechID:" TextAlignment="Left" FontSize="20" Margin="-200 10 0 0"></TextBlock>
                 <TextBlock x:Name="tboldMechID" Width="250" Text="{Binding MechID}" TextAlignment="Left" FontSize="12" Margin="130 -26 0 0"></TextBlock>
-                <TextBlock Width="150" Text="CFM:" TextAlignment="Left" FontSize="20" Margin="-200 10 0 0"></TextBlock>
-                <TextBlock x:Name="tboldCFM" Width="150" Text="{Binding CanFixMotor}" TextAlignment="Left" FontSize="20" Margin="200 -26 0 0"></TextBlock>
+                <TextBlock Width="150" Text="CFE:" TextAlignment="Left" FontSize="20" Margin="-200 10 0 0"></TextBlock>
+                <TextBlock x:Name="tboldCFE" Width="150" Text="{Binding CanFixEngines}" TextAlignment="Left" FontSize="20" Margin="200 -26 0 0"></TextBlock>
                 <TextBlock Width="150" Text="CFT:" TextAlignment="Left" FontSize="20" Margin="-200 10 0 0"></TextBlock>
                 <TextBlock x:Name="tboldCFT" Width="150" Text="{Binding CanFixTires}" TextAlignment="Left" FontSize="20" Margin="200 -26 0 0"></TextBlock>
                 <TextBlock Width="150" Text="CFB:" TextAlignment="Left" FontSize="20" Margin="-200 10 0 0"></TextBlock>
                 <TextBlock x:Name="tboldCFB" Width="150" Text="{Binding CanFixBrakes}" TextAlignment="Left" FontSize="20" Margin="200 -26 0 0"></TextBlock>
                 <TextBlock Width="150" Text="CFWS:" TextAlignment="Left" FontSize="20" Margin="-200 10 0 0"></TextBlock>
-                <TextBlock x:Name="tboldCFWS" Width="150" Text="{Binding CanFixWindshield}" TextAlignment="Left" FontSize="20" Margin="200 -26 0 0"></TextBlock>
+                <TextBlock x:Name="tboldCFWS" Width="150" Text="{Binding CanFixWindshields}" TextAlignment="Left" FontSize="20" Margin="200 -26 0 0"></TextBlock>
                 <TextBlock Width="150" Text="CFVB:" TextAlignment="Left" FontSize="20" Margin="-200 10 0 0"></TextBlock>
                 <TextBlock x:Name="tboldCFVB" Width="150" Text="{Binding CanFixVehicleBody}" TextAlignment="Left" FontSize="20" Margin="200 -26 0 0"></TextBlock>
             </StackPanel>
@@ -43,16 +45,16 @@
                 <StackPanel VerticalAlignment="Top" Width="380" HorizontalAlignment="Right" Margin="20 720 -10 10" Height="1530">
 
                     <TextBlock Width="100" Text="New" TextAlignment="Center" FontSize="26" Margin="-170 60 0 0"></TextBlock>
-                    <TextBox x:Name="tbFirstName2" HorizontalAlignment="Left" Margin="5" Width="225" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="First Name" FontSize="14"/>
-                    <TextBox x:Name="tbSurName2" HorizontalAlignment="Left" Margin="5" Width="225" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Surname" FontSize="14"/>
-                    <TextBox x:Name="tbDateOfBirth2" HorizontalAlignment="Left" Margin="5" Width="225" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Date of birth (YYYY-MM-DD)" FontSize="14"/>
-                    <TextBox x:Name="tbDateOfEmployment2" HorizontalAlignment="Left" Margin="5" Width="225" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Date of employment (YYYY-MM-DD)" FontSize="14"/>
-                    <TextBox x:Name="tbEmploymentEnds2" HorizontalAlignment="Left" Margin="5" Width="225" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Employment ends (YYYY-MM-DD)" FontSize="14"/>
+                    <TextBox x:Name="tbFirstName2" Text="{Binding FirstName}" HorizontalAlignment="Left" Margin="5" Width="225" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="First Name" FontSize="14"/>
+                    <TextBox x:Name="tbSurName2" Text="{Binding SurName}" HorizontalAlignment="Left" Margin="5" Width="225" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Surname" FontSize="14"/>
+                    <TextBox x:Name="tbDateOfBirth2" Text="{Binding DateOfBirth}" HorizontalAlignment="Left" Margin="5" Width="225" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Date of birth (YYYY-MM-DD)" FontSize="14"/>
+                    <TextBox x:Name="tbDateOfEmployment2" Text="{Binding DateOfEmployment}" HorizontalAlignment="Left" Margin="5" Width="225" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Date of employment (YYYY-MM-DD)" FontSize="14"/>
+                    <TextBox x:Name="tbEmploymentEnds2" Text="{Binding EndDate}" HorizontalAlignment="Left" Margin="5" Width="225" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Employment ends (YYYY-MM-DD)" FontSize="14"/>
                 
-                    <TextBlock Text="Experienced with motors:" FontFamily="Century Gothic" FontSize="14" Margin="5"></TextBlock>
+                    <TextBlock Text="Experienced with engines:" FontFamily="Century Gothic" FontSize="14" Margin="5"></TextBlock>
                     <StackPanel Orientation="Horizontal">
-                        <CheckBox x:Name="cbMotorYes2" HorizontalAlignment="Left" Margin="5" Width="50" Content="Yes" FontSize="14" Height="50"/>
-                        <CheckBox x:Name="cbMotorNo2" HorizontalAlignment="Left" Margin="5" Width="50" Content="No" FontSize="14" Height="50"/>
+                        <CheckBox x:Name="cbEnginesYes2" HorizontalAlignment="Left" Margin="5" Width="50" Content="Yes" FontSize="14" Height="50"/>
+                        <CheckBox x:Name="cbEnginesNo2"  HorizontalAlignment="Left" Margin="5" Width="50" Content="No" FontSize="14" Height="50"/>
 
                     </StackPanel>
                     <TextBlock Text="Experienced with tires:" FontFamily="Century Gothic" FontSize="14" Margin="5"></TextBlock>
@@ -64,19 +66,19 @@
                     <TextBlock Text="Experienced with brakes:" FontFamily="Century Gothic" FontSize="14" Margin="5"></TextBlock>
                     <StackPanel Orientation="Horizontal">
                         <CheckBox x:Name="cbBrakesYes2" HorizontalAlignment="Left" Margin="5" Width="50" Content="Yes" FontSize="14" Height="50"/>
-                        <CheckBox x:Name="cbBrakesNo2" HorizontalAlignment="Left" Margin="5" Width="50" Content="No" FontSize="14" Height="50"/>
+                        <CheckBox x:Name="cbBrakesNo2"  HorizontalAlignment="Left" Margin="5" Width="50" Content="No" FontSize="14" Height="50"/>
 
                     </StackPanel>
                     <TextBlock Text="Experienced with windshields:" FontFamily="Century Gothic" FontSize="14" Margin="5"></TextBlock>
                     <StackPanel Orientation="Horizontal">
                         <CheckBox x:Name="cbWindshieldsYes2" HorizontalAlignment="Left" Margin="5" Width="50" Content="Yes" FontSize="14" Height="50"/>
-                        <CheckBox x:Name="cbWindshieldsNo2" HorizontalAlignment="Left" Margin="5" Width="50" Content="No" FontSize="14" Height="50"/>
+                        <CheckBox x:Name="cbWindshieldsNo2"  HorizontalAlignment="Left" Margin="5" Width="50" Content="No" FontSize="14" Height="50"/>
 
                     </StackPanel>
                     <TextBlock Text="Experienced with vehicle body:" FontFamily="Century Gothic" FontSize="14" Margin="5"></TextBlock>
                     <StackPanel Orientation="Horizontal">
                         <CheckBox x:Name="cbVehicleBodyYes2" HorizontalAlignment="Left" Margin="5 0 0 10" Width="50" Content="Yes" FontSize="14" Height="50"/>
-                        <CheckBox x:Name="cbVehicleBodyNo2" HorizontalAlignment="Left" Margin="5 0 0 10" Width="50" Content="No" FontSize="14" Height="50"/>
+                        <CheckBox x:Name="cbVehicleBodyNo2"  HorizontalAlignment="Left" Margin="5 0 0 10" Width="50" Content="No" FontSize="14" Height="50"/>
                         
                     </StackPanel>
                 

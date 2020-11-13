@@ -5,7 +5,7 @@ using System.Windows.Controls;
 using Logic.Entities;
 using System.IO;
 using Newtonsoft.Json;
-using static Logic.Services.AddMechanicService;
+using static Logic.Services.StaticLists;
 using GUI.UserControls;
 
 namespace Projektuppgift.GUI.UserControls
@@ -32,7 +32,7 @@ namespace Projektuppgift.GUI.UserControls
 
         }
 
-        public void AddMechanicButton_Click(object sender, RoutedEventArgs e)
+        public async void AddMechanicButton_Click(object sender, RoutedEventArgs e)
         {
 
 
@@ -41,7 +41,7 @@ namespace Projektuppgift.GUI.UserControls
             string dateOfBirth = this.tbDateOfBirth.Text;
             string dateOfEmployment = this.tbDateOfEmployment.Text;
             string employmentEnds = this.tbEmploymentEnds.Text;
-            string MotorIsChecked = ((bool)cbMotorYes.IsChecked) ? "Yes" : "No";
+            string EnginesAreChecked = ((bool)cbEnginesYes.IsChecked) ? "Yes" : "No";
             string TiresAreChecked = ((bool)cbTiresYes.IsChecked) ? "Yes" : "No";
             string BrakesAreChecked = ((bool)cbBrakesYes.IsChecked) ? "Yes" : "No";
             string WindshieldsAreChecked = ((bool)cbWindshieldsYes.IsChecked) ? "Yes" : "No";
@@ -60,7 +60,7 @@ namespace Projektuppgift.GUI.UserControls
                 CanFixEngines = MotorIsChecked,
                 CanFixTires = TiresAreChecked,
                 CanFixBrakes = BrakesAreChecked,
-                CanFixWindshield = WindshieldsAreChecked,
+                CanFixWindshields = WindshieldsAreChecked,
                 CanFixVehicleBody = VehicleBodyIsChecked
 
             };
@@ -78,7 +78,7 @@ namespace Projektuppgift.GUI.UserControls
                 var jsonToWrite = JsonConvert.SerializeObject(mechanics, Formatting.Indented);
                 using (var writer = new StreamWriter(mechpath)) 
                 {   
-                writer.Write(jsonToWrite);
+                await writer.WriteAsync(jsonToWrite);
                 
                 }
             }
@@ -90,7 +90,7 @@ namespace Projektuppgift.GUI.UserControls
                 var fs = File.OpenWrite(mechpath);
                 using (var writer = new StreamWriter(fs))
                 {
-                    writer.Write(jsonToWrite);
+                   await writer.WriteAsync(jsonToWrite);
 
                 }
             }

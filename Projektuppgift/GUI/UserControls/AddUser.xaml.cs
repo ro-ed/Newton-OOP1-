@@ -15,8 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using static Logic.Services.AddUserService;
-using static Logic.Services.AddMechanicService;
+using static Logic.Services.StaticLists;
 
 
 namespace GUI.UserControls
@@ -51,11 +50,11 @@ namespace GUI.UserControls
 
             //listview för att kunna se vilka mek som har user och vilka som inte har
 
-           
+
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private async void Button_Click(object sender, RoutedEventArgs e)
 
         {
             var mechanic = MechanicCb.SelectedItem as Mechanic;
@@ -105,14 +104,14 @@ namespace GUI.UserControls
                 var jsonToWrite = JsonConvert.SerializeObject(usersList, Formatting.Indented);
                 using (var writer = new StreamWriter(userpath))
                 {
-                    writer.Write(jsonToWrite);
+                   await writer.WriteAsync(jsonToWrite);
 
                 }
 
-               jsonToWrite = JsonConvert.SerializeObject(mechanics, Formatting.Indented);
+                jsonToWrite = JsonConvert.SerializeObject(mechanics, Formatting.Indented);
                 using (var writer = new StreamWriter(mechpath))
                 {
-                    writer.Write(jsonToWrite);
+                    await writer.WriteAsync(jsonToWrite);
 
                 }
 
@@ -125,7 +124,7 @@ namespace GUI.UserControls
 
 
         }
-        
+
 
         private void DeleteUser_Click_1(object sender, RoutedEventArgs e)
         {
@@ -146,13 +145,13 @@ namespace GUI.UserControls
                     writer.Write(jsonToWrite);
 
                 }
-                
+
                 MessageBox.Show("User Removed!");
 
                 AddUserView.Children.Clear();
                 AddUserView.Children.Add(new UserControlAddUser());
 
-                
+
 
             }
         }

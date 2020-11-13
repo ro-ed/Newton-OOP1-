@@ -1,4 +1,4 @@
-﻿<Page x:Class="GUI.Home.MekanikernasHemsida"
+﻿<Page x:Name="MechanicHomePage" x:Class="GUI.Home.MekanikernasHemsida"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -53,7 +53,7 @@
             <Grid x:Name="GridCursor" Margin="0 170 0 0" Background="#FFFF5500" Width="10" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top">
 
             </Grid>
-            <ListView x:Name="ListViewMenu" Margin="0 170 0 0" >
+            <ListView x:Name="ListViewMenu" Margin="0 170 0 0" SelectionChanged="ListViewMenu_SelectionChanged" >
                 <ListViewItem Height="60" Foreground="LightGray" FontFamily="Century Gothic">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="Home" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
@@ -67,16 +67,17 @@
                         <TextBlock Text="Errands" FontSize="22" VerticalAlignment="Center" Margin="10 0"/>
                     </StackPanel>
                 </ListViewItem>
-                <ListViewItem Height="60" Foreground="LightGray" FontFamily="Century Gothic">
-                    <StackPanel Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind="Check" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
-                        <TextBlock Text="Work Status" FontSize="22" VerticalAlignment="Center" Margin="10 0"/>
-                    </StackPanel>
-                </ListViewItem>
-                <ListViewItem Height="60" Foreground="LightGray" FontFamily="Century Gothic">
+                <ListViewItem Height="60" Foreground="LightGray" FontFamily="Century Gothic" >
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="GraduationCap" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
                         <TextBlock Text="Competences" FontSize="22" VerticalAlignment="Center" Margin="10 0"/>
+                    </StackPanel>
+                </ListViewItem>
+
+                <ListViewItem Height="60" Foreground="LightGray" FontFamily="Century Gothic" Margin="0 0 0 0">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="Logout" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
+                        <TextBlock Text="Logout" FontSize="22" VerticalAlignment="Center" Margin="10 0"/>
                     </StackPanel>
                 </ListViewItem>
 

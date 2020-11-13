@@ -1,11 +1,13 @@
-﻿using Logic.Entities;
+﻿using Logic.DAL;
+using Logic.Entities;
 using Newtonsoft.Json;
 using Projektuppgift.GUI.UserControls;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
-using static Logic.Services.AddMechanicService;
+using System.Windows.Documents;
+using static Logic.Services.StaticLists;
 
 namespace GUI.UserControls
 {
@@ -76,10 +78,10 @@ namespace GUI.UserControls
             Mechanic m = (Mechanic)lv_data.SelectedItem;
             
             
-        }          
+        }
 
         //Metod som används när man tar bort mekaniker.
-        private void Overrite()
+        void Overrite()
         {
             File.WriteAllText(mechpath, JsonConvert.SerializeObject(mechanics));
             string jsonFromFile;

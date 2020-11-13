@@ -28,10 +28,10 @@
                         <GridViewColumn DisplayMemberBinding="{Binding DateOfEmployment}" Header="Date of employment" Width="200"></GridViewColumn>
                         <GridViewColumn DisplayMemberBinding="{Binding EndDate}" Header="End date" Width="150"></GridViewColumn>
                         <GridViewColumn DisplayMemberBinding="{Binding MechID}" Header="ID" Width="350"></GridViewColumn>
-                        <GridViewColumn DisplayMemberBinding="{Binding CanFixMotor}" Header="CFMotor" Width="150"></GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding CanFixEngines}" Header="CFMotor" Width="150"></GridViewColumn>
                         <GridViewColumn DisplayMemberBinding="{Binding CanFixTires}" Header="CFTires" Width="150"></GridViewColumn>
                         <GridViewColumn DisplayMemberBinding="{Binding CanFixBrakes}" Header="CFBrakes" Width="150"></GridViewColumn>
-                        <GridViewColumn DisplayMemberBinding="{Binding CanFixWindshield}" Header="CFWS" Width="150"></GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding CanFixWindshields}" Header="CFWS" Width="150"></GridViewColumn>
                         <GridViewColumn DisplayMemberBinding="{Binding CanFixVehicleBody}" Header="CFVB" Width="150"></GridViewColumn>
 
                     </GridView>

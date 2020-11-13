@@ -2,7 +2,7 @@
 using System.Data;
 using System.IO;
 using Newtonsoft.Json;
-using static Logic.Services.AddMechanicService;
+using static Logic.Services.StaticLists;
 using Logic.Entities;
 using System.Collections.Generic;
 using static GUI.UserControls.MechanicHome;
@@ -34,7 +34,7 @@ namespace GUI.UserControls
 
         }
 
-        private void EditMechanicButton_Click(object sender, System.Windows.RoutedEventArgs e)
+        private async void EditMechanicButton_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             Mechanic selectedMechanic = _selectedMechanic;
 
@@ -47,7 +47,7 @@ namespace GUI.UserControls
             string dateOfBirth = this.tbDateOfBirth2.Text;
             string dateOfEmployment = this.tbDateOfEmployment2.Text;
             string employmentEnds = this.tbEmploymentEnds2.Text;
-            string MotorIsChecked = ((bool)cbMotorYes2.IsChecked) ? "Yes" : "No";
+            string EnginesAreChecked = ((bool)cbEnginesYes2.IsChecked) ? "Yes" : "No";
             string TiresAreChecked = ((bool)cbTiresYes2.IsChecked) ? "Yes" : "No";
             string BrakesAreChecked = ((bool)cbBrakesYes2.IsChecked) ? "Yes" : "No";
             string WindshieldsAreChecked = ((bool)cbWindshieldsYes2.IsChecked) ? "Yes" : "No";
@@ -66,7 +66,7 @@ namespace GUI.UserControls
                 CanFixEngines = MotorIsChecked,
                 CanFixTires = TiresAreChecked,
                 CanFixBrakes = BrakesAreChecked,
-                CanFixWindshield = WindshieldsAreChecked,
+                CanFixWindshields = WindshieldsAreChecked,
                 CanFixVehicleBody = VehicleBodyIsChecked
 
             };
@@ -84,9 +84,11 @@ namespace GUI.UserControls
                 var jsonToWrite = JsonConvert.SerializeObject(mechanics, Formatting.Indented);
                 using (var writer = new StreamWriter(mechpath))
                 {
-                    writer.Write(jsonToWrite);
+                   await writer.WriteAsync(jsonToWrite);
 
                 }
+
+               
             }
             //ADD
             else
@@ -96,7 +98,7 @@ namespace GUI.UserControls
                 var fs = File.OpenWrite(mechpath);
                 using (var writer = new StreamWriter(fs))
                 {
-                    writer.Write(jsonToWrite);
+                   await writer.WriteAsync(jsonToWrite);
 
                 }
 
