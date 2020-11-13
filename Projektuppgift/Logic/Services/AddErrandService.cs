@@ -17,6 +17,12 @@ namespace Logic.Services
     {
         public static List<Errands> errands = new List<Errands>();
 
-        public const string pathforErrand = @"C:\Users\julia\Documents\GitHub\Newton-OOP1-\Projektuppgift\Logic\DAL\Errand.json";
+        public static List<Car> cars = new List<Car>();
+
+        //public const string pathforErrand = @"C:\Users\julia\Documents\GitHub\Newton-OOP1-\Projektuppgift\Logic\DAL\Errand.json";
+
+        public const string pathforErrand = @"C:\Users\Adm\Documents\GitHub\Newton-OOP1-\Projektuppgift\Logic\DAL\Errand.json";
+
+        public const string pathforCar = @"C:\Users\Adm\Documents\GitHub\Newton-OOP1-\Projektuppgift\Logic\DAL\Car.json";
     }
 }

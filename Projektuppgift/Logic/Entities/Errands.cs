@@ -12,16 +12,24 @@ namespace Logic.Entities
         public string ErrandStatus { get; set; }
         public Guid ErrandID { get; set; }
 
-        public string TypeOfProblem { get; set; }
         public string ComponentsNeeded { get; set; }
         public string TypeOfVehicle { get; set; }
-
-
+        public string TypOfCar { get; set; }
+        public string ModelName { get; set; }
+        public string RegistrationNumber { get; set; }
+        public int Odometer { get; set; }
+        public DateTime RegistrationDate { get; set; }
+        public string Propellant { get; set; }
+        public int MaxLoad { get; set; }
+        public string HasTowbar { get; set; }
+        public int MaxNrPassengers { get; set; }
         //Test
         public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Description { get; set; }
 
-        public string LastName { get; set; }      
 
-        
+
+
     }
 }
