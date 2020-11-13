@@ -58,40 +58,49 @@ namespace GUI.UserControls
         {
             var mechanic = MechanicChoose.SelectedItem as Mechanic;
 
-          
-            mechanic.ErrandIDs.Append(_selectedErrand.ErrandID);
 
-            var indexOfMechanic = mechanics.FindIndex(x => x.MechID == mechanic.MechID);
+            //mechanic.ErrandIDs.Append(_selectedErrand.ErrandID);
 
-            mechanics[indexOfMechanic] = mechanic;
+            //var indexOfMechanic = mechanics.FindIndex(x => x.MechID == mechanic.MechID);
 
-            //spara mekanikern;
+            //mechanics[indexOfMechanic] = mechanic;
 
-            Errands errand = new Errands
+            ////spara mekanikern;
+
+            //Errands errand = new Errands
+            //{
+            //    FirstName = mechanic.FirstName
+            //};
+
+            //foreach (var item in errands)
+            //{
+            //    if (errand.FirstName == mechanic.FirstName)
+            //    {
+            //        string json = File.ReadAllText(pathforErrand);
+            //        dynamic jsonOB = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
+            //        jsonOB[0]["FirstName"] = mechanic.FirstName;
+            //        string test = Newtonsoft.Json.JsonConvert.SerializeObject(jsonOB, Newtonsoft.Json.Formatting.Indented);
+            //        using (var jsonWriter = new StreamWriter(pathforErrand))
+            //        {
+            //            jsonWriter.Write(jsonOB);
+            //        }
+            //    }
+            //}
+
+            string json = File.ReadAllText(pathforErrand);
+            dynamic jsonOB = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
+            jsonOB[0]["FirstName"] = mechanic.FirstName + " " + mechanic.SurName;
+            string test = Newtonsoft.Json.JsonConvert.SerializeObject(jsonOB, Newtonsoft.Json.Formatting.Indented);
+            using (var jsonWriter = new StreamWriter(pathforErrand))
             {
-                FirstName = mechanic.FirstName
-            };
-
-            foreach (var item in errands)
-            {
-                if (errand.FirstName == mechanic.FirstName)
-                {
-                    string json = File.ReadAllText(pathforErrand);
-                    dynamic jsonOB = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
-                    jsonOB[0]["FirstName"] = mechanic.FirstName;
-                    string test = Newtonsoft.Json.JsonConvert.SerializeObject(jsonOB, Newtonsoft.Json.Formatting.Indented);
-                    using (var jsonWriter = new StreamWriter(pathforErrand))
-                    {
-                        jsonWriter.Write(jsonOB);
-                    }
-                }
+                jsonWriter.Write(jsonOB);
             }
 
 
 
+            ChooseMechanic.Children.Clear();
+            ChooseMechanic.Children.Add(new UserControlNewErrand());
 
-            //MechanicChoose.Children.Clear();
-            //MechanicChoose.Children.Add(new UserControlNewErrand());
 
             //string json = File.ReadAllText(pathforErrand);
             //dynamic jsonOB = Newtonsoft.Json.JsonConvert.DeserializeObject(json);

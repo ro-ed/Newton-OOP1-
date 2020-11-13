@@ -9,7 +9,9 @@ namespace Logic.DAL
     {
         public static object stockobject = new object();
         
-        public const string stockpath = @"C:\Users\julia\Documents\GitHub\Newton-OOP1-\Projektuppgift\Logic\DAL\Stock.json";
+        //public const string stockpath = @"C:\Users\julia\Documents\GitHub\Newton-OOP1-\Projektuppgift\Logic\DAL\Stock.json";
+
+        public const string stockpath = @"C:\Users\Adm\Documents\GitHub\Newton-OOP1-\Projektuppgift\Logic\DAL\Stock.json";
 
        
         

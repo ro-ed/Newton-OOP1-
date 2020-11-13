@@ -17,6 +17,9 @@ namespace Logic.Services
     {
         public static List<User> usersList = new List<User>();
 
-        public const string userpath = @"C:\Users\sandr\source\repos\NewRepos\Projektuppgift\Logic\DAL\User.json";
+        //public const string userpath = @"C:\Users\sandr\source\repos\NewRepos\Projektuppgift\Logic\DAL\User.json";
+
+        public const string userpath = @"C:\Users\Adm\Documents\GitHub\Newton-OOP1-\Projektuppgift\Logic\DAL\User.json";
+
     }
 }
