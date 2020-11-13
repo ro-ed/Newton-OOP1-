@@ -54,7 +54,7 @@ namespace GUI.UserControls
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private async void Button_Click(object sender, RoutedEventArgs e)
 
         {
             var mechanic = MechanicCb.SelectedItem as Mechanic;
@@ -104,14 +104,14 @@ namespace GUI.UserControls
                 var jsonToWrite = JsonConvert.SerializeObject(usersList, Formatting.Indented);
                 using (var writer = new StreamWriter(userpath))
                 {
-                    writer.Write(jsonToWrite);
+                   await writer.WriteAsync(jsonToWrite);
 
                 }
 
                 jsonToWrite = JsonConvert.SerializeObject(mechanics, Formatting.Indented);
                 using (var writer = new StreamWriter(mechpath))
                 {
-                    writer.Write(jsonToWrite);
+                    await writer.WriteAsync(jsonToWrite);
 
                 }
 

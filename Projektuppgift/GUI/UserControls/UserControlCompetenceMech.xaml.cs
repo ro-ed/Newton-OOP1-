@@ -15,7 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using static Logic.Services.AddMechanicService;
+using static Logic.Services.StaticLists;
 
 
 namespace GUI.UserControls
@@ -34,7 +34,7 @@ namespace GUI.UserControls
                 jsonFromFile = reader.ReadToEnd();
             }
             var readFromJson = JsonConvert.DeserializeObject<List<Mechanic>>(jsonFromFile);
-            AddMechanicService.mechanics = readFromJson;
+            mechanics = readFromJson;
 
             Mechanic LoggedInMechanic = readFromJson.FirstOrDefault(x => x.UserID == LoggedInUserService.LoggedInUser.UserID);
 
@@ -44,7 +44,7 @@ namespace GUI.UserControls
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-            string MotorIsChecked = ((bool)cbMotorYes3.IsChecked) ? "Yes" : "No";
+            string EnginesAreChecked = ((bool)cbMotorYes3.IsChecked) ? "Yes" : "No";
             string TiresAreChecked = ((bool)cbTiresYes3.IsChecked) ? "Yes" : "No";
             string BrakesAreChecked = ((bool)cbBrakesYes3.IsChecked) ? "Yes" : "No";
             string WindshieldsAreChecked = ((bool)cbWindshieldsYes3.IsChecked) ? "Yes" : "No";
@@ -52,21 +52,11 @@ namespace GUI.UserControls
 
             var LoggedInMechanic = DataContext as Mechanic;
 
-            LoggedInMechanic.CanFixMotor = MotorIsChecked;
+            LoggedInMechanic.CanFixEngines = EnginesAreChecked;
             LoggedInMechanic.CanFixTires = TiresAreChecked;
             LoggedInMechanic.CanFixBrakes = BrakesAreChecked;
-            LoggedInMechanic.CanFixWindshield = WindshieldsAreChecked;
+            LoggedInMechanic.CanFixWindshields = WindshieldsAreChecked;
             LoggedInMechanic.CanFixVehicleBody = VehicleBodyIsChecked;
-
-
-            //Mechanic mechanic = new Mechanic
-            //{
-            //    CanFixMotor = MotorIsChecked,
-            //    CanFixTires = TiresAreChecked,
-            //    CanFixBrakes = BrakesAreChecked,
-            //    CanFixWindshield = WindshieldsAreChecked,
-            //    CanFixVehicleBody = VehicleBodyIsChecked
-            //};
 
             var index = mechanics.FindIndex(x => x.MechID == LoggedInMechanic.MechID);
             mechanics[index] = LoggedInMechanic;

@@ -72,7 +72,7 @@ namespace GUI.UserControls
 
         }
 
-        public void CreateErrand_Click(object sender, RoutedEventArgs e)
+        public async void CreateErrand_Click(object sender, RoutedEventArgs e)
         {
             string errandName = this.tbErrandName.Text;
             string errandStart = this.tbErrandStart.Text;
@@ -106,9 +106,10 @@ namespace GUI.UserControls
                 var jsonRead = JsonConvert.DeserializeObject<List<Errands>>(jsonFile);
                 errands.Add(errand);
                 var jsonWrite = JsonConvert.SerializeObject(errands, Formatting.Indented);
+                var fs = File.OpenWrite(pathforErrand);
                 using (var jsonWriter = new StreamWriter(pathforErrand))
                 {
-                    jsonWriter.Write(jsonWrite);
+                    await jsonWriter.WriteAsync(jsonWrite);
                 }
 
             }
@@ -117,9 +118,10 @@ namespace GUI.UserControls
             {
                 errands.Add(errand);
                 var jsonWrite = JsonConvert.SerializeObject(errands, Formatting.Indented);
+                var fs = File.OpenWrite(pathforErrand);
                 using (var jsonWriter = new StreamWriter(pathforErrand))
                 {
-                    jsonWriter.Write(jsonWrite);
+                    await jsonWriter.WriteAsync(jsonWrite);
                 }
             }
             ErrandViewer.Children.Clear();

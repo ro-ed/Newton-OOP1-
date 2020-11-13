@@ -32,7 +32,7 @@ namespace Projektuppgift.GUI.UserControls
 
         }
 
-        public void AddMechanicButton_Click(object sender, RoutedEventArgs e)
+        public async void AddMechanicButton_Click(object sender, RoutedEventArgs e)
         {
 
 
@@ -78,7 +78,7 @@ namespace Projektuppgift.GUI.UserControls
                 var jsonToWrite = JsonConvert.SerializeObject(mechanics, Formatting.Indented);
                 using (var writer = new StreamWriter(mechpath)) 
                 {   
-                writer.Write(jsonToWrite);
+                await writer.WriteAsync(jsonToWrite);
                 
                 }
             }
@@ -90,7 +90,7 @@ namespace Projektuppgift.GUI.UserControls
                 var fs = File.OpenWrite(mechpath);
                 using (var writer = new StreamWriter(fs))
                 {
-                    writer.Write(jsonToWrite);
+                   await writer.WriteAsync(jsonToWrite);
 
                 }
             }

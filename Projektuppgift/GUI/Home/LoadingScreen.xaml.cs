@@ -26,12 +26,20 @@ namespace GUI.Home
         {
             InitializeComponent();
 
-            
+            LoadingScreenMethod();
 
 
         }
-        
-        
-       
+        public void LoadingScreenMethod()
+        {
+            Thread.Sleep(2000);
+
+
+
+
+
+        }
+
+
     }
 }
