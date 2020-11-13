@@ -21,6 +21,8 @@ namespace GUI.Home
         public MekanikernasHemsida()
         {
             InitializeComponent();
+
+            ShowsNavigationUI = false;
         }
     }
 }

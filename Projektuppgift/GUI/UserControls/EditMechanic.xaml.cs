@@ -47,7 +47,7 @@ namespace GUI.UserControls
             string dateOfBirth = this.tbDateOfBirth2.Text;
             string dateOfEmployment = this.tbDateOfEmployment2.Text;
             string employmentEnds = this.tbEmploymentEnds2.Text;
-            string MotorIsChecked = ((bool)cbMotorYes2.IsChecked) ? "Yes" : "No";
+            string EnginesAreChecked = ((bool)cbEnginesYes2.IsChecked) ? "Yes" : "No";
             string TiresAreChecked = ((bool)cbTiresYes2.IsChecked) ? "Yes" : "No";
             string BrakesAreChecked = ((bool)cbBrakesYes2.IsChecked) ? "Yes" : "No";
             string WindshieldsAreChecked = ((bool)cbWindshieldsYes2.IsChecked) ? "Yes" : "No";
@@ -63,10 +63,10 @@ namespace GUI.UserControls
                 DateOfEmployment = dateOfEmployment,
                 EndDate = employmentEnds,
                 MechID = CurrentMechID,
-                CanFixMotor = MotorIsChecked,
+                CanFixEngines = EnginesAreChecked,
                 CanFixTires = TiresAreChecked,
                 CanFixBrakes = BrakesAreChecked,
-                CanFixWindshield = WindshieldsAreChecked,
+                CanFixWindshields = WindshieldsAreChecked,
                 CanFixVehicleBody = VehicleBodyIsChecked
 
             };

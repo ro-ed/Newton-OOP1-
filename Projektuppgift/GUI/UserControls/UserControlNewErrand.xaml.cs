@@ -69,30 +69,17 @@ namespace GUI.UserControls
 
             DataContext = this;
             lv_Errand.ItemsSource = errands;
+            
 
-           
         }
 
         public void CreateErrand_Click(object sender, RoutedEventArgs e)
         {
             string errandName = this.tbErrandName.Text;
             string errandStart = this.tbErrandStart.Text;
-            string errandEnd = this.tbErrandEnd.Text;
-            //string errandStatus = ((bool)cbStatusStart.IsChecked) ? "New" : "Finished";
-            string errandStatus = "";
-            if ((bool)cbStatusNew.IsChecked)
-            {
-                errandStatus = "New";
-            }
-            else if ((bool)cbStatusOnGoing.IsChecked)
-            {
-                errandStatus = "Ongoing";
-            }
-            else if ((bool)cbStatusFinished.IsChecked)
-            {
-                errandStatus = "Finished";
-            }
-
+            string errandEnd = this.tbErrandEnd.Text;          
+            string errandStatus = "New";
+        
 
 
             Errands errand = new Errands
@@ -101,8 +88,9 @@ namespace GUI.UserControls
                 ErrandStartDate = errandStart,
                 ErrandEndDate = errandEnd,
                 ErrandID = Guid.NewGuid(),
-                ErrandStatus = errandStatus, 
+                ErrandStatus = errandStatus
                 
+
             };
 
             

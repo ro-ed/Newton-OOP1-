@@ -18,10 +18,10 @@ namespace Logic.Entities
         //public string Id { get; set; } = Guid.NewGuid().ToString();
         public Guid MechID { get; set; }
         public Guid? UserID { get; set; }
-        public string CanFixMotor { get; set; }
+        public string CanFixEngines { get; set; }
         public string CanFixTires { get; set; }
         public string CanFixBrakes { get; set; }
-        public string CanFixWindshield { get; set; }
+        public string CanFixWindshields { get; set; }
         public string CanFixVehicleBody { get; set; }
         public Guid[] ErrandIDs { get; set; } = new Guid[1];
         //public Guid ErrandIDs { get; set; }
