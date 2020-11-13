@@ -1,7 +1,10 @@
-﻿namespace Logic.Services
+﻿using Logic.Entities;
+
+namespace Logic.Services
 {
     public interface ILoginService
     {
-        bool Login(string username, string password);
+      
+        User Login(string username, string password);
     }
 }

@@ -102,6 +102,7 @@ namespace GUI.UserControls
 
                 usersList.Add(user);
                 var jsonToWrite = JsonConvert.SerializeObject(usersList, Formatting.Indented);
+                var fs = File.OpenWrite(userpath);
                 using (var writer = new StreamWriter(userpath))
                 {
                     writer.Write(jsonToWrite);

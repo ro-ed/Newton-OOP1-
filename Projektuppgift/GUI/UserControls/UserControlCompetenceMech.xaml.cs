@@ -15,7 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using static Logic.Services.AddMechanicService;
+using static Logic.Services.StaticLists;
 
 
 namespace GUI.UserControls
@@ -34,7 +34,7 @@ namespace GUI.UserControls
                 jsonFromFile = reader.ReadToEnd();
             }
             var readFromJson = JsonConvert.DeserializeObject<List<Mechanic>>(jsonFromFile);
-            AddMechanicService.mechanics = readFromJson;
+            mechanics = readFromJson;
 
             Mechanic LoggedInMechanic = readFromJson.FirstOrDefault(x => x.UserID == LoggedInUserService.LoggedInUser.UserID);
 
@@ -52,10 +52,10 @@ namespace GUI.UserControls
 
             var LoggedInMechanic = DataContext as Mechanic;
 
-            LoggedInMechanic.CanFixMotor = MotorIsChecked;
+            LoggedInMechanic.CanFixEngines = MotorIsChecked;
             LoggedInMechanic.CanFixTires = TiresAreChecked;
             LoggedInMechanic.CanFixBrakes = BrakesAreChecked;
-            LoggedInMechanic.CanFixWindshield = WindshieldsAreChecked;
+            LoggedInMechanic.CanFixWindshields = WindshieldsAreChecked;
             LoggedInMechanic.CanFixVehicleBody = VehicleBodyIsChecked;
 
 
@@ -73,6 +73,7 @@ namespace GUI.UserControls
             DataContext = LoggedInMechanic;
 
             var jsonToWrite = JsonConvert.SerializeObject(mechanics, Formatting.Indented);
+            var fs = File.OpenWrite(mechpath);
             using (var writer = new StreamWriter(mechpath))
             {
                 writer.Write(jsonToWrite);
