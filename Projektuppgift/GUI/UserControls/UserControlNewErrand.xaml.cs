@@ -13,9 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using static Logic.Services.AddErrandService;
-using static Logic.Services.AddMechanicService;
-using static Logic.DAL.StockDataAccess;
+using static Logic.Services.StaticLists;
 using GUI.UserControls;
 using Projektuppgift.GUI.UserControls;
 using System.Linq;
@@ -32,8 +30,10 @@ namespace GUI.UserControls
     {
         public int _selectedIndex = 0;
         public int _selectedIndexVehicle = 0;
+        public int _selectedIndexTypOfCar = 0;
         // public List<Errands> listRead { get; set; }
         public static Errands _newSelectedErrandTest;
+        public static Errands _selectedErrand;
         public UserControlNewErrand()
         {
             InitializeComponent();
@@ -49,7 +49,6 @@ namespace GUI.UserControls
             mechanics = readFromJson;
 
             string jsonFile;
-
             using (var reader = new StreamReader(pathforErrand))
             {
                 jsonFile = reader.ReadToEnd();
@@ -57,7 +56,8 @@ namespace GUI.UserControls
 
             var jsonRead = JsonConvert.DeserializeObject<List<Errands>>(jsonFile);
             errands = jsonRead;
-            //jsonRead.ForEach(x => {
+            //jsonRead.ForEach(x =>
+            //{
             //    var m = mechanics.FirstOrDefault(y => y.ErrandIDs.Contains(x.ErrandID));
             //    x.FirstName = m?.FirstName ?? "";
             //    x.LastName = m?.SurName ?? "";
@@ -72,7 +72,7 @@ namespace GUI.UserControls
             var stockread = JsonConvert.DeserializeObject<Stock>(jsonFromFile6);
 
             DataContext = stockread;
-
+            //errands = jsonRead;
 
 
 
@@ -110,6 +110,7 @@ namespace GUI.UserControls
             int maxPass = int.Parse(this.tbMaxNrPass.Text);
             int loadMax = int.Parse(this.tbMaxLoad.Text);
             string writeDescription = this.tbDescription.Text;
+            int amountOfComp = int.Parse(this.tbAmount.Text);
             //if ((bool)cbStatusNew.IsChecked)
             //{
             //    errandStatus = "New";
@@ -143,8 +144,9 @@ namespace GUI.UserControls
                 HasTowbar = hasTow,
                 MaxNrPassengers = maxPass,
                 MaxLoad = loadMax,
-                Description = writeDescription
-
+                Description = writeDescription,
+                Amount = amountOfComp,
+                FirstName = null
 
             };
 
@@ -165,7 +167,7 @@ namespace GUI.UserControls
                 errands.Add(errand);
                 var jsonWrite = JsonConvert.SerializeObject(errands, Formatting.Indented);
                 var fs = File.OpenWrite(pathforErrand);
-                using (var jsonWriter = new StreamWriter(pathforErrand))
+                using (var jsonWriter = new StreamWriter(fs))
                 {
                     await jsonWriter.WriteAsync(jsonWrite);
                 }
@@ -177,7 +179,7 @@ namespace GUI.UserControls
                 errands.Add(errand);
                 var jsonWrite = JsonConvert.SerializeObject(errands, Formatting.Indented);
                 var fs = File.OpenWrite(pathforErrand);
-                using (var jsonWriter = new StreamWriter(pathforErrand))
+                using (var jsonWriter = new StreamWriter(fs))
                 {
                     await jsonWriter.WriteAsync(jsonWrite);
                 }
@@ -249,8 +251,8 @@ namespace GUI.UserControls
         private void AssignMechanicToErrand_Click(object sender, RoutedEventArgs e)
         {
             Errands errands = lv_Errand.SelectedItem as Errands;
-            
 
+            _selectedErrand = errands;
 
             ErrandViewer.Children.Clear();
             ErrandViewer.Children.Add(new ChooseMechanicToErrand(errands));
@@ -262,7 +264,7 @@ namespace GUI.UserControls
         {
             Errands selectedErrand = lv_Errand.SelectedItem as Errands;
             _newSelectedErrandTest = selectedErrand;
-
+            selectedErrand.FirstName = null;
             ErrandViewer.Children.Clear();
             var child = new EditErrand();
             child.DataContext = selectedErrand;
@@ -362,12 +364,19 @@ namespace GUI.UserControls
             _selectedIndexVehicle = selectedIndex;
         }
 
+        private void TypeCarComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            TypeCarComboBox = sender as ComboBox;
+            int selectedIndex = TypeCarComboBox.SelectedIndex;
+            _selectedIndexTypOfCar = selectedIndex;
+        }
+
         //public void ChooseVehicle()
         //{
-            
+
         //}
 
-        
+
     }
 }
 

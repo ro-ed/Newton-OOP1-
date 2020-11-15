@@ -22,6 +22,7 @@ using System.Collections.ObjectModel;
 using System.Data;
 using Logic.Services;
 using static Logic.Entities.Errands;
+using static GUI.UserControls.UserControlNewErrand;
 
 
 namespace GUI.UserControls
@@ -32,12 +33,12 @@ namespace GUI.UserControls
     public partial class ChooseMechanicToErrand : UserControl
     {
         public static Errands _test;
-
-        private readonly Errands _selectedErrand;
+        
+        //private static Errands _selectedErrand;
         public ChooseMechanicToErrand(Errands errands)
         {
             InitializeComponent();
-            _selectedErrand = errands;
+            //_selectedErrand = errands;
             string jsonFromFile;
             using (var reader = new StreamReader(mechpath))
             {
@@ -47,16 +48,25 @@ namespace GUI.UserControls
 
             DataContext = this;
             MechanicChoose.ItemsSource = mechanics;
-            
 
+           
 
 
         }
 
         private void AssignMechanicToErrand_Click(object sender, RoutedEventArgs e)
         {
+            Errands errands1 = _selectedErrand;
+
             var mechanic = MechanicChoose.SelectedItem as Mechanic;
 
+            errands1.ErrandID = mechanic.ErrandIDs;
+
+            var indexOfMechanic = mechanics.FindIndex(x => x.ErrandIDs == errands1.ErrandID);
+
+            mechanics[indexOfMechanic] = mechanic;
+
+            errands1.FirstName = mechanic.FirstName;
 
             //mechanic.ErrandIDs.Append(_selectedErrand.ErrandID);
 
@@ -86,14 +96,31 @@ namespace GUI.UserControls
             //    }
             //}
 
-            string json = File.ReadAllText(pathforErrand);
-            dynamic jsonOB = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
-            jsonOB[0]["FirstName"] = mechanic.FirstName + " " + mechanic.SurName;
-            string test = Newtonsoft.Json.JsonConvert.SerializeObject(jsonOB, Newtonsoft.Json.Formatting.Indented);
-            using (var jsonWriter = new StreamWriter(pathforErrand))
-            {
-                jsonWriter.Write(jsonOB);
-            }
+            //string json = File.ReadAllText(pathforErrand);
+            //dynamic jsonOB = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
+            ////jsonOB[0]["FirstName"] = mechanic.FirstName + " " + mechanic.SurName;
+            //jsonOB[0]["FirstName"] = mechanic.FirstName + " " + mechanic.SurName;                
+            //string test = Newtonsoft.Json.JsonConvert.SerializeObject(jsonOB, Newtonsoft.Json.Formatting.Indented);
+            //using (var jsonWriter = new StreamWriter(pathforErrand))
+            //{
+            //    jsonWriter.Write(jsonOB);
+            //}
+
+
+            //Errands errands = new Errands();
+            //string json = File.ReadAllText(pathforErrand);
+            //dynamic jsonOB = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
+            //jsonOB[0]["FirstName"] = mechanic.FirstName + " " + mechanic.SurName;
+            ////jsonOB[errands.FirstName = "FirstName"] = mechanic.FirstName;
+            
+            //string test = Newtonsoft.Json.JsonConvert.SerializeObject(jsonOB, Newtonsoft.Json.Formatting.Indented);
+            //File.WriteAllText(pathforErrand, test);
+            //using (var jsonWriter = new StreamWriter(pathforErrand))
+            //{
+            //    jsonWriter.Write(jsonOB);
+            //}
+
+
 
 
 

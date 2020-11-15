@@ -63,7 +63,7 @@ namespace GUI.UserControls
                 DateOfEmployment = dateOfEmployment,
                 EndDate = employmentEnds,
                 MechID = CurrentMechID,
-                CanFixEngines = MotorIsChecked,
+                CanFixEngines = EnginesAreChecked,
                 CanFixTires = TiresAreChecked,
                 CanFixBrakes = BrakesAreChecked,
                 CanFixWindshields = WindshieldsAreChecked,
@@ -114,5 +114,7 @@ namespace GUI.UserControls
             EditMechanicView.Children.Clear();
             EditMechanicView.Children.Add(new MechanicHome());
         }
+
+       
     }
 }
