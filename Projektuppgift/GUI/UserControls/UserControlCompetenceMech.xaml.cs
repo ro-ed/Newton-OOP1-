@@ -52,7 +52,7 @@ namespace GUI.UserControls
 
             var LoggedInMechanic = DataContext as Mechanic;
 
-            LoggedInMechanic.CanFixEngines = EnginesAreChecked;
+            LoggedInMechanic.CanFixEngines = MotorIsChecked;
             LoggedInMechanic.CanFixTires = TiresAreChecked;
             LoggedInMechanic.CanFixBrakes = BrakesAreChecked;
             LoggedInMechanic.CanFixWindshields = WindshieldsAreChecked;
@@ -63,6 +63,7 @@ namespace GUI.UserControls
             DataContext = LoggedInMechanic;
 
             var jsonToWrite = JsonConvert.SerializeObject(mechanics, Formatting.Indented);
+            var fs = File.OpenWrite(mechpath);
             using (var writer = new StreamWriter(mechpath))
             {
                 writer.Write(jsonToWrite);

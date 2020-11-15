@@ -1,10 +1,13 @@
 ﻿using GUI.Home;
 using GUI.UserControls;
 using GUI.View;
+using Logic.Entities;
 using Logic.Services;
 using Microsoft.Windows.Themes;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -17,6 +20,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static Logic.Services.StaticLists;
 
 
 namespace GUI.Login
@@ -32,7 +36,7 @@ namespace GUI.Login
         public LoginPage()
         {
             InitializeComponent();
-
+           
             _loginService = new LoginService();
             ShowsNavigationUI = false;
         }
