@@ -17,6 +17,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using static Logic.Services.StaticLists;
 
+
 namespace GUI.Home
 {
     /// <summary>
@@ -66,6 +67,10 @@ namespace GUI.Home
                 case 0:
                     MainViewGrid.Children.Clear();
                     MainViewGrid.Children.Add(new HomeTab());
+                    break;
+                case 1:
+                    MainViewGrid.Children.Clear();
+                    MainViewGrid.Children.Add(new UCErrandsMech());
                     break;
                 case 2:
                     MainViewGrid.Children.Clear();

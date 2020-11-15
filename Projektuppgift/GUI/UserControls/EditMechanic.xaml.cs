@@ -116,5 +116,7 @@ namespace GUI.UserControls
             EditMechanicView.Children.Clear();
             EditMechanicView.Children.Add(new MechanicHome());
         }
+
+       
     }
 }

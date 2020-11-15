@@ -11,6 +11,7 @@ namespace Logic.Entities
         public string ErrandEndDate { get; set; }
         public string ErrandStatus { get; set; }
         public Guid ErrandID { get; set; }
+        //public Guid MechID { get; set; }
 
         public string ComponentsNeeded { get; set; }
         public string TypeOfVehicle { get; set; }
@@ -27,6 +28,8 @@ namespace Logic.Entities
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Description { get; set; }
+
+        public int Amount { get; set; }
 
 
 

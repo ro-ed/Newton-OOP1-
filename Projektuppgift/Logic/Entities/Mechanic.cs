@@ -24,7 +24,7 @@ namespace Logic.Entities
         public string CanFixWindshields { get; set; }
         public string CanFixVehicleBody { get; set; }
         //public Guid[] ErrandIDs { get; set; } = new Guid[1];
-        //public Guid ErrandIDs { get; set; }
+        public Guid ErrandIDs { get; set; }
 
 
 
