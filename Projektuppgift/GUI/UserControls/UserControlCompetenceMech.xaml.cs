@@ -52,7 +52,7 @@ namespace GUI.UserControls
 
             var LoggedInMechanic = DataContext as Mechanic;
 
-            LoggedInMechanic.CanFixEngines = MotorIsChecked;
+            LoggedInMechanic.CanFixEngines = EnginesAreChecked;
             LoggedInMechanic.CanFixTires = TiresAreChecked;
             LoggedInMechanic.CanFixBrakes = BrakesAreChecked;
             LoggedInMechanic.CanFixWindshields = WindshieldsAreChecked;

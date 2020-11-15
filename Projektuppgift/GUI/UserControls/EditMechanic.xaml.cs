@@ -63,7 +63,7 @@ namespace GUI.UserControls
                 DateOfEmployment = dateOfEmployment,
                 EndDate = employmentEnds,
                 MechID = CurrentMechID,
-                CanFixEngines = MotorIsChecked,
+                CanFixEngines = EnginesAreChecked,
                 CanFixTires = TiresAreChecked,
                 CanFixBrakes = BrakesAreChecked,
                 CanFixWindshields = WindshieldsAreChecked,
