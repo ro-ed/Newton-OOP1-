@@ -1,18 +1,5 @@
 [
-  {
-    "FirstName": "Robin",
-    "SurName": "Edin",
-    "DateOfBirth": "213123123",
-    "DateOfEmployment": "213123",
-    "EndDate": "213123123",
-    "MechID": "8a67dca0-419d-4f15-95e1-32933d117c87",
-    "UserID": "ec8e9b7b-084e-4ec5-a2bc-8205e9475990",
-    "CanFixEngines": null,
-    "CanFixTires": "No",
-    "CanFixBrakes": "No",
-    "CanFixWindshield": "No",
-    "CanFixVehicleBody": "No"
-  },
+  
   {
     "FirstName": "Timmy",
     "SurName": "test",
@@ -24,7 +11,7 @@
     "CanFixEngines": null,
     "CanFixTires": "Yes",
     "CanFixBrakes": "No",
-    "CanFixWindshield": "No",
+    "CanFixWindshields": null,
     "CanFixVehicleBody": "No"
   },
   {
@@ -38,63 +25,21 @@
     "CanFixEngines": null,
     "CanFixTires": "Yes",
     "CanFixBrakes": "Yes",
-    "CanFixWindshield": "Yes",
+    "CanFixWindshields": null,
     "CanFixVehicleBody": "Yes"
   },
   {
     "FirstName": "Test",
     "SurName": "Testson",
-    "DateOfBirth": "213213",
-    "DateOfEmployment": "3123123",
-    "EndDate": "213123213",
+    "DateOfBirth": "23123123123123",
+    "DateOfEmployment": "123123123123",
+    "EndDate": "12312321312312",
     "MechID": "02c9ec6d-2b90-49bb-a9ce-a8e1a73ece54",
-    "UserID": "e3422cfa-96a9-4517-9095-cce048867a35",
-    "CanFixEngines": null,
-    "CanFixTires": "Yes",
-    "CanFixBrakes": "Yes",
-    "CanFixWindshield": "Yes",
+    "UserID": null,
+    "CanFixEngines": "No",
+    "CanFixTires": "No",
+    "CanFixBrakes": "No",
+    "CanFixWindshields": "No",
     "CanFixVehicleBody": "No"
-  },
-  {
-    "FirstName": "Olle",
-    "SurName": "Teeee",
-    "DateOfBirth": "2432423",
-    "DateOfEmployment": "42342",
-    "EndDate": "34234",
-    "MechID": "3b4ccaca-3d87-406b-a93d-ca26d5ca973f",
-    "UserID": null,
-    "CanFixEngines": null,
-    "CanFixTires": "No",
-    "CanFixBrakes": "Yes",
-    "CanFixWindshield": "No",
-    "CanFixVehicleBody": "Yes"
-  },
-  {
-    "FirstName": "Kalle",
-    "SurName": "teoooo",
-    "DateOfBirth": "3123123",
-    "DateOfEmployment": "2412412",
-    "EndDate": "12412412",
-    "MechID": "3dd0af67-0754-48e1-9950-e95c01134d5a",
-    "UserID": null,
-    "CanFixEngines": null,
-    "CanFixTires": "No",
-    "CanFixBrakes": "Yes",
-    "CanFixWindshield": "No",
-    "CanFixVehicleBody": "Yes"
-  },
-  {
-    "FirstName": "Robin",
-    "SurName": "Edin",
-    "DateOfBirth": "123123123",
-    "DateOfEmployment": "1231231",
-    "EndDate": "23123123",
-    "MechID": "39649675-9541-4c3b-a5ee-baff054dfe8b",
-    "UserID": null,
-    "CanFixEngines": "Yes",
-    "CanFixTires": "No",
-    "CanFixBrakes": "Yes",
-    "CanFixWindshield": "No",
-    "CanFixVehicleBody": "Yes"
   }
 ]

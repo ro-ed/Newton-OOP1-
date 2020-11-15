@@ -71,15 +71,18 @@ namespace GUI.UserControls
 
             DataContext = stockread;
 
+            var orderList = jsonRead.OrderBy(x => x.ErrandStatus);
 
+            DataContext = orderList;
+            lv_Errand.ItemsSource = orderList;
 
 
 
             //errands.AddRange(jsonRead);
             //listRead.AddRange(jsonRead);
 
-            DataContext = this;
-            lv_Errand.ItemsSource = errands;
+            //DataContext = this;
+            //lv_Errand.ItemsSource = errands;
             
 
         }
@@ -95,18 +98,7 @@ namespace GUI.UserControls
             string errandEnd = this.tbErrandEnd.Text;
             //string errandStatus = ((bool)cbStatusStart.IsChecked) ? "New" : "Finished";
             string errandStatus = "";
-            if ((bool)cbStatusNew.IsChecked)
-            {
-                errandStatus = "New";
-            }
-            else if ((bool)cbStatusOnGoing.IsChecked)
-            {
-                errandStatus = "Ongoing";
-            }
-            else if ((bool)cbStatusFinished.IsChecked)
-            {
-                errandStatus = "Finished";
-            }
+           
 
 
 
