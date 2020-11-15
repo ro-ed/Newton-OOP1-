@@ -35,7 +35,7 @@ namespace GUI.UserControls
         public static Errands _test;
         
         //private static Errands _selectedErrand;
-        public ChooseMechanicToErrand(Errands errands)
+        public ChooseMechanicToErrand()
         {
             InitializeComponent();
             //_selectedErrand = errands;
@@ -54,19 +54,65 @@ namespace GUI.UserControls
 
         }
 
-        private void AssignMechanicToErrand_Click(object sender, RoutedEventArgs e)
+        private async void AssignMechanicToErrand_Click(object sender, RoutedEventArgs e)
         {
             Errands errands1 = _selectedErrand;
 
             var mechanic = MechanicChoose.SelectedItem as Mechanic;
 
-            errands1.ErrandID = mechanic.ErrandIDs;
+            mechanic.ErrandIDs = errands1.ErrandID;
 
             var indexOfMechanic = mechanics.FindIndex(x => x.ErrandIDs == errands1.ErrandID);
 
             mechanics[indexOfMechanic] = mechanic;
 
             errands1.FirstName = mechanic.FirstName;
+
+            mechanic.ActiveErrands++;
+
+            if(mechanic.ActiveErrands == 2)
+            {
+                //MessageBox.Show("Sure ??", "DELETE", MessageBoxButton.OK, MessageBoxImage.Warning) == MessageBoxResult.OK;
+                MessageBox.Show("This mechanic already has 2 active errands. Please select another mechanic.",
+                    "Exception", MessageBoxButton.OK, MessageBoxImage.Error);
+                ChooseMechanic.Children.Clear();
+                ChooseMechanic.Children.Add(new ChooseMechanicToErrand());
+
+            }
+
+            errands.Remove(_selectedErrand);        
+
+            if (errands.Count >= 1)
+            {
+                string jsonFromFile;
+                using (var reader = new StreamReader(pathforErrand))
+                {
+                    jsonFromFile = reader.ReadToEnd();
+                }
+                var readFromJson = JsonConvert.DeserializeObject<List<Mechanic>>(jsonFromFile);
+                errands.Add(errands1);
+                var jsonToWrite = JsonConvert.SerializeObject(errands, Formatting.Indented);
+                using (var writer = new StreamWriter(pathforErrand))
+                {
+                    await writer.WriteAsync(jsonToWrite);
+
+                }
+
+
+            }
+            //ADD
+            else
+            {
+                errands.Add(errands1);
+                var jsonToWrite = JsonConvert.SerializeObject(errands, Formatting.Indented);
+                var fs = File.OpenWrite(pathforErrand);
+                using (var writer = new StreamWriter(fs))
+                {
+                    await writer.WriteAsync(jsonToWrite);
+
+                }
+
+            }
 
             //mechanic.ErrandIDs.Append(_selectedErrand.ErrandID);
 
@@ -112,7 +158,7 @@ namespace GUI.UserControls
             //dynamic jsonOB = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
             //jsonOB[0]["FirstName"] = mechanic.FirstName + " " + mechanic.SurName;
             ////jsonOB[errands.FirstName = "FirstName"] = mechanic.FirstName;
-            
+
             //string test = Newtonsoft.Json.JsonConvert.SerializeObject(jsonOB, Newtonsoft.Json.Formatting.Indented);
             //File.WriteAllText(pathforErrand, test);
             //using (var jsonWriter = new StreamWriter(pathforErrand))

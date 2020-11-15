@@ -6,19 +6,13 @@ namespace Logic.Exceptions
 {
     public class MaxErrandException : Exception
     {
-        public MaxErrandException()
-        {
 
+        public MaxErrandException(string message) 
+            : base("Hej")
+        {
+           
         }
 
-        public MaxErrandException(string message) : base(message)
-        {
-
-        }
-
-        public MaxErrandException(string message, Exception innerException) : base(message, innerException)
-        {
-
-        }
+        
     }
 }

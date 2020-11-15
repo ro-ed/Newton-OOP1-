@@ -17,7 +17,7 @@ namespace GUI.UserControls
     /// <summary>
     /// Interaction logic for UserControlMechanicHome.xaml
     /// </summary>
-    public partial class MechanicHome : UserControl
+    public partial class MechanicHome : UserControl, ILogic
     {
         //public ObservableCollection<Mechanic> listToRead = new ObservableCollection<Mechanic>();
 

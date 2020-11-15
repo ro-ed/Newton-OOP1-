@@ -1,5 +1,4 @@
 [
-  
   {
     "FirstName": "Timmy",
     "SurName": "test",
@@ -12,7 +11,9 @@
     "CanFixTires": "Yes",
     "CanFixBrakes": "No",
     "CanFixWindshields": null,
-    "CanFixVehicleBody": "No"
+    "CanFixVehicleBody": "No",
+    "ErrandIDs": "00000000-0000-0000-0000-000000000000",
+    "ActiveErrands": 0
   },
   {
     "FirstName": "Julia",
@@ -26,7 +27,9 @@
     "CanFixTires": "Yes",
     "CanFixBrakes": "Yes",
     "CanFixWindshields": null,
-    "CanFixVehicleBody": "Yes"
+    "CanFixVehicleBody": "Yes",
+    "ErrandIDs": "00000000-0000-0000-0000-000000000000",
+    "ActiveErrands": 0
   },
   {
     "FirstName": "Test",
@@ -40,6 +43,24 @@
     "CanFixTires": "No",
     "CanFixBrakes": "No",
     "CanFixWindshields": "No",
-    "CanFixVehicleBody": "No"
+    "CanFixVehicleBody": "No",
+    "ErrandIDs": "00000000-0000-0000-0000-000000000000",
+    "ActiveErrands": 0
+  },
+  {
+    "FirstName": "Robin",
+    "SurName": "Edin",
+    "DateOfBirth": "12321312",
+    "DateOfEmployment": "312312312",
+    "EndDate": "3123123",
+    "MechID": "5d7107cf-ee97-4250-bff8-831abb7868d9",
+    "UserID": null,
+    "CanFixEngines": "Yes",
+    "CanFixTires": "No",
+    "CanFixBrakes": "Yes",
+    "CanFixWindshields": "No",
+    "CanFixVehicleBody": "Yes",
+    "ErrandIDs": "7e366da7-7c20-401d-b420-017d13487f99",
+    "ActiveErrands": 0
   }
 ]

@@ -258,7 +258,7 @@ namespace GUI.UserControls
             _selectedErrand = errands;
 
             ErrandViewer.Children.Clear();
-            ErrandViewer.Children.Add(new ChooseMechanicToErrand(errands));
+            ErrandViewer.Children.Add(new ChooseMechanicToErrand());
 
             
         }
