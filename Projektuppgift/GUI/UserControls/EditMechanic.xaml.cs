@@ -8,6 +8,8 @@ using System.Collections.Generic;
 using static GUI.UserControls.MechanicHome;
 using System;
 using System.Windows;
+using static Logic.DAL.GenericClass;
+using Logic.Exceptions;
 
 namespace GUI.UserControls
 {
@@ -43,10 +45,10 @@ namespace GUI.UserControls
             mechanics.Remove(selectedMechanic);
 
             string firstName = this.tbFirstName2.Text;
-            string surName = this.tbSurName2.Text;
+            string surName = this.tbSurName2.Text;         
             string dateOfBirth = this.tbDateOfBirth2.Text;
-            string dateOfEmployment = this.tbDateOfEmployment2.Text;
-            string employmentEnds = this.tbEmploymentEnds2.Text;
+            string dateOfEmployment = this.tbDateOfEmployment2.Text;            
+            string employmentEnds = this.tbEmploymentEnds2.Text;           
             string EnginesAreChecked = ((bool)cbEnginesYes2.IsChecked) ? "Yes" : "No";
             string TiresAreChecked = ((bool)cbTiresYes2.IsChecked) ? "Yes" : "No";
             string BrakesAreChecked = ((bool)cbBrakesYes2.IsChecked) ? "Yes" : "No";
@@ -114,5 +116,7 @@ namespace GUI.UserControls
             EditMechanicView.Children.Clear();
             EditMechanicView.Children.Add(new MechanicHome());
         }
+
+       
     }
 }

@@ -56,13 +56,12 @@
                                     <ComboBoxItem Content="Truck"></ComboBoxItem>
                                 </ComboBox>
                                 <TextBlock Text="Type of car:" FontFamily="Century Gothic" FontSize="14" Width="95" Height="17" HorizontalAlignment="Left" Margin="5,10,0,0"/>
-                                <ComboBox x:Name="TypeCarComboBox" Width="100" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,-30,40,0">
+                                <ComboBox x:Name="TypeCarComboBox" Width="100" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,-30,40,0" SelectionChanged="TypeCarComboBox_SelectionChanged">
                                     <ComboBoxItem Content="Sedan"></ComboBoxItem>
                                     <ComboBoxItem Content="Station wagon"></ComboBoxItem>
                                     <ComboBoxItem Content="Convertible"></ComboBoxItem>
                                     <ComboBoxItem Content="Hatchback"></ComboBoxItem>
                                     <ComboBoxItem Content=""></ComboBoxItem>
-                                    
                                 </ComboBox>
                                 <TextBlock Text="Propellant:" FontFamily="Century Gothic" FontSize="14" Width="95" Height="17" HorizontalAlignment="Left" Margin="5,10,0,0"/>
                                 <ComboBox x:Name="TypePropellantComboBox" Width="100" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,-30,40,0">
@@ -70,7 +69,6 @@
                                     <ComboBoxItem Content="Petrol"></ComboBoxItem>
                                     <ComboBoxItem Content="Diesel"></ComboBoxItem>
                                     <ComboBoxItem Content="Ethanol"></ComboBoxItem>                                    
-
                                 </ComboBox>
                                 <TextBox x:Name="tbModel" HorizontalAlignment="Left" Width="225" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Model" FontSize="14" Margin="5,0,0,0"/>
                                 <TextBox x:Name="tbRegistrationNumber" HorizontalAlignment="Left" Width="225" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Registration number" FontSize="14" Margin="5,0,0,0"/>
@@ -80,11 +78,11 @@
                                 <TextBox x:Name="tbMaxNrPass" HorizontalAlignment="Left" Width="225" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Max number of passengers" FontSize="14" Margin="5,0,0,0"/>
                                 <TextBox x:Name="tbMaxLoad" HorizontalAlignment="Left" Width="225" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Max load" FontSize="14" Margin="5,0,0,0"/>
                                 <TextBox x:Name="tbDescription" HorizontalAlignment="Left" Width="350" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Description" FontSize="14" Margin="5,0,0,0" Height="100"/>
-                                
+                                <TextBox x:Name="tbAmount" Width="80" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Amount" FontSize="14" HorizontalAlignment="Right" Height="42" VerticalAlignment="Stretch" Margin="0,-1042,20,0"/>
                             </StackPanel>
+                            
                         </ScrollViewer>
                         <TextBox x:Name="tbScrollDown" Width="80" Height="50" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Scroll down!" VerticalAlignment="Top" HorizontalAlignment="Center"></TextBox>
-                        <TextBox x:Name="tbAmount" Width="80" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Amount" FontSize="14" HorizontalAlignment="Right" Margin="0,-405,40,0" Height="42"/>
                         <Button x:Name="CreateErrand" Margin="250,-45,0,0" Width="100" Content="Create" Foreground="#FF222222" FontFamily="Century Gothic" FontSize="14" FontWeight="Bold" Click="CreateErrand_Click" VerticalAlignment="Stretch"></Button>
 
                     </StackPanel>
@@ -109,6 +107,7 @@
                                     <GridViewColumn DisplayMemberBinding="{Binding ErrandEndDate}" Header="End date" Width="150"/>
                                     <GridViewColumn DisplayMemberBinding="{Binding ErrandID}" Header="ID" Width="150"/>
                                     <GridViewColumn DisplayMemberBinding="{Binding ComponentsNeeded}" Header="Components" Width="150"/>
+                                    <GridViewColumn DisplayMemberBinding="{Binding Amount}" Header="Amount" Width="150"/>
                                     <GridViewColumn DisplayMemberBinding="{Binding TypeOfVehicle}" Header="Vehicle" Width="150"/>
                                     <GridViewColumn DisplayMemberBinding="{Binding TypOfCar}" Header="Type of car" Width="150"/>
                                     <GridViewColumn DisplayMemberBinding="{Binding ModelName}" Header="Model" Width="150"/>

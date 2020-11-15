@@ -1,13 +1,16 @@
-﻿using Logic.DAL;
+﻿using static Logic.DAL.GenericClass;
 using Logic.Entities;
+using Logic.Interfaces;
 using Newtonsoft.Json;
 using Projektuppgift.GUI.UserControls;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using static Logic.Services.StaticLists;
+
 
 namespace GUI.UserControls
 {
@@ -32,10 +35,10 @@ namespace GUI.UserControls
             //// Lägger till i listan.
             //mechanics.AddRange(readFromJson);
 
+            var orderList = mechanics.OrderBy(x => x.FirstName).ToList();
 
-
-            DataContext = this;
-            lv_data.ItemsSource = mechanics;
+            DataContext = orderList;
+            lv_data.ItemsSource = orderList;
         }
 
         private void ChangeToAdd_Click(object sender, RoutedEventArgs e)
@@ -81,16 +84,7 @@ namespace GUI.UserControls
         }
 
         //Metod som används när man tar bort mekaniker.
-        void Overrite()
-        {
-            File.WriteAllText(mechpath, JsonConvert.SerializeObject(mechanics));
-            string jsonFromFile;
-            using (var reader = new StreamReader(mechpath))
-            {
-                jsonFromFile = reader.ReadToEnd();
-            }
-            var readFromJson = JsonConvert.DeserializeObject<List<Mechanic>>(jsonFromFile);
-        }
+        
 
 
     }
