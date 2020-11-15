@@ -20,6 +20,8 @@ using System.Linq;
 using Microsoft.VisualBasic;
 using Newtonsoft.Json.Serialization;
 using static Logic.Entities.Stock;
+using static Logic.Services.StaticLists;
+using System.Text.RegularExpressions;
 
 namespace GUI.UserControls
 {
@@ -91,6 +93,35 @@ namespace GUI.UserControls
 
         public async void CreateErrand_Click(object sender, RoutedEventArgs e)
         {
+           
+
+            if (!Regex.IsMatch(tbRegistrationDate.Text, @"^\d{4}-((0\d)|(1[012]))-(([012]\d)|3[01])$"))
+            {
+                MessageBox.Show("Enter a valid date for Registration Date. YYYY-MM-DD");
+            }
+
+            if (!Regex.IsMatch(tbErrandStart.Text, @"^\d{4}-((0\d)|(1[012]))-(([012]\d)|3[01])$"))
+            {
+                MessageBox.Show("Enter a valid date for Errand Start. YYYY-MM-DD");
+            }
+
+            if (!Regex.IsMatch(tbErrandEnd.Text, @"^\d{4}-((0\d)|(1[012]))-(([012]\d)|3[01])$"))
+            {
+                MessageBox.Show("Enter a valid date for Errand End. YYYY-MM-DD");
+            
+
+            }
+
+
+
+            if (!Regex.IsMatch(tbRegistrationNumber.Text, @"^[A-Z0-9]*$"))
+            {
+                MessageBox.Show("Invalid Registration number. The letters must be in capitals A-Z");
+                return;
+            }
+
+
+
             StockChange();
             //ChooseVehicle();
 
@@ -170,7 +201,7 @@ namespace GUI.UserControls
                 errands.Add(errand);
                 var jsonWrite = JsonConvert.SerializeObject(errands, Formatting.Indented);
                 var fs = File.OpenWrite(pathforErrand);
-                using (var jsonWriter = new StreamWriter(fs))
+                using (var jsonWriter = new StreamWriter(pathforErrand))
                 {
                     await jsonWriter.WriteAsync(jsonWrite);
                 }
@@ -189,7 +220,10 @@ namespace GUI.UserControls
             }
             ErrandViewer.Children.Clear();
             ErrandViewer.Children.Add(new UserControlNewErrand());
+
+            
         }
+
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
@@ -367,19 +401,47 @@ namespace GUI.UserControls
             _selectedIndexVehicle = selectedIndex;
         }
 
-        private void TypeCarComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            TypeCarComboBox = sender as ComboBox;
-            int selectedIndex = TypeCarComboBox.SelectedIndex;
-            _selectedIndexTypOfCar = selectedIndex;
-        }
-
         //public void ChooseVehicle()
         //{
 
         //}
 
-
+        
     }
-}
+
+    //class RegNr
+    //{
+    //    private string registrationNumber;
+    //    public string RegistrationNumber
+    //    {
+    //        set
+    //        {
+                
+
+    //            if (!(value.Length == 6 && int.TryParse(value.Substring(3, 3), out int digits)))
+    //                throw new Exception("Invalid license number");
+
+    //            string letters = value.Substring(0, 3).ToUpper();
+
+    //            for (int i = 0; i < letters.Length; i++)
+    //            {
+    //                if (!("ABCDEFGHIJKLMNOPQRSYUVWXYZ".Contains(letters[i])))
+    //                    throw new Exception("Three first characters must be letters A-Z");
+    //            }
+
+
+
+    //            registrationNumber = value;
+    //        }
+    //        get
+    //        {
+    //            string letters = registrationNumber.Substring(0, 3);
+    //            string digits = registrationNumber.Substring(3, 3);
+
+    //            return $"*** {letters.ToUpper()} {digits} ***";
+    //        }
+    //    }
+    }
+
+
 
