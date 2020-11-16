@@ -64,17 +64,18 @@ namespace GUI.UserControls
 
             var jsonToWrite = JsonConvert.SerializeObject(mechanics, Formatting.Indented);
             var fs = File.OpenWrite(mechpath);
-            using (var writer = new StreamWriter(mechpath))
+            using (var writer = new StreamWriter(fs))
             {
                 writer.Write(jsonToWrite);
 
             }
 
             MessageBox.Show("Competence Changed!");
+
+
         }
 
+
     }
-
-
-  }
+}
 

@@ -60,7 +60,7 @@ namespace GUI.UserControls
 
             var mechanic = MechanicChoose.SelectedItem as Mechanic;
 
-            mechanic.ErrandIDs = errands1.ErrandID;
+            mechanic.MechID = errands1.ErrandID;
 
             //FIrst or default
             var indexOfMechanic = mechanics.FindIndex(x => x.ErrandIDs == errands1.ErrandID);
