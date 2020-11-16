@@ -20,7 +20,6 @@ using System.Linq;
 using Microsoft.VisualBasic;
 using Newtonsoft.Json.Serialization;
 using static Logic.Entities.Stock;
-using static Logic.Services.StaticLists;
 using System.Text.RegularExpressions;
 
 namespace GUI.UserControls
@@ -183,10 +182,10 @@ namespace GUI.UserControls
                 FirstName = null
 
             };
+           
 
 
 
-            
 
             if (errands.Count >= 1)
             {
@@ -201,7 +200,7 @@ namespace GUI.UserControls
                 errands.Add(errand);
                 var jsonWrite = JsonConvert.SerializeObject(errands, Formatting.Indented);
                 var fs = File.OpenWrite(pathforErrand);
-                using (var jsonWriter = new StreamWriter(pathforErrand))
+                using (var jsonWriter = new StreamWriter(fs))
                 {
                     await jsonWriter.WriteAsync(jsonWrite);
                 }
@@ -400,13 +399,18 @@ namespace GUI.UserControls
             int selectedIndex = VehicleComboBox.SelectedIndex;
             _selectedIndexVehicle = selectedIndex;
         }
-
+        private void TypeCarComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            TypeCarComboBox = sender as ComboBox;
+            int selectedIndex = TypeCarComboBox.SelectedIndex;
+            _selectedIndexTypOfCar = selectedIndex;
+        }
         //public void ChooseVehicle()
         //{
 
         //}
 
-        
+
     }
 
     //class RegNr

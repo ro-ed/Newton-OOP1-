@@ -23,9 +23,16 @@ namespace Logic.Entities
         public string CanFixBrakes { get; set; }
         public string CanFixWindshields { get; set; }
         public string CanFixVehicleBody { get; set; }
-        //public Guid[] ErrandIDs { get; set; } = new Guid[1];
-        public Guid ErrandIDs { get; set; }
+        public Guid[] ErrandIDArray { get; set; } 
+        public Guid ErrandIDMech { get; set; }
         public int ActiveErrands { get; set; }
+
+        public bool HasErrands { get 
+            {
+                return !(ErrandIDArray[0].Equals(Guid.Empty) && ErrandIDArray[1].Equals(Guid.Empty));
+            } 
+        }
+
 
 
 
