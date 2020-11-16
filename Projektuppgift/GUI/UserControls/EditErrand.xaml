@@ -77,8 +77,10 @@
                 <TextBox x:Name="tbErrandName" HorizontalAlignment="Left" Text="{Binding ErrandName}" Margin="430 0 0 0" Width="225" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Errand Name" FontSize="14" />
                 <TextBox x:Name="tbStartDate" HorizontalAlignment="Left" Text="{Binding ErrandStartDate}" Margin="430 0 0 0" Width="225" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Start date (YYYY-MM-DD)" FontSize="14"/>
                 <TextBox x:Name="tbEndDate" HorizontalAlignment="Left" Text="{Binding ErrandEndDate}" Margin="430 0 0 0" Width="225" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="End date (YYYY-MM-DD)" FontSize="14"/>
-                <TextBox x:Name="tbStatus" HorizontalAlignment="Left" Text="{Binding ErrandStatus}" Margin="430 0 0 0" Width="225" Style="{StaticResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="Status" FontSize="14"/>
-                <TextBox x:Name="tbComponent" HorizontalAlignment="Left" Text="Components needed:" Margin="430 0 0 0" Width="139" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="14"/>
+                <TextBox Text="Status:" HorizontalAlignment="Left" Margin="430,20,0,0" Width="44"  FontSize="14"/>
+
+                <CheckBox x:Name="cbStatusFinished" HorizontalAlignment="Right" Margin="0,-25,180,0" Width="80" Content="Finished" FontSize="14" Height="21"/>
+                <TextBox x:Name="tbComponent" HorizontalAlignment="Left" Text="Components needed:" Margin="430,-5,0,0" Width="139" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="14"/>
                 <ComboBox x:Name="InvComboBoxNeed" Width="91" HorizontalAlignment="Right" Margin="0,-28,85,0" SelectionChanged="InvComboBoxNeed_SelectionChanged">
                     <ComboBoxItem Content="CarTires"></ComboBoxItem>
                     <ComboBoxItem Content="CarBrakes"></ComboBoxItem>

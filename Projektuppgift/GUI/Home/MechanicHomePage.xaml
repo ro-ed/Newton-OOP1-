@@ -30,7 +30,7 @@
                     <Button Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="LightGray" Margin="0 0 10 0">
                         <materialDesign:PackIcon Kind="Settings" Height="30" Width="30"/>
                     </Button>
-                    <Button x:Name="CloseButton" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="#FFFF5500">
+                    <Button x:Name="CloseButton" Width="30" Height="30" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" Foreground="#FFFF5500" Click="CloseButton_Click_1">
                         <materialDesign:PackIcon Kind="CloseCircle" Height="30" Width="30"/>
                     </Button>
                 </StackPanel>

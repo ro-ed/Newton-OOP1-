@@ -62,6 +62,7 @@ namespace GUI.UserControls
 
             mechanic.ErrandIDs = errands1.ErrandID;
 
+            //FIrst or default
             var indexOfMechanic = mechanics.FindIndex(x => x.ErrandIDs == errands1.ErrandID);
 
             mechanics[indexOfMechanic] = mechanic;
@@ -233,11 +234,9 @@ namespace GUI.UserControls
             Mechanic mechanic = (Mechanic)MechanicChoose.SelectedItem;
         }
 
+        
         private void GoBackButton_Click(object sender, RoutedEventArgs e)
         {
-            Errands selectedErrand = MechanicChoose.SelectedItem as Errands;
-            _test = selectedErrand;
-
             ChooseMechanic.Children.Clear();
             ChooseMechanic.Children.Add(new UserControlNewErrand());
         }
