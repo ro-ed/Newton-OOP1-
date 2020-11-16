@@ -110,7 +110,8 @@ namespace GUI.UserControls
                 }
 
                 jsonToWrite = JsonConvert.SerializeObject(mechanics, Formatting.Indented);
-                using (var writer = new StreamWriter(mechpath))
+                var fs1 = File.OpenWrite(mechpath);
+                using (var writer = new StreamWriter(fs1))
                 {
                     await writer.WriteAsync(jsonToWrite);
 

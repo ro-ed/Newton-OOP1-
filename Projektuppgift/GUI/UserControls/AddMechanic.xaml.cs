@@ -93,7 +93,7 @@ namespace Projektuppgift.GUI.UserControls
             string WindshieldsAreChecked = ((bool)cbWindshieldsYes.IsChecked) ? "Yes" : "No";
             string VehicleBodyIsChecked = ((bool)cbVehicleBodyYes.IsChecked) ? "Yes" : "No";
 
-           
+
 
             Mechanic mechanic = new Mechanic
             {
@@ -108,11 +108,15 @@ namespace Projektuppgift.GUI.UserControls
                 CanFixBrakes = BrakesAreChecked,
                 CanFixWindshields = WindshieldsAreChecked,
                 CanFixVehicleBody = VehicleBodyIsChecked,
-                ErrandIDs = Guid.NewGuid(),
+                ErrandIDArray = new Guid[2],                   
                 ActiveErrands = 0
 
             };
-       
+
+            //mechanic.ErrandIDMech = Guid.NewGuid();
+
+
+
             //READ
             if (mechanics.Count >= 1)
             {
