@@ -10,6 +10,7 @@ namespace Logic.Entities
         public string ErrandStartDate { get; set; }
         public string ErrandEndDate { get; set; }
         public string ErrandStatus { get; set; }
+        public bool Finished { get; set; }
         public Guid ErrandID { get; set; }
         //public Guid MechID { get; set; }
 

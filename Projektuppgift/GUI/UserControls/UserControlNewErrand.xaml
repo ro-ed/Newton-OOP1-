@@ -56,7 +56,7 @@
                                     <ComboBoxItem Content="Truck"></ComboBoxItem>
                                 </ComboBox>
                                 <TextBlock Text="Type of car:" FontFamily="Century Gothic" FontSize="14" Width="95" Height="17" HorizontalAlignment="Left" Margin="5,10,0,0"/>
-                                <ComboBox x:Name="TypeCarComboBox" Width="100" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,-30,40,0" SelectionChanged="TypeCarComboBox_SelectionChanged">
+                                <ComboBox x:Name="TypeCarComboBox" Width="100" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,-30,40,0">
                                     <ComboBoxItem Content="Sedan"></ComboBoxItem>
                                     <ComboBoxItem Content="Station wagon"></ComboBoxItem>
                                     <ComboBoxItem Content="Convertible"></ComboBoxItem>
@@ -125,6 +125,7 @@
                         <Button x:Name="AssignMechanicToErrand" Margin="0 12 60 0" Width="150" Content="Assign mechanic" Foreground="#FF222222" FontFamily="Century Gothic" FontSize="14" FontWeight="Bold" Click="AssignMechanicToErrand_Click"></Button>
                         <Button x:Name="Edit" Margin="320 -32 50 0" Width="150" Content="Edit and Details" Foreground="#FF222222" FontFamily="Century Gothic" FontSize="14" FontWeight="Bold" Click="Edit_Click"></Button>
                         <Button x:Name="Delete" Margin="590 -32 0 0" Width="150" Content="Delete" Foreground="#FF222222" FontFamily="Century Gothic" FontSize="14" FontWeight="Bold" Click="Delete_Click"></Button>
+                        <Button x:Name="MechDetail" Margin="100,-32,0,0" Width="150" Content="Mechanic details" Foreground="#FF222222" FontFamily="Century Gothic" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Click="MechDetail_Click"></Button>
                     </StackPanel>
                 </StackPanel>
 

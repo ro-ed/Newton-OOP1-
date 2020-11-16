@@ -108,7 +108,8 @@ namespace Projektuppgift.GUI.UserControls
                 CanFixBrakes = BrakesAreChecked,
                 CanFixWindshields = WindshieldsAreChecked,
                 CanFixVehicleBody = VehicleBodyIsChecked,
-                ErrandIDs = Guid.NewGuid()
+                ErrandIDs = Guid.NewGuid(),
+                ActiveErrands = 0
 
             };
        

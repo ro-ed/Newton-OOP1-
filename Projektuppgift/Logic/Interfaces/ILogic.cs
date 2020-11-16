@@ -12,10 +12,7 @@ namespace Logic.Interfaces
 
         }
 
-        void DateFormat<T>()
-        {
-
-        }
+       
         
     }
 }

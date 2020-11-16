@@ -25,17 +25,7 @@ namespace Logic.DAL
             var readFromJson = JsonConvert.DeserializeObject<List<Mechanic>>(jsonFromFile);
         }
 
-        //public static void DateFormat(string date)
-        //{
-        //    try
-        //    {
-        //        String.Format("{0:YYYY/MM/DD}", date);
-        //    }
-        //    catch (DateFormatException ex)
-        //    {
-        //        throw new DateFormatException(ex.Message);
-        //    }
-        //}
+       
 
 
 

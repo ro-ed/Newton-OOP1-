@@ -92,7 +92,10 @@ namespace GUI.Home
             GridCursor.Margin = new Thickness(0, (170 + (60 * index)), 0, 0);
         }
 
-
+        private void CloseButton_Click_1(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
             //private void MoveCursorMenu(int index)
             //{

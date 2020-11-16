@@ -1,1 +1,25 @@
-[{"ErrandName":"test","ErrandStartDate":"23432","ErrandEndDate":"3432423","ErrandStatus":"New","ErrandID":"0dee47fa-d88b-4478-9d2b-e15e14836ae5","ComponentsNeeded":"CarTires","TypeOfVehicle":"Car","TypOfCar":"Sedan","ModelName":"Volvo","RegistrationNumber":"abd234","Odometer":24214,"RegistrationDate":"2010-10-10T00:00:00","Propellant":"Electric","MaxLoad":1233,"HasTowbar":"No","MaxNrPassengers":5,"FirstName":null,"LastName":null,"Description":"Neeeeej","Amount":0}]
+[
+  {
+    "ErrandName": "Car",
+    "ErrandStartDate": "2010-10-10",
+    "ErrandEndDate": "2010-10-10",
+    "ErrandStatus": "Finished",
+    "Finished": false,
+    "ErrandID": "7e671612-7922-462a-90f9-e2939ad4eec6",
+    "ComponentsNeeded": "CarTires",
+    "TypeOfVehicle": "Car",
+    "TypOfCar": "Sedan",
+    "ModelName": "Tesla",
+    "RegistrationNumber": "ABC123",
+    "Odometer": 1233,
+    "RegistrationDate": "2010-10-10T00:00:00",
+    "Propellant": "Electric",
+    "MaxLoad": 1233,
+    "HasTowbar": "No",
+    "MaxNrPassengers": 5,
+    "FirstName": "Julia",
+    "LastName": null,
+    "Description": "ok",
+    "Amount": 2
+  }
+]
