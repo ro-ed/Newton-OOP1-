@@ -2,17 +2,24 @@
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace Logic.Exceptions
 {
-    public class MaxErrandException : Exception
+    public class DateTimeException : Exception
     {
-
-        public MaxErrandException(string message) 
-            : base("Hej")
+        public override string Message
+        {
+            get
+            {
+                return "Enter valid date format. hejochhoooooj";
+            }
+        }
+        public DateTimeException()
         {
            
-        }
 
-        
+
+        }
+       
     }
 }

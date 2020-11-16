@@ -272,11 +272,9 @@ namespace GUI.UserControls
             Mechanic mechanic = (Mechanic)MechanicChoose.SelectedItem;
         }
 
+        
         private void GoBackButton_Click(object sender, RoutedEventArgs e)
         {
-            Errands selectedErrand = MechanicChoose.SelectedItem as Errands;
-            _test = selectedErrand;
-
             ChooseMechanic.Children.Clear();
             ChooseMechanic.Children.Add(new UserControlNewErrand());
         }

@@ -10,17 +10,5 @@
     "Password": "tesst",
     "IsAdmin": false,
     "UserID": "895a1d03-ee66-49ae-8fdc-7f3c126e050e"
-  },
-  {
-    "Username": "robin@rob.se",
-    "Password": "123",
-    "IsAdmin": false,
-    "UserID": "8a32cb54-c1ec-40cc-9df9-c07ae7ac98a8"
-  },
-  {
-    "Username": "Timmy@timmy.se",
-    "Password": "hejsan",
-    "IsAdmin": false,
-    "UserID": "a7049cc2-3f22-4664-b3c9-c69b4488f182"
   }
 ]

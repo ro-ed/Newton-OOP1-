@@ -29,7 +29,7 @@ namespace GUI.UserControls
     /// </summary>
     public partial class EditErrand : UserControl
     {
-        private const string MessageChooseMech = "You must assign mechanic again!";
+        
         public int _selectedIndex = 0;
         public int _selectedIndexNeed = 0;
         public EditErrand()
@@ -58,7 +58,9 @@ namespace GUI.UserControls
         private void EditErrandButton_Click(object sender, RoutedEventArgs e)
         {
             Errands selectedErrand = _newSelectedErrandTest;
-            
+
+            var currentMechanic = selectedErrand.FirstName;
+
             Guid CurrentErrandID = selectedErrand.ErrandID;
 
             errands.Remove(selectedErrand);
@@ -87,13 +89,15 @@ namespace GUI.UserControls
             int loadMax = int.Parse(this.tbMaxLoad.Text);
             string writeDescription = this.tbDescription.Text;
 
+            string finished = ((bool)cbStatusFinished.IsChecked) ? "Finished" : "OnGoing";
+
             Errands errand = new Errands
             {
                 ErrandName = errandName,
                 ErrandStartDate = errandStart,
                 ErrandEndDate = errandEnd,
-                ErrandID = Guid.NewGuid(),
-                ErrandStatus = "New",
+                ErrandID = CurrentErrandID,
+                ErrandStatus = finished,
                 ComponentsNeeded = componentsNeed,
                 TypeOfVehicle = vehicleType,
                 TypOfCar = carType,
@@ -106,8 +110,9 @@ namespace GUI.UserControls
                 MaxNrPassengers = maxPass,
                 MaxLoad = loadMax,
                 Description = writeDescription,
-                Amount = amountOfComp
-                               
+                Amount = amountOfComp,
+                FirstName = currentMechanic
+
             };
 
             //if (errands.Count >= 1)
@@ -147,7 +152,7 @@ namespace GUI.UserControls
             {
                 jsonWriter.Write(jsonWrite);
             }
-            MessageBox.Show(MessageChooseMech);
+            
 
             EditErrandView.Children.Clear();
             EditErrandView.Children.Add(new UserControlNewErrand());

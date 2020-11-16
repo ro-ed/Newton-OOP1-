@@ -21,6 +21,8 @@ using Microsoft.VisualBasic;
 using Newtonsoft.Json.Serialization;
 using static Logic.Entities.Stock;
 using System.Text.RegularExpressions;
+using static Logic.Entities.Mechanic;
+using static GUI.UserControls.MechanicHome;
 
 namespace GUI.UserControls
 {
@@ -35,6 +37,7 @@ namespace GUI.UserControls
         // public List<Errands> listRead { get; set; }
         public static Errands _newSelectedErrandTest;
         public static Errands _selectedErrand;
+        public static Mechanic _selectedMechanic;
         public UserControlNewErrand()
         {
             InitializeComponent();
@@ -93,25 +96,25 @@ namespace GUI.UserControls
         public async void CreateErrand_Click(object sender, RoutedEventArgs e)
         {
            
+            
 
             if (!Regex.IsMatch(tbRegistrationDate.Text, @"^\d{4}-((0\d)|(1[012]))-(([012]\d)|3[01])$"))
             {
                 MessageBox.Show("Enter a valid date for Registration Date. YYYY-MM-DD");
+                
             }
 
             if (!Regex.IsMatch(tbErrandStart.Text, @"^\d{4}-((0\d)|(1[012]))-(([012]\d)|3[01])$"))
             {
                 MessageBox.Show("Enter a valid date for Errand Start. YYYY-MM-DD");
+                return;
             }
 
             if (!Regex.IsMatch(tbErrandEnd.Text, @"^\d{4}-((0\d)|(1[012]))-(([012]\d)|3[01])$"))
             {
                 MessageBox.Show("Enter a valid date for Errand End. YYYY-MM-DD");
-            
-
+                return;
             }
-
-
 
             if (!Regex.IsMatch(tbRegistrationNumber.Text, @"^[A-Z0-9]*$"))
             {
@@ -289,7 +292,7 @@ namespace GUI.UserControls
             Errands errands = lv_Errand.SelectedItem as Errands;
 
             _selectedErrand = errands;
-
+            errands.ErrandStatus = "OnGoing";
             ErrandViewer.Children.Clear();
             ErrandViewer.Children.Add(new ChooseMechanicToErrand());
 
@@ -300,7 +303,7 @@ namespace GUI.UserControls
         {
             Errands selectedErrand = lv_Errand.SelectedItem as Errands;
             _newSelectedErrandTest = selectedErrand;
-            selectedErrand.FirstName = null;
+            //selectedErrand.FirstName = null;
             ErrandViewer.Children.Clear();
             var child = new EditErrand();
             child.DataContext = selectedErrand;
@@ -399,52 +402,39 @@ namespace GUI.UserControls
             int selectedIndex = VehicleComboBox.SelectedIndex;
             _selectedIndexVehicle = selectedIndex;
         }
+
+        private void MechDetail_Click(object sender, RoutedEventArgs e)
+        {
+            Errands errands = lv_Errand.SelectedItem as Errands;
+            _selectedErrand = errands;
+
+            
+
+            ErrandViewer.Children.Clear();
+            var child = new ErandMechanicDetail();
+            child.DataContext = errands;
+            //child.DataContext = selectedMechanic;
+            ErrandViewer.Children.Add(child);
+
+            //ErrandViewer.Children.Clear();
+            //ErrandViewer.Children.Add(new ErandMechanicDetail());
+        }
+
+        //public void ChooseVehicle()
+        //{
+
+        //}
+
         private void TypeCarComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             TypeCarComboBox = sender as ComboBox;
             int selectedIndex = TypeCarComboBox.SelectedIndex;
             _selectedIndexTypOfCar = selectedIndex;
         }
-        //public void ChooseVehicle()
-        //{
-
-        //}
-
 
     }
 
-    //class RegNr
-    //{
-    //    private string registrationNumber;
-    //    public string RegistrationNumber
-    //    {
-    //        set
-    //        {
-                
-
-    //            if (!(value.Length == 6 && int.TryParse(value.Substring(3, 3), out int digits)))
-    //                throw new Exception("Invalid license number");
-
-    //            string letters = value.Substring(0, 3).ToUpper();
-
-    //            for (int i = 0; i < letters.Length; i++)
-    //            {
-    //                if (!("ABCDEFGHIJKLMNOPQRSYUVWXYZ".Contains(letters[i])))
-    //                    throw new Exception("Three first characters must be letters A-Z");
-    //            }
-
-
-
-    //            registrationNumber = value;
-    //        }
-    //        get
-    //        {
-    //            string letters = registrationNumber.Substring(0, 3);
-    //            string digits = registrationNumber.Substring(3, 3);
-
-    //            return $"*** {letters.ToUpper()} {digits} ***";
-    //        }
-    //    }
+  
     }
 
 

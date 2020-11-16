@@ -7,6 +7,8 @@ using System.IO;
 using Newtonsoft.Json;
 using static Logic.Services.StaticLists;
 using GUI.UserControls;
+using System.Text.RegularExpressions;
+using Logic.Exceptions;
 
 namespace Projektuppgift.GUI.UserControls
 {
@@ -34,6 +36,50 @@ namespace Projektuppgift.GUI.UserControls
 
         public async void AddMechanicButton_Click(object sender, RoutedEventArgs e)
         {
+
+
+            string someString = tbDateOfBirth.Text;
+            DateTime DateOfBirth;
+            DateTime.Now.ToString("yyyy-MM-dd");
+            
+            try
+            {
+                DateOfBirth= DateTime.Parse(someString); 
+                
+                
+            }
+            catch (FormatException)
+            {
+                throw new DateTimeException();
+             
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
+
+ 
+
+
+
+            //if (!Regex.IsMatch(tbDateOfBirth.Text, @"^\d{4}-((0\d)|(1[012]))-(([012]\d)|3[01])$"))
+            //{
+            //    MessageBox.Show("Enter a valid date for Date of birth. YYYY-MM-DD");
+            //    return;
+            //}
+
+            if (!Regex.IsMatch(tbDateOfEmployment.Text, @"^\d{4}-((0\d)|(1[012]))-(([012]\d)|3[01])$"))
+            {
+                MessageBox.Show("Enter a valid date for Date of Employment. YYYY-MM-DD");
+                return;
+            }
+
+            if (!Regex.IsMatch(tbEmploymentEnds.Text, @"^\d{4}-((0\d)|(1[012]))-(([012]\d)|3[01])$"))
+            {
+                MessageBox.Show("Enter a valid date for Employment Ends. YYYY-MM-DD");
+                return;
+            }
 
 
             string firstName = this.tbFirstName.Text;
