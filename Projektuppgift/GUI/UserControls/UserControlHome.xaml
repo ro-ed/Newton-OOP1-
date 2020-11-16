@@ -10,9 +10,7 @@
     <Grid>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center">
             <StackPanel Width="754" Height="530">
-                <TextBlock Text="Welcome!" FontFamily="Century Gothic" FontSize="35" Margin="25" HorizontalAlignment="Center">
-
-                </TextBlock>
+                <TextBlock  Margin="25" HorizontalAlignment="Center" Width="333"><Run Text="Welcome"/><Run Text=" "/><Run Language="sv-se" Text="Bosse"/><Run Text="!"/></TextBlock>
 
 
 

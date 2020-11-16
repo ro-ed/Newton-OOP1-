@@ -1,5 +1,4 @@
 [
-  
   {
     "FirstName": "Timmy",
     "SurName": "test",
@@ -7,12 +6,13 @@
     "DateOfEmployment": "234",
     "EndDate": "3242",
     "MechID": "382ce2a9-5cbf-42f2-bcad-c2339ffb3e47",
-    "UserID": "f5ce2869-bd8f-4087-a6d5-cc1ac86e732f",
+    "UserID": "93e009bb-ca90-4c63-9220-8454e0e73783",
     "CanFixEngines": null,
     "CanFixTires": "Yes",
     "CanFixBrakes": "No",
     "CanFixWindshields": null,
-    "CanFixVehicleBody": "No"
+    "CanFixVehicleBody": "No",
+    "ErrandIDs": "00000000-0000-0000-0000-000000000000"
   },
   {
     "FirstName": "Julia",
@@ -21,12 +21,13 @@
     "DateOfEmployment": "123213",
     "EndDate": "123213",
     "MechID": "5f323416-300e-41d8-b4b2-9c78b954c984",
-    "UserID": "7c9454f6-be9d-445a-8d55-352ed855de5e",
+    "UserID": "4e2165bd-5b26-44ce-89ee-d85b7eda194f",
     "CanFixEngines": null,
     "CanFixTires": "Yes",
     "CanFixBrakes": "Yes",
     "CanFixWindshields": null,
-    "CanFixVehicleBody": "Yes"
+    "CanFixVehicleBody": "Yes",
+    "ErrandIDs": "00000000-0000-0000-0000-000000000000"
   },
   {
     "FirstName": "Test",
@@ -40,6 +41,52 @@
     "CanFixTires": "No",
     "CanFixBrakes": "No",
     "CanFixWindshields": "No",
-    "CanFixVehicleBody": "No"
+    "CanFixVehicleBody": "No",
+    "ErrandIDs": "00000000-0000-0000-0000-000000000000"
+  },
+  {
+    "FirstName": "",
+    "SurName": "hej",
+    "DateOfBirth": "2020-10-20",
+    "DateOfEmployment": "2020-10-22",
+    "EndDate": "2020-10-24",
+    "MechID": "74efb5c2-1903-4caa-a47a-7a5bc5405640",
+    "UserID": null,
+    "CanFixEngines": "No",
+    "CanFixTires": "No",
+    "CanFixBrakes": "No",
+    "CanFixWindshields": "No",
+    "CanFixVehicleBody": "No",
+    "ErrandIDs": "29923e42-3a7f-42b0-a35d-c85308829eb1"
+  },
+  {
+    "FirstName": "hej",
+    "SurName": "hej",
+    "DateOfBirth": "2020-02-10",
+    "DateOfEmployment": "2020-10-20",
+    "EndDate": "2020-10-20",
+    "MechID": "7e36225d-9ecc-438d-8d20-e21ee22331ad",
+    "UserID": null,
+    "CanFixEngines": "No",
+    "CanFixTires": "No",
+    "CanFixBrakes": "No",
+    "CanFixWindshields": "No",
+    "CanFixVehicleBody": "No",
+    "ErrandIDs": "9041826a-77a6-43ca-920a-f1145502f859"
+  },
+  {
+    "FirstName": "exx",
+    "SurName": "trycatch",
+    "DateOfBirth": "2002-10-20",
+    "DateOfEmployment": "2020-10-20",
+    "EndDate": "2020-10-20",
+    "MechID": "6ba495b1-4838-4a9d-8914-0f40e17d13df",
+    "UserID": null,
+    "CanFixEngines": "No",
+    "CanFixTires": "No",
+    "CanFixBrakes": "No",
+    "CanFixWindshields": "No",
+    "CanFixVehicleBody": "No",
+    "ErrandIDs": "6a019ce8-3199-4206-946f-c2484440a4b4"
   }
 ]
