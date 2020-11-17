@@ -8,5 +8,6 @@ namespace Logic.Services
     public static class LoggedInUserService
     {
         public static User LoggedInUser { get; set; }
+        public static Mechanic LoggedInMechanic { get; set; }
     }
 }
