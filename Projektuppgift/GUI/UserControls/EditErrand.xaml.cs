@@ -21,6 +21,7 @@ using System.Linq;
 using Microsoft.VisualBasic;
 using Newtonsoft.Json.Serialization;
 using static Logic.Entities.Stock;
+using static Logic.DAL.GenericClass;
 
 namespace GUI.UserControls
 {
@@ -36,14 +37,15 @@ namespace GUI.UserControls
         {
             InitializeComponent();
 
-            //string jsonFile;
-            //using (var reader = new StreamReader(pathforErrand))
-            //{
-            //    jsonFile = reader.ReadToEnd();
-            //}
+            string jsonFile;
+            using (var reader = new StreamReader(pathforErrand))
+            {
+                jsonFile = reader.ReadToEnd();
+            }
 
-            //var jsonRead = JsonConvert.DeserializeObject<List<Errands>>(jsonFile);
-            //errands = jsonRead;
+            var jsonRead = JsonConvert.DeserializeObject<List<Errands>>(jsonFile);
+            errands = jsonRead;
+
 
             string jsonFromFile6;
             using (var reader = new StreamReader(stockpath))
@@ -55,16 +57,31 @@ namespace GUI.UserControls
             DataContext = stockread;
         }
 
-        private void EditErrandButton_Click(object sender, RoutedEventArgs e)
+        private async void EditErrandButton_Click(object sender, RoutedEventArgs e)
         {
             Errands selectedErrand = _newSelectedErrandTest;
-
+                    
             var currentMechanic = selectedErrand.FirstName;
 
             Guid CurrentErrandID = selectedErrand.ErrandID;
 
-            errands.Remove(selectedErrand);
-                      
+            var findIndexOfErrand = errands.FindIndex(x => x.ErrandID == selectedErrand.ErrandID);
+
+            errands[findIndexOfErrand] = selectedErrand;
+
+            errands.Remove(selectedErrand);                    
+
+            Overrite<Errands>(pathforErrand, errands);
+         
+            string jsonFile4;
+
+            using (var reader = new StreamReader(pathforErrand))
+            {
+                jsonFile4 = reader.ReadToEnd();
+            }
+
+            var jsonRead4 = JsonConvert.DeserializeObject<List<Errands>>(jsonFile4);
+            errands = jsonRead4;
 
             StockChangeNeed();
             StockChangeAdd();
@@ -115,42 +132,48 @@ namespace GUI.UserControls
 
             };
 
-            //if (errands.Count >= 1)
-            //{
-            //    string jsonFile;
+        if (errand.ErrandStatus == "Finished")
+        {
+                string jsonFromFile;
+                using (var reader = new StreamReader(mechpath))
+                {
+                    jsonFromFile = reader.ReadToEnd();
+                }
+                var readFromJson = JsonConvert.DeserializeObject<List<Mechanic>>(jsonFromFile);
+                mechanics = readFromJson;
 
-            //    using (var reader = new StreamReader(pathforErrand))
-            //    {
-            //        jsonFile = reader.ReadToEnd();
-            //    }
+                Mechanic ArrayFirstElement = readFromJson.FirstOrDefault(x => x.ErrandIDArray[0] == errand.ErrandID);
+                Mechanic ArraySecondElement = readFromJson.FirstOrDefault(x => x.ErrandIDArray[1] == errand.ErrandID);
 
-            //    var jsonRead = JsonConvert.DeserializeObject<List<Errands>>(jsonFile);
-            //    errands.Add(errand);
-            //    var jsonWrite = JsonConvert.SerializeObject(errands, Formatting.Indented);
-            //    var fs = File.OpenWrite(pathforErrand);
-            //    using (var jsonWriter = new StreamWriter(fs))
-            //    {
-            //        await jsonWriter.WriteAsync(jsonWrite);
-            //    }
+            if(ArrayFirstElement != null)
+            {               
+                if (ArrayFirstElement.ErrandIDArray[0] == errand.ErrandID)
+                {
+                    ArrayFirstElement.ErrandIDArray[0] = Guid.Empty;
+                }
+            }
 
-            //}
-
-            //else
-            //{
-            //errands.Add(errand);
-            //var jsonWrite = JsonConvert.SerializeObject(errands, Formatting.Indented);
-            //var fs = File.OpenWrite(pathforErrand);
-            //using (var jsonWriter = new StreamWriter(fs))
-            //{
-            //    await jsonWriter.WriteAsync(jsonWrite);
-            //}
-            //}
+            if (ArraySecondElement != null)
+            {
+                if (ArraySecondElement.ErrandIDArray[1] == errand.ErrandID)
+                {
+                        ArraySecondElement.ErrandIDArray[1] = Guid.Empty;
+                }
+            }
+        }
+            var jsonWrite = JsonConvert.SerializeObject(mechanics, Formatting.Indented);
+            var fs = File.OpenWrite(mechpath);
+            using (var jsonWriter = new StreamWriter(fs))
+            {
+                await jsonWriter.WriteAsync(jsonWrite);
+            }
 
             errands.Add(errand);
-            var jsonWrite = JsonConvert.SerializeObject(errands, Formatting.Indented);
-            using (var jsonWriter = new StreamWriter(pathforErrand))
+            var jsonWrite2 = JsonConvert.SerializeObject(errands, Formatting.Indented);
+            var fs2 = File.OpenWrite(pathforErrand);
+            using (var jsonWriter = new StreamWriter(fs2))
             {
-                jsonWriter.Write(jsonWrite);
+                await jsonWriter.WriteAsync(jsonWrite2);
             }
             
 

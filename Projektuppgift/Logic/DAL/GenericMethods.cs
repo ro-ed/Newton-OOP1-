@@ -12,20 +12,21 @@ namespace Logic.DAL
 {
     public partial class GenericClass : ILogic
     {
-        public static void Overrite()
+        public static void Overrite<T>(string path, List<T> list)
         {
 
-            File.WriteAllText(mechpath, JsonConvert.SerializeObject(mechanics));
+            File.WriteAllText(path, JsonConvert.SerializeObject(list));
             string jsonFromFile;
 
-            using (var reader = new StreamReader(mechpath))
+            using (var reader = new StreamReader(path))
             {
                 jsonFromFile = reader.ReadToEnd();
             }
-            var readFromJson = JsonConvert.DeserializeObject<List<Mechanic>>(jsonFromFile);
+            var readFromJson = JsonConvert.DeserializeObject<List<T>>(jsonFromFile);
+            list = readFromJson;
         }
 
-       
+
 
 
 

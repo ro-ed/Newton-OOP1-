@@ -57,7 +57,7 @@ namespace GUI.UserControls
                 {
                     mechanics.Remove(selectedMechanic);                  
                 }
-                Overrite();
+                Overrite<Mechanic>(mechpath, mechanics);
                 MechanicView.Children.Clear();
                 MechanicView.Children.Add(new MechanicHome());
 

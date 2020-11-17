@@ -11,7 +11,7 @@ namespace Logic.Exceptions
         {
             get
             {
-                return "Enter valid date format. hejochhoooooj";
+                return "You entered an invalid date format. Please restart the program and try again with this format (YYYY-MM-DD).";
             }
         }
         public DateTimeException()

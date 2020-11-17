@@ -13,11 +13,11 @@
     "CanFixWindshields": "No",
     "CanFixVehicleBody": "No",
     "ErrandIDArray": [
-      "95738db4-1fc2-4783-8653-5b428cf75d63",
-      "ac763415-c536-4350-a1d0-1cc5efd74dc4"
+      "00000000-0000-0000-0000-000000000000",
+      "00000000-0000-0000-0000-000000000000"
     ],
     "ErrandIDMech": "ac763415-c536-4350-a1d0-1cc5efd74dc4",
     "ActiveErrands": 0,
-    "HasErrands": true
+    "HasErrands": false
   }
 ]
