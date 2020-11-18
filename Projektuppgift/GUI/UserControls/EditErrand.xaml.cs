@@ -61,6 +61,8 @@ namespace GUI.UserControls
 
             var currentMechanic = selectedErrand.FirstName;
 
+            var currentMechanic1 = selectedErrand.LastName;
+
             Guid CurrentErrandID = selectedErrand.ErrandID;
 
             errands.Remove(selectedErrand);
@@ -89,7 +91,11 @@ namespace GUI.UserControls
             int loadMax = int.Parse(this.tbMaxLoad.Text);
             string writeDescription = this.tbDescription.Text;
 
+
+
             string finished = ((bool)cbStatusFinished.IsChecked) ? "Finished" : "OnGoing";
+
+
 
             Errands errand = new Errands
             {
@@ -111,9 +117,25 @@ namespace GUI.UserControls
                 MaxLoad = loadMax,
                 Description = writeDescription,
                 Amount = amountOfComp,
-                FirstName = currentMechanic
+                FirstName = currentMechanic,
+                LastName = currentMechanic1
 
             };
+
+
+            errands.Add(errand);
+            var jsonWrite = JsonConvert.SerializeObject(errands, Formatting.Indented);
+            using (var jsonWriter = new StreamWriter(pathforErrand))
+            {
+                jsonWriter.Write(jsonWrite);
+            }
+
+
+            EditErrandView.Children.Clear();
+            EditErrandView.Children.Add(new UserControlNewErrand());
+
+
+
 
             //if (errands.Count >= 1)
             //{
@@ -146,16 +168,7 @@ namespace GUI.UserControls
             //}
             //}
 
-            errands.Add(errand);
-            var jsonWrite = JsonConvert.SerializeObject(errands, Formatting.Indented);
-            using (var jsonWriter = new StreamWriter(pathforErrand))
-            {
-                jsonWriter.Write(jsonWrite);
-            }
-            
 
-            EditErrandView.Children.Clear();
-            EditErrandView.Children.Add(new UserControlNewErrand());
 
         }
 

@@ -182,7 +182,9 @@ namespace GUI.UserControls
                 MaxLoad = loadMax,
                 Description = writeDescription,
                 Amount = amountOfComp,
-                FirstName = null
+                FirstName = null,
+                LastName = null,
+                Competence = null
 
             };
 
@@ -292,9 +294,16 @@ namespace GUI.UserControls
             Errands errands = lv_Errand.SelectedItem as Errands;
 
             _selectedErrand = errands;
-            errands.ErrandStatus = "OnGoing";
-            ErrandViewer.Children.Clear();
-            ErrandViewer.Children.Add(new ChooseMechanicToErrand());
+            if (errands != null)
+            {
+                errands.ErrandStatus = "OnGoing";
+                ErrandViewer.Children.Clear();
+                ErrandViewer.Children.Add(new ChooseMechanicToErrand());
+            }
+            //errands.ErrandStatus = "OnGoing";
+            //ErrandViewer.Children.Clear();
+            //ErrandViewer.Children.Add(new ChooseMechanicToErrand());
+
 
             
         }
@@ -390,6 +399,9 @@ namespace GUI.UserControls
                 case 19:
                     stock.TruckVehicleBodies -= int.Parse(tbAmount.Text);
                     break;
+                default:
+                    _selectedIndex = 0;
+                    break;
 
             }
 
@@ -408,13 +420,22 @@ namespace GUI.UserControls
             Errands errands = lv_Errand.SelectedItem as Errands;
             _selectedErrand = errands;
 
-            
+            ////Mechanic mechanic = lv_Errand.SelectedItem as Mechanic;
+            ////_selectedMechanic = mechanic;
+
 
             ErrandViewer.Children.Clear();
             var child = new ErandMechanicDetail();
             child.DataContext = errands;
             //child.DataContext = selectedMechanic;
             ErrandViewer.Children.Add(child);
+
+            ////ErrandViewer.Children.Clear();
+            ////ErrandViewer.Children.Add(new ErandMechanicDetail());
+            ///
+            //Errands errands = lv_Errand.SelectedItem as Errands;
+
+            //_selectedErrand = errands;
 
             //ErrandViewer.Children.Clear();
             //ErrandViewer.Children.Add(new ErandMechanicDetail());

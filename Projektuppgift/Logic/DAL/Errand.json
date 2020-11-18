@@ -1,25 +1,26 @@
 [
   {
-    "ErrandName": "Car",
+    "ErrandName": "Test",
     "ErrandStartDate": "2010-10-10",
     "ErrandEndDate": "2010-10-10",
-    "ErrandStatus": "Finished",
+    "ErrandStatus": "OnGoing",
     "Finished": false,
-    "ErrandID": "7e671612-7922-462a-90f9-e2939ad4eec6",
-    "ComponentsNeeded": "CarTires",
+    "ErrandID": "f94b3348-9136-4881-895a-cee4f9185cde",
+    "ComponentsNeeded": "CarBrakes",
     "TypeOfVehicle": "Car",
     "TypOfCar": "Sedan",
     "ModelName": "Tesla",
-    "RegistrationNumber": "ABC123",
-    "Odometer": 1233,
+    "RegistrationNumber": "ADC123",
+    "Odometer": 21313,
     "RegistrationDate": "2010-10-10T00:00:00",
     "Propellant": "Electric",
-    "MaxLoad": 1233,
+    "MaxLoad": 12313,
     "HasTowbar": "No",
     "MaxNrPassengers": 5,
-    "FirstName": "Julia",
-    "LastName": null,
-    "Description": "ok",
-    "Amount": 2
+    "FirstName": "Timmy",
+    "LastName": "Hej",
+    "Description": "hehe",
+    "Amount": 1,
+    "Competence": null
   }
 ]

@@ -49,6 +49,8 @@ namespace GUI.UserControls
             DataContext = this;
             MechanicChoose.ItemsSource = mechanics;
 
+            
+
            
 
 
@@ -68,52 +70,136 @@ namespace GUI.UserControls
             mechanics[indexOfMechanic] = mechanic;
 
             errands1.FirstName = mechanic.FirstName;
+            errands1.LastName = mechanic.SurName;
+            //errands1.ComponentsNeeded = mechanic.CanFixBrakes;
+            //errands1.ComponentsNeeded = mechanic.CanFixEngines;
+            //errands1.ComponentsNeeded = mechanic.CanFixTires;
+            //errands1.ComponentsNeeded = mechanic.CanFixVehicleBody;
+            //errands1.ComponentsNeeded = mechanic.CanFixWindshields;
+            string CFB = mechanic.CanFixBrakes;
+            string CFE = mechanic.CanFixEngines;
+            string CFT = mechanic.CanFixTires;
+            string CFV = mechanic.CanFixVehicleBody;
+            string CFW = mechanic.CanFixWindshields;
+            string compNeed = errands1.ComponentsNeeded;
 
-            mechanic.ActiveErrands++;
 
-            if(mechanic.ActiveErrands == 2)
+
+
+            //mechanic.ActiveErrands++;
+
+            //if (mechanic.ActiveErrands == 2)
+            //{
+            //    //MessageBox.Show("Sure ??", "DELETE", MessageBoxButton.OK, MessageBoxImage.Warning) == MessageBoxResult.OK;
+            //    MessageBox.Show("This mechanic already has 2 active errands. Please select another mechanic.",
+            //        "Exception", MessageBoxButton.OK, MessageBoxImage.Error);
+            //    ChooseMechanic.Children.Clear();
+            //    ChooseMechanic.Children.Add(new ChooseMechanicToErrand());
+
+            //}
+
+            //errands.Remove(_selectedErrand);
+
+
+            //if (errands1.Competence == "No")
+            //{
+
+
+            //    MessageBox.Show("Does not have the competence, choose another mechanic!");
+
+            //}
+
+            //else
+            //{
+
+            //if (errands.Count >= 1)
+            //{
+            //    string jsonFromFile;
+            //    using (var reader = new StreamReader(pathforErrand))
+            //    {
+            //        jsonFromFile = reader.ReadToEnd();
+            //    }
+            //    var readFromJson = JsonConvert.DeserializeObject<List<Mechanic>>(jsonFromFile);
+            //    errands.Add(errands1);
+            //    var jsonToWrite = JsonConvert.SerializeObject(errands, Formatting.Indented);
+            //    using (var writer = new StreamWriter(pathforErrand))
+            //    {
+            //        await writer.WriteAsync(jsonToWrite);
+
+            //    }
+
+
+            //}
+            ////ADD
+            //else
+            //{
+            //    errands.Add(errands1);
+            //    var jsonToWrite = JsonConvert.SerializeObject(errands, Formatting.Indented);
+            //    var fs = File.OpenWrite(pathforErrand);
+            //    using (var writer = new StreamWriter(fs))
+            //    {
+            //        await writer.WriteAsync(jsonToWrite);
+
+            //    }
+
+            //}
+            //ChooseMechanic.Children.Clear();
+            //ChooseMechanic.Children.Add(new UserControlNewErrand());
+        
+
+            if (((compNeed == "CarTires" || compNeed ==  "MCTires" || compNeed == "BusTires" || compNeed == "TruckTires") && CFT == "Yes") ||
+                ((compNeed == "CarBrakes" || compNeed == "MCBrakes" || compNeed == "BusBrakes" || compNeed == "TruckBrakes") && CFB == "Yes") ||
+                ((compNeed == "CarMotors" || compNeed == "MCMotors" || compNeed == "BusMotors" || compNeed == "TruckMotors") && CFE == "Yes") ||
+                ((compNeed == "CarWindshields" || compNeed == "MCWindshields" || compNeed == "BusWindshields" || compNeed == "TruckWindshields") && CFW == "Yes") ||
+                ((compNeed == "CarVehicleBodies" || compNeed == "MCVehicleBodies" || compNeed == "BusVehicleBodies" || compNeed == "TruckVehicleBodies") && CFV == "Yes"))
             {
-                //MessageBox.Show("Sure ??", "DELETE", MessageBoxButton.OK, MessageBoxImage.Warning) == MessageBoxResult.OK;
-                MessageBox.Show("This mechanic already has 2 active errands. Please select another mechanic.",
-                    "Exception", MessageBoxButton.OK, MessageBoxImage.Error);
+                if (errands.Count >= 1)
+                {
+                    string jsonFromFile;
+                    using (var reader = new StreamReader(pathforErrand))
+                    {
+                        jsonFromFile = reader.ReadToEnd();
+                    }
+                    var readFromJson = JsonConvert.DeserializeObject<List<Mechanic>>(jsonFromFile);
+                    errands.Add(errands1);
+                    var jsonToWrite = JsonConvert.SerializeObject(errands, Formatting.Indented);
+                    using (var writer = new StreamWriter(pathforErrand))
+                    {
+                        await writer.WriteAsync(jsonToWrite);
+
+                    }
+
+
+                }
+                //ADD
+                else
+                {
+                    errands.Add(errands1);
+                    var jsonToWrite = JsonConvert.SerializeObject(errands, Formatting.Indented);
+                    var fs = File.OpenWrite(pathforErrand);
+                    using (var writer = new StreamWriter(fs))
+                    {
+                        await writer.WriteAsync(jsonToWrite);
+
+                    }
+
+                }
                 ChooseMechanic.Children.Clear();
-                ChooseMechanic.Children.Add(new ChooseMechanicToErrand());
-
+                ChooseMechanic.Children.Add(new UserControlNewErrand());
             }
-
-            errands.Remove(_selectedErrand);        
-
-            if (errands.Count >= 1)
-            {
-                string jsonFromFile;
-                using (var reader = new StreamReader(pathforErrand))
-                {
-                    jsonFromFile = reader.ReadToEnd();
-                }
-                var readFromJson = JsonConvert.DeserializeObject<List<Mechanic>>(jsonFromFile);
-                errands.Add(errands1);
-                var jsonToWrite = JsonConvert.SerializeObject(errands, Formatting.Indented);
-                using (var writer = new StreamWriter(pathforErrand))
-                {
-                    await writer.WriteAsync(jsonToWrite);
-
-                }
-
-
-            }
-            //ADD
             else
             {
-                errands.Add(errands1);
-                var jsonToWrite = JsonConvert.SerializeObject(errands, Formatting.Indented);
-                var fs = File.OpenWrite(pathforErrand);
-                using (var writer = new StreamWriter(fs))
-                {
-                    await writer.WriteAsync(jsonToWrite);
-
-                }
-
+                MessageBox.Show("Does not have the competence, choose another mechanic!");
             }
+
+
+
+
+
+
+
+
+
 
             //mechanic.ErrandIDs.Append(_selectedErrand.ErrandID);
 
@@ -171,8 +257,7 @@ namespace GUI.UserControls
 
 
 
-            ChooseMechanic.Children.Clear();
-            ChooseMechanic.Children.Add(new UserControlNewErrand());
+
 
 
             //string json = File.ReadAllText(pathforErrand);
