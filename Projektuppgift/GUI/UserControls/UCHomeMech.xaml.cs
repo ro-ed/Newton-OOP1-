@@ -11,17 +11,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace GUI.View
+namespace GUI.UserControls
 {
     /// <summary>
-    /// Interaction logic for LoadingNavWin.xaml
+    /// Interaction logic for UCHomeMech.xaml
     /// </summary>
-    public partial class LoadingNavWin : NavigationWindow
+    public partial class UCHomeMech : UserControl
     {
-        public LoadingNavWin()
+        public UCHomeMech()
         {
             InitializeComponent();
         }
-       
     }
 }

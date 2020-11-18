@@ -1,6 +1,5 @@
 ﻿using GUI.Home;
 using GUI.UserControls;
-using GUI.View;
 using Logic.Entities;
 using Logic.Services;
 using Microsoft.Windows.Themes;

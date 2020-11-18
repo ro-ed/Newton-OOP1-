@@ -66,7 +66,7 @@ namespace GUI.Home
             {
                 case 0:
                     MainViewGrid.Children.Clear();
-                    MainViewGrid.Children.Add(new HomeTab());
+                    MainViewGrid.Children.Add(new UCHomeMech());
                     break;
                 case 1:
                     MainViewGrid.Children.Clear();

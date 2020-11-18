@@ -1,18 +1,23 @@
 [
   {
-    "FirstName": "Timmy",
-    "SurName": "Hej",
-    "DateOfBirth": "2010-10-10",
-    "DateOfEmployment": "2010-10-10",
-    "EndDate": "2010-10-10",
-    "MechID": "eefddba4-9040-4992-b72b-7eff9713c558",
+    "FirstName": "Robin",
+    "SurName": "Edin",
+    "DateOfBirth": "2313212",
+    "DateOfEmployment": "123123123",
+    "EndDate": "123123",
+    "MechID": "f379662d-6262-4045-ad99-e79de6f4ab3a",
     "UserID": null,
     "CanFixEngines": "No",
     "CanFixTires": "No",
-    "CanFixBrakes": "Yes",
+    "CanFixBrakes": "No",
     "CanFixWindshields": "No",
-    "CanFixVehicleBody": "Yes",
-    "ErrandIDs": "f7ca8fd6-f303-48b1-b4b9-400e1d131936",
-    "ActiveErrands": 0
+    "CanFixVehicleBody": "No",
+    "ErrandIDArray": [
+      "00000000-0000-0000-0000-000000000000",
+      "00000000-0000-0000-0000-000000000000"
+    ],
+    "ErrandIDMech": "ac763415-c536-4350-a1d0-1cc5efd74dc4",
+    "ActiveErrands": 0,
+    "HasErrands": false
   }
-]
+] 

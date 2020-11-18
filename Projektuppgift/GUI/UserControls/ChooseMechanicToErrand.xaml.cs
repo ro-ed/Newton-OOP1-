@@ -32,6 +32,8 @@ namespace GUI.UserControls
     /// </summary>
     public partial class ChooseMechanicToErrand : UserControl
     {
+        public static int _index;
+
         public static Errands _test;
         
         //private static Errands _selectedErrand;
@@ -62,10 +64,9 @@ namespace GUI.UserControls
 
             var mechanic = MechanicChoose.SelectedItem as Mechanic;
 
-            mechanic.ErrandIDs = errands1.ErrandID;
+            mechanic.ErrandIDMech = errands1.ErrandID;
 
-            //FIrst or default
-            var indexOfMechanic = mechanics.FindIndex(x => x.ErrandIDs == errands1.ErrandID);
+            var indexOfMechanic = mechanics.FindIndex(x => x.ErrandIDMech == errands1.ErrandID);
 
             mechanics[indexOfMechanic] = mechanic;
 
@@ -83,6 +84,50 @@ namespace GUI.UserControls
             string CFW = mechanic.CanFixWindshields;
             string compNeed = errands1.ComponentsNeeded;
 
+            //=========================================================================================
+            var totalElementsInArray = mechanic.ErrandIDArray;
+           
+            var numberOfElements = mechanic.HasErrands ? totalElementsInArray.Count():0;                                                                 
+
+            if (mechanic.ErrandIDArray[0].Equals(Guid.Empty))
+            {
+                _index = 0;
+                mechanic.ErrandIDArray[_index] = errands1.ErrandID;
+                var SetValueToMechanic = mechanics.FindIndex(x => x.ErrandIDArray[_index] == errands1.ErrandID);
+                mechanics[SetValueToMechanic] = mechanic;
+                _index++;
+            }
+            else if ((mechanic.ErrandIDArray[1].Equals(Guid.Empty)))
+            {
+                _index = 1;
+                mechanic.ErrandIDArray[_index] = errands1.ErrandID;
+                var SetValueToMechanic = mechanics.FindIndex(x => x.ErrandIDArray[_index] == errands1.ErrandID);
+                mechanics[SetValueToMechanic] = mechanic;
+                _index++;
+            }
+            else
+            {
+                MessageBox.Show("This mechanic has 2 errands already.", "Choose another mechanic.",
+                MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
+            }
+          
+            //=========================================================================================
+          
+            if (mechanics.Count >= 1)
+            {
+                string jsonFromFile;
+                using (var reader = new StreamReader(mechpath))
+                {
+                    jsonFromFile = reader.ReadToEnd();
+                }
+                var readFromJson = JsonConvert.DeserializeObject<List<Mechanic>>(jsonFromFile);
+                //mechanics.Clear();
+                //mechanics.Add(mechanic);
+                var jsonToWrite = JsonConvert.SerializeObject(mechanics, Formatting.Indented);
+                using (var writer = new StreamWriter(mechpath))
+                {
+                    await writer.WriteAsync(jsonToWrite);
 
 
 
@@ -128,6 +173,11 @@ namespace GUI.UserControls
 
             //    }
 
+                }
+            }
+            //ADD        
+
+            errands.Remove(_selectedErrand);        
 
             //}
             ////ADD
@@ -167,6 +217,17 @@ namespace GUI.UserControls
                     {
                         await writer.WriteAsync(jsonToWrite);
 
+                }
+            }
+            //ADD
+            else
+            {
+                errands.Add(errands1);
+                var jsonToWrite = JsonConvert.SerializeObject(errands, Formatting.Indented);
+                var fs = File.OpenWrite(pathforErrand);
+                using (var writer = new StreamWriter(fs))
+                {
+                    await writer.WriteAsync(jsonToWrite);
                     }
 
 
@@ -191,15 +252,6 @@ namespace GUI.UserControls
             {
                 MessageBox.Show("Does not have the competence, choose another mechanic!");
             }
-
-
-
-
-
-
-
-
-
 
             //mechanic.ErrandIDs.Append(_selectedErrand.ErrandID);
 

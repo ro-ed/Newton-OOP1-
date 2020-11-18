@@ -7,6 +7,38 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <Label Content="My Errands" HorizontalAlignment="Left" Margin="285,17,0,0" VerticalAlignment="Top" Height="46" Width="210" FontFamily="Century Gothic" FontSize="35"/>
+        <ListView x:Name="MechLV" Margin="8,91,35,44">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding ErrandStatus}" Header="Status" Width="150"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding ErrandName}" Header="Errand" Width="150"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding ErrandStartDate}" Header="Start date" Width="150"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding ErrandEndDate}" Header="End date" Width="150"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding ComponentsNeeded}" Header="Components" Width="150"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Amount}" Header="Amount" Width="150"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding TypeOfVehicle}" Header="Vehicle" Width="150"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding TypOfCar}" Header="Type of car" Width="150"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding ModelName}" Header="Model" Width="150"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding RegistrationNumber}" Header="Reg nr" Width="150"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Odometer}" Header="Odometer" Width="150"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding RegistrationDate}" Header="Reg date" Width="150"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Propellant}" Header="Propellant" Width="150"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding HasTowbar}" Header="Has towbar" Width="150"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding MaxNrPassengers}" Header="Max passengers" Width="150"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding MaxLoad}" Header="Max load" Width="150"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Description}" Header="Max load" Width="150"/>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+            <ListView Height="100" Width="100">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </ListView>
+
     </Grid>
 </UserControl>

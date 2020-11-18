@@ -103,14 +103,15 @@ namespace GUI.UserControls
                 usersList.Add(user);
                 var jsonToWrite = JsonConvert.SerializeObject(usersList, Formatting.Indented);
                 var fs = File.OpenWrite(userpath);
-                using (var writer = new StreamWriter(userpath))
+                using (var writer = new StreamWriter(fs))
                 {
                    await writer.WriteAsync(jsonToWrite);
 
                 }
 
                 jsonToWrite = JsonConvert.SerializeObject(mechanics, Formatting.Indented);
-                using (var writer = new StreamWriter(mechpath))
+                var fs1 = File.OpenWrite(mechpath);
+                using (var writer = new StreamWriter(fs1))
                 {
                     await writer.WriteAsync(jsonToWrite);
 
