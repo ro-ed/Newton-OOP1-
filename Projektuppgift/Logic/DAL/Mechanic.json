@@ -1,25 +1,2 @@
 [
-  
-  {
-    "FirstName": "Timmy",
-    "SurName": "tim",
-    "DateOfBirth": "2010-10-10",
-    "DateOfEmployment": "2010-10-10",
-    "EndDate": "2010-10-10",
-    "MechID": "cef1a467-0664-4535-80c5-c67ca11f818b",
-    "UserID": null,
-    "CanFixEngines": "Yes",
-    "CanFixTires": "Yes",
-    "CanFixBrakes": "Yes",
-    "CanFixWindshields": "Yes",
-    "CanFixVehicleBody": "Yes",
-    "ErrandIDArray": [
-      "00000000-0000-0000-0000-000000000000",
-      "00000000-0000-0000-0000-000000000000"
-    ],
-    "ErrandIDMech": "00000000-0000-0000-0000-000000000000",
-    "ActiveErrands": 0,
-    "ErrandAmount": 0,
-    "HasErrands": false
-  }
 ]

@@ -83,8 +83,7 @@ namespace GUI.UserControls
             
         }
 
-        //Metod som används när man tar bort mekaniker.
-        
+       
 
 
     }

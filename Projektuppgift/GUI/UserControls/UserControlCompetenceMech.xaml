@@ -14,24 +14,24 @@
 
 
 
-        <TextBlock TextAlignment="Left" FontSize="17" Margin="3,100,629,0" Height="48" VerticalAlignment="Top"><Run Language="sv-se" Text="Can Fix With Tires"/><Run Text=":"/></TextBlock>
-        <TextBlock x:Name="tboldCFT" Width="150" Text="{Binding CanFixTires}" TextAlignment="Left" FontSize="18" Margin="195,108,455,310"></TextBlock>
+        <TextBlock TextAlignment="Left" FontSize="17" Margin="3,100,600,0" Height="48" VerticalAlignment="Top"><Run Language="sv-se" Text="Can Fix With Tires"/></TextBlock>
+        <TextBlock x:Name="tboldCFT" Text="{Binding CanFixTires}" TextAlignment="Left" FontSize="18" Margin="221,100,455,310"/>
 
-        <TextBlock TextAlignment="Left" FontSize="17" Margin="2,284,613,129"><Run Text="C"/><Run Language="sv-se" Text="an fix with breaks"/><Run Text=":"/></TextBlock>
-        <TextBlock x:Name="tboldCFB" Text="{Binding CanFixBrakes}" TextAlignment="Left" FontSize="18" Margin="195,281,450,144"/>
+        <TextBlock TextAlignment="Left" FontSize="17" Margin="4,284,607,129"><Run Language="sv-se" Text="Can fix with Brakes"/></TextBlock>
+        <TextBlock x:Name="tboldCFB" Text="{Binding CanFixBrakes}" TextAlignment="Left" FontSize="18" Margin="221,281,450,144"/>
 
-        <TextBlock TextAlignment="Left" FontSize="17" Margin="3,221,639,183"><Run Language="sv-se" Text="Can Fix"/><Run Language="sv-se" Text=" with "/><Run Text="WS:"/></TextBlock>
-        <TextBlock x:Name="tboldCFWS" Width="150" Text="{Binding CanFixWindshield}" TextAlignment="Left" FontSize="18" Margin="195,214,455,191"></TextBlock>
+        <TextBlock TextAlignment="Left" FontSize="17" Margin="3,221,607,183"><Run Language="sv-se" Text="Can Fix WS"/></TextBlock>
+        <TextBlock x:Name="tboldCFWS" Text="{Binding CanFixWindshields}" TextAlignment="Left" FontSize="18" Margin="221,214,455,191"/>
 
-        <TextBlock TextAlignment="Left" FontSize="17" Margin="2,162,639,250"><Run Text="Can Fix With VB"/><Run Language="sv-se" Text=":"/></TextBlock>
-        <TextBlock x:Name="tboldCFVB" Width="150" Text="{Binding CanFixVehicleBody}" TextAlignment="Left" FontSize="18" Margin="195,157,455,268"></TextBlock>
+        <TextBlock TextAlignment="Left" FontSize="17" Margin="2,162,600,250"><Run Text="Can Fix With VB"/></TextBlock>
+        <TextBlock x:Name="tboldCFVB" Text="{Binding CanFixVehicleBody}" TextAlignment="Left" FontSize="18" Margin="221,157,455,268"/>
 
-        <TextBlock x:Name="tboldCFM" Width="150" Text="{Binding CanFixMotor}" TextAlignment="Left" FontSize="18" Margin="195,346,455,63"></TextBlock>
-        <TextBlock TextAlignment="Left" FontSize="17" Margin="-2,346,615,71"><Run Language="sv-se" Text="Can Fix with Motors"/></TextBlock>
+        <TextBlock x:Name="tboldCFM" Text="{Binding CanFixEngines}" TextAlignment="Left" FontSize="18" Margin="221,346,455,63"/>
+        <TextBlock TextAlignment="Left" FontSize="17" Margin="2,346,591,71"><Run Language="sv-se" Text="Can Fix with Motors"/></TextBlock>
 
-        <TextBlock FontFamily="Century Gothic" FontSize="14" Margin="430,344,209,68"><Run Text="Can fix"/><Run Text=" with motors :"/></TextBlock>
+        <TextBlock FontFamily="Century Gothic" FontSize="14" Margin="430,344,102,68"><Run Text="Can fix"/><Run Text=" with motors :"/></TextBlock>
 
-        <TextBlock FontFamily="Century Gothic" FontSize="14" Margin="430,285,153,134"><Run Language="sv-se" Text="Can fix"/><Run Text=" with brakes:"/></TextBlock>
+        <TextBlock FontFamily="Century Gothic" FontSize="14" Margin="430,285,47,134"><Run Language="sv-se" Text="Can fix"/><Run Text=" with brakes:"/></TextBlock>
         <StackPanel Orientation="Horizontal" Margin="430,296,48,106">
             <CheckBox x:Name="cbBrakesYes3" HorizontalAlignment="Left" Margin="5" Width="50" Content="Yes" FontSize="14" Height="50"/>
             <CheckBox x:Name="cbBrakesNo3" Margin="5" Width="50" Content="No" FontSize="14" Height="50"/>
@@ -44,7 +44,7 @@
             <CheckBox x:Name="cbWindshieldsNo3" HorizontalAlignment="Left" Margin="5" Width="50" Content="No" FontSize="14" Height="50"/>
 
         </StackPanel>
-        <TextBlock FontFamily="Century Gothic" FontSize="14" Margin="430,161,139,261"><Run Language="sv-se" Text="Can fix"/><Run Text=" with vehicle body:"/></TextBlock>
+        <TextBlock FontFamily="Century Gothic" FontSize="14" Margin="430,161,82,261"><Run Language="sv-se" Text="Can fix"/><Run Text=" with vehicle body:"/></TextBlock>
         <StackPanel Orientation="Horizontal" Margin="430,183,176,211">
             <CheckBox x:Name="cbVehicleBodyYes3" HorizontalAlignment="Left" Margin="5 0 0 10" Width="50" Content="Yes" FontSize="14" Height="50"/>
             <CheckBox x:Name="cbVehicleBodyNo3" HorizontalAlignment="Left" Margin="5 0 0 10" Width="50" Content="No" FontSize="14" Height="50"/>
@@ -53,7 +53,7 @@
         <CheckBox x:Name="cbMotorYes3" Content="Yes" HorizontalAlignment="Left" Margin="433,374,0,0" VerticalAlignment="Top" />
         <CheckBox x:Name="cbMotorNo3" Content="No" HorizontalAlignment="Left" Margin="494,374,0,0" VerticalAlignment="Top"/>
 
-        <TextBlock Text="Experienced with tires:" FontFamily="Century Gothic" FontSize="14" Margin="430,100,212,324"></TextBlock>
+        <TextBlock Text="Experienced with tires:" FontFamily="Century Gothic" FontSize="14" Margin="430,100,120,324"></TextBlock>
         <CheckBox x:Name="cbTiresYes3" Content="Yes" HorizontalAlignment="Left" Margin="433,131,0,0" VerticalAlignment="Top" />
         <CheckBox x:Name="cbTiresNo3" Content="No" HorizontalAlignment="Left" Margin="489,131,0,0" VerticalAlignment="Top"/>
 

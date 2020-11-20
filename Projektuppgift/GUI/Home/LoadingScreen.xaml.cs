@@ -34,10 +34,6 @@ namespace GUI.Home
         {
             Thread.Sleep(2000);
 
-
-
-
-
         }
 
 

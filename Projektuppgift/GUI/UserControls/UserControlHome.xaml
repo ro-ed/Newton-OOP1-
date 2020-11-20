@@ -10,7 +10,8 @@
     <Grid>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center">
             <StackPanel Width="754" Height="530">
-                <TextBlock  Margin="25" HorizontalAlignment="Center" Width="333"><Run Text="Welcome"/><Run Text=" "/><Run Language="sv-se" Text="Bosse"/><Run Text="!"/></TextBlock>
+                <TextBlock  Margin="25" HorizontalAlignment="Center" FontSize="50" Width="364"><Run Text="Welcome"/><Run Text=" "/><Run Language="sv-se" Text="Bosse"/><Run Text="!"/></TextBlock>
+                <Image Height="361" Stretch="Uniform" Source="/Verkstad.png" Width="554"/>
 
 
 

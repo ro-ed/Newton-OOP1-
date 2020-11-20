@@ -38,9 +38,18 @@ namespace GUI.UserControls
 
         private async void EditMechanicButton_Click(object sender, System.Windows.RoutedEventArgs e)
         {
+
             Mechanic selectedMechanic = _selectedMechanic;
 
             Guid CurrentMechID = selectedMechanic.MechID;
+
+            Guid[] CurrentErrandIDArray = selectedMechanic.ErrandIDArray;
+
+            int CurrentActiveErrands = selectedMechanic.ActiveErrands;
+
+            var findIndexOfMechanic = mechanics.FindIndex(x => x.MechID == selectedMechanic.MechID);
+
+            mechanics[findIndexOfMechanic] = selectedMechanic;
 
             mechanics.Remove(selectedMechanic);
 
@@ -57,6 +66,7 @@ namespace GUI.UserControls
 
 
 
+
             Mechanic mechanic = new Mechanic
             {
                 FirstName = firstName,
@@ -69,7 +79,12 @@ namespace GUI.UserControls
                 CanFixTires = TiresAreChecked,
                 CanFixBrakes = BrakesAreChecked,
                 CanFixWindshields = WindshieldsAreChecked,
-                CanFixVehicleBody = VehicleBodyIsChecked
+                CanFixVehicleBody = VehicleBodyIsChecked,
+                ErrandIDArray = CurrentErrandIDArray,
+                ActiveErrands = CurrentActiveErrands
+                
+                
+                
 
             };
 

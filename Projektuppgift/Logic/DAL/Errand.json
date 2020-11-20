@@ -1,27 +1,2 @@
 [
-  
-  {
-    "ErrandName": "Test",
-    "ErrandStartDate": "2010-10-10",
-    "ErrandEndDate": "2010-10-10",
-    "ErrandStatus": "New",
-    "Finished": false,
-    "ErrandID": "bfe29c2a-10b0-4a28-bc6c-776bb461bd6c",
-    "ComponentsNeeded": "CarTires",
-    "TypeOfVehicle": "Car",
-    "TypOfCar": "Sedan",
-    "ModelName": "Tesal",
-    "RegistrationNumber": "AED123",
-    "Odometer": 213,
-    "RegistrationDate": "2010-10-10T00:00:00",
-    "Propellant": "Electric",
-    "MaxLoad": 2313,
-    "HasTowbar": "No",
-    "MaxNrPassengers": 3,
-    "FirstName": null,
-    "LastName": null,
-    "Description": "he",
-    "Amount": 1,
-    "Competence": null
-  }
 ]

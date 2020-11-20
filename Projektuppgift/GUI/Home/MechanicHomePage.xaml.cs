@@ -40,22 +40,14 @@ namespace GUI.Home
 
         private void SignOutButton_Click(object sender, RoutedEventArgs e)
         {
-            //LoginPage loginPage = new LoginPage();
-            //this.NavigationService.Navigate(loginPage);
             Login.LoginPage loginPage = new Login.LoginPage();
             this.NavigationService.Navigate(loginPage);
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
-        {
-            //Hej
+        {          
             Application.Current.Shutdown();
         }
-
-        //private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
-        //{
-        //    DragMove();
-        //}
 
         private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -96,14 +88,7 @@ namespace GUI.Home
         {
             Application.Current.Shutdown();
         }
-    }
-            //private void MoveCursorMenu(int index)
-            //{
-            //    TransitionContentSlide.OnApplyTemplate();
-            //    GridCursor.Margin = new Thickness(0, (170 + (60 * index)), 0, 0);
-            //}
-
-        
+    }             
     
 }
 

@@ -69,10 +69,7 @@ namespace GUI.Login
 
 
                 }
-                //await LoadingScreenMethod();
-
-                //HomePage homePage = new HomePage();
-                //this.NavigationService.Navigate(homePage);
+                
             }
             else
             {
@@ -84,10 +81,7 @@ namespace GUI.Login
 
         }
         private void Close_Button(object sender, RoutedEventArgs e)
-        {
-            //Home.HomePage homePage = new HomePage();
-            //homePage.Visibility = Visibility.Hidden; 
-
+        {        
             Application.Current.Shutdown();
         }
         
