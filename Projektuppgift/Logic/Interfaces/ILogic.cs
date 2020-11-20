@@ -7,7 +7,7 @@ namespace Logic.Interfaces
 {
     public interface ILogic
     { 
-        void Overrite<T>()
+         static void Overrite<T>()
         {
 
         }

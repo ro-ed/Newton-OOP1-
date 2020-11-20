@@ -23,6 +23,7 @@ using static Logic.Entities.Stock;
 using System.Text.RegularExpressions;
 using static Logic.Entities.Mechanic;
 using static GUI.UserControls.MechanicHome;
+using static Logic.Services.LoggedInUserService;
 using static Logic.DAL.GenericClass;
 
 namespace GUI.UserControls
@@ -232,15 +233,6 @@ namespace GUI.UserControls
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
-            //Errands errandSelected = ErrandView.SelectedItem as Errands;
-            //if (errandSelected != null)
-            //{
-            //    errands.Remove(errandSelected);
-            //}
-            //DeleteTheErrand();
-            //ErrandView.Children.Clear();
-            //ErrandView.Children.Add(new UserControlNewErrand());
-
             Errands errandSelected = lv_Errand.SelectedItem as Errands;
 
             string jsonFromFile;
@@ -256,7 +248,7 @@ namespace GUI.UserControls
 
             if (mechanic != null) mechanic.ErrandIDArray[0] = Guid.Empty;
             if (mechanic2 != null) mechanic2.ErrandIDArray[1] = Guid.Empty;
-
+            
             if (errandSelected != null)
             {
                 errands.Remove(errandSelected);
