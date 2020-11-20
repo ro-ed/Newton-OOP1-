@@ -30,7 +30,7 @@ namespace GUI.UserControls
     /// </summary>
     public partial class EditErrand : UserControl
     {
-        
+
         public int _selectedIndex = 0;
         public int _selectedIndexNeed = 0;
         public EditErrand()
@@ -53,14 +53,14 @@ namespace GUI.UserControls
                 jsonFromFile6 = reader.ReadToEnd();
             }
             var stockread = JsonConvert.DeserializeObject<Stock>(jsonFromFile6);
-            
+
             DataContext = stockread;
         }
 
         private async void EditErrandButton_Click(object sender, RoutedEventArgs e)
         {
             Errands selectedErrand = _newSelectedErrandTest;
-                    
+
             var currentMechanic = selectedErrand.FirstName;
 
             var currentMechanic1 = selectedErrand.LastName;
@@ -71,10 +71,10 @@ namespace GUI.UserControls
 
             errands[findIndexOfErrand] = selectedErrand;
 
-            errands.Remove(selectedErrand);                    
+            errands.Remove(selectedErrand);
 
             Overrite<Errands>(pathforErrand, errands);
-         
+
             string jsonFile4;
 
             using (var reader = new StreamReader(pathforErrand))
@@ -112,6 +112,7 @@ namespace GUI.UserControls
 
             string finished = ((bool)cbStatusFinished.IsChecked) ? "Finished" : "OnGoing";
 
+            
 
 
             Errands errand = new Errands
@@ -139,8 +140,8 @@ namespace GUI.UserControls
 
             };
 
-        if (errand.ErrandStatus == "Finished")
-        {
+            if (errand.ErrandStatus == "Finished")
+            {
                 string jsonFromFile;
                 using (var reader = new StreamReader(mechpath))
                 {
@@ -149,43 +150,25 @@ namespace GUI.UserControls
                 var readFromJson = JsonConvert.DeserializeObject<List<Mechanic>>(jsonFromFile);
                 mechanics = readFromJson;
 
-            errands.Add(errand);
-            var jsonWrite = JsonConvert.SerializeObject(errands, Formatting.Indented);
-            using (var jsonWriter = new StreamWriter(pathforErrand))
-            {
-                jsonWriter.Write(jsonWrite);
-            }
-
-
-            EditErrandView.Children.Clear();
-            EditErrandView.Children.Add(new UserControlNewErrand());
-
-
-
-
-            //if (errands.Count >= 1)
-            //{
-            //    string jsonFile;
-
                 Mechanic ArrayFirstElement = readFromJson.FirstOrDefault(x => x.ErrandIDArray[0] == errand.ErrandID);
                 Mechanic ArraySecondElement = readFromJson.FirstOrDefault(x => x.ErrandIDArray[1] == errand.ErrandID);
 
-            if(ArrayFirstElement != null)
-            {               
-                if (ArrayFirstElement.ErrandIDArray[0] == errand.ErrandID)
+                if (ArrayFirstElement != null)
                 {
-                    ArrayFirstElement.ErrandIDArray[0] = Guid.Empty;
+                    if (ArrayFirstElement.ErrandIDArray[0] == errand.ErrandID)
+                    {
+                        ArrayFirstElement.ErrandIDArray[0] = Guid.Empty;
+                    }
                 }
-            }
 
-            if (ArraySecondElement != null)
-            {
-                if (ArraySecondElement.ErrandIDArray[1] == errand.ErrandID)
+                if (ArraySecondElement != null)
                 {
+                    if (ArraySecondElement.ErrandIDArray[1] == errand.ErrandID)
+                    {
                         ArraySecondElement.ErrandIDArray[1] = Guid.Empty;
+                    }
                 }
             }
-        }
             var jsonWrite = JsonConvert.SerializeObject(mechanics, Formatting.Indented);
             var fs = File.OpenWrite(mechpath);
             using (var jsonWriter = new StreamWriter(fs))
@@ -200,10 +183,17 @@ namespace GUI.UserControls
             {
                 await jsonWriter.WriteAsync(jsonWrite2);
             }
-            
 
+
+            EditErrandView.Children.Clear();
+            EditErrandView.Children.Add(new UserControlNewErrand());
 
         }
+        
+
+
+
+    
 
         public void ErrandEditGoBackButton_Click(object sender, RoutedEventArgs e)
         {

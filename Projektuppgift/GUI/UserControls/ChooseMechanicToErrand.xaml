@@ -28,7 +28,7 @@
                                 <GridViewColumn DisplayMemberBinding="{Binding CanFixTires}" Header="CanFixTires" Width="150"/>
                                 <GridViewColumn DisplayMemberBinding="{Binding CanFixWindshields}" Header="CanFixWindshields" Width="150"/>
                                 <GridViewColumn DisplayMemberBinding="{Binding CanFixVehicleBody}" Header="CanFixVehicleBody" Width="150"/>
-                                <GridViewColumn DisplayMemberBinding="{Binding ErrandName}" Header="Errands" Width="150"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding ErrandAmount}" Header="ActiveErrands" Width="150"/>
                                 <GridViewColumn DisplayMemberBinding="{Binding MechID}" Header="ID" Width="200"/>
                             
                         </GridView>

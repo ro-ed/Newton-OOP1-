@@ -26,6 +26,7 @@ namespace Logic.Entities
         public Guid[] ErrandIDArray { get; set; } 
         public Guid ErrandIDMech { get; set; }
         public int ActiveErrands { get; set; }
+        public int ErrandAmount { get; set; }
 
         public bool HasErrands { get 
             {
