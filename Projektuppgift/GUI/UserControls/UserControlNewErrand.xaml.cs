@@ -23,6 +23,8 @@ using static Logic.Entities.Stock;
 using System.Text.RegularExpressions;
 using static Logic.Entities.Mechanic;
 using static GUI.UserControls.MechanicHome;
+using static Logic.Services.LoggedInUserService;
+using static Logic.DAL.GenericClass;
 
 namespace GUI.UserControls
 {
@@ -229,22 +231,28 @@ namespace GUI.UserControls
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
-            //Errands errandSelected = ErrandView.SelectedItem as Errands;
-            //if (errandSelected != null)
-            //{
-            //    errands.Remove(errandSelected);
-            //}
-            //DeleteTheErrand();
-            //ErrandView.Children.Clear();
-            //ErrandView.Children.Add(new UserControlNewErrand());
-
-
             Errands errandSelected = lv_Errand.SelectedItem as Errands;
+
+            string jsonFromFile;
+            using (var reader = new StreamReader(mechpath))
+            {
+                jsonFromFile = reader.ReadToEnd();
+            }
+            var readFromJson = JsonConvert.DeserializeObject<List<Mechanic>>(jsonFromFile);
+            mechanics = readFromJson;
+
+            Mechanic mechanic = readFromJson.FirstOrDefault(x => x.ErrandIDArray[0] == errandSelected.ErrandID);
+            Mechanic mechanic2 = readFromJson.FirstOrDefault(x => x.ErrandIDArray[1] == errandSelected.ErrandID);
+
+            if (mechanic != null) mechanic.ErrandIDArray[0] = Guid.Empty;
+            if (mechanic2 != null) mechanic2.ErrandIDArray[1] = Guid.Empty;
+            
             if (errandSelected != null)
             {
                 errands.Remove(errandSelected);
             }
             DeleteTheErrand();
+            Overrite<Mechanic>(mechpath, mechanics);
             ErrandViewer.Children.Clear();
             ErrandViewer.Children.Add(new UserControlNewErrand());
 

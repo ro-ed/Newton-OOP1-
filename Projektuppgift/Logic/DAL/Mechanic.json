@@ -1,4 +1,5 @@
 [
+  
   {
     "FirstName": "Robin",
     "SurName": "Edin",
@@ -12,12 +13,9 @@
     "CanFixBrakes": "No",
     "CanFixWindshields": "No",
     "CanFixVehicleBody": "No",
-    "ErrandIDArray": [
-      "00000000-0000-0000-0000-000000000000",
-      "00000000-0000-0000-0000-000000000000"
-    ],
-    "ErrandIDMech": "ac763415-c536-4350-a1d0-1cc5efd74dc4",
+    "ErrandIDArray": [ "00000000-0000-0000-0000-000000000000", "00000000-0000-0000-0000-000000000000" ],
+    "ErrandIDMech": "7a9e73f4-2c39-400d-9e46-436ed4c20c94",
     "ActiveErrands": 0,
     "HasErrands": false
   }
-] 
+]
