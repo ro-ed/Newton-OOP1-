@@ -63,6 +63,8 @@ namespace GUI.UserControls
                     
             var currentMechanic = selectedErrand.FirstName;
 
+            var currentMechanic1 = selectedErrand.LastName;
+
             Guid CurrentErrandID = selectedErrand.ErrandID;
 
             var findIndexOfErrand = errands.FindIndex(x => x.ErrandID == selectedErrand.ErrandID);
@@ -106,7 +108,11 @@ namespace GUI.UserControls
             int loadMax = int.Parse(this.tbMaxLoad.Text);
             string writeDescription = this.tbDescription.Text;
 
+
+
             string finished = ((bool)cbStatusFinished.IsChecked) ? "Finished" : "OnGoing";
+
+
 
             Errands errand = new Errands
             {
@@ -128,7 +134,8 @@ namespace GUI.UserControls
                 MaxLoad = loadMax,
                 Description = writeDescription,
                 Amount = amountOfComp,
-                FirstName = currentMechanic
+                FirstName = currentMechanic,
+                LastName = currentMechanic1
 
             };
 
@@ -141,6 +148,24 @@ namespace GUI.UserControls
                 }
                 var readFromJson = JsonConvert.DeserializeObject<List<Mechanic>>(jsonFromFile);
                 mechanics = readFromJson;
+
+            errands.Add(errand);
+            var jsonWrite = JsonConvert.SerializeObject(errands, Formatting.Indented);
+            using (var jsonWriter = new StreamWriter(pathforErrand))
+            {
+                jsonWriter.Write(jsonWrite);
+            }
+
+
+            EditErrandView.Children.Clear();
+            EditErrandView.Children.Add(new UserControlNewErrand());
+
+
+
+
+            //if (errands.Count >= 1)
+            //{
+            //    string jsonFile;
 
                 Mechanic ArrayFirstElement = readFromJson.FirstOrDefault(x => x.ErrandIDArray[0] == errand.ErrandID);
                 Mechanic ArraySecondElement = readFromJson.FirstOrDefault(x => x.ErrandIDArray[1] == errand.ErrandID);
@@ -177,8 +202,6 @@ namespace GUI.UserControls
             }
             
 
-            EditErrandView.Children.Clear();
-            EditErrandView.Children.Add(new UserControlNewErrand());
 
         }
 

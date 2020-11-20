@@ -93,6 +93,17 @@ namespace Projektuppgift.GUI.UserControls
             string WindshieldsAreChecked = ((bool)cbWindshieldsYes.IsChecked) ? "Yes" : "No";
             string VehicleBodyIsChecked = ((bool)cbVehicleBodyYes.IsChecked) ? "Yes" : "No";
 
+            //string firstName = this.tbFirstName.Text;
+            //string surName = this.tbSurName.Text;
+            //string dateOfBirth = this.tbDateOfBirth.Text;
+            //string dateOfEmployment = this.tbDateOfEmployment.Text;
+            //string employmentEnds = this.tbEmploymentEnds.Text;
+            //string EnginesAreChecked = ((bool)cbEnginesYes.IsChecked) ? "CanFixEngines" : "";
+            //string TiresAreChecked = ((bool)cbTiresYes.IsChecked) ? "CanFixTires" : "";
+            //string BrakesAreChecked = ((bool)cbBrakesYes.IsChecked) ? "CanFixBrakes" : "";
+            //string WindshieldsAreChecked = ((bool)cbWindshieldsYes.IsChecked) ? "CanFixWindshields" : "";
+            //string VehicleBodyIsChecked = ((bool)cbVehicleBodyYes.IsChecked) ? "CanFixVehicleBody" : "";
+
 
 
             Mechanic mechanic = new Mechanic

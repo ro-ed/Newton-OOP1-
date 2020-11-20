@@ -3,10 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Projektuppgift.GUI.UserControls"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="530" d:DesignWidth="754" HorizontalAlignment="Center" VerticalAlignment="Center">
-    <Grid x:Name="MechanicDetailView">
+    <Grid x:Name="MechanicViewer">
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2" Height="530" Width="754">
             <StackPanel x:Name="spDetailView" VerticalAlignment="Bottom" Width="380" Margin="200,-50,10,10" Height="476">
                 <TextBlock Width="100" Text="Details" TextAlignment="Center" FontSize="26" HorizontalAlignment="Left"></TextBlock>

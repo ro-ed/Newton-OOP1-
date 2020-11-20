@@ -31,6 +31,7 @@ namespace Logic.Entities
         public string Description { get; set; }
 
         public int Amount { get; set; }
+        public string Competence { get; set; }
 
 
 
