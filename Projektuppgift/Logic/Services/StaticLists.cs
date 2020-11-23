@@ -24,4 +24,5 @@ namespace Logic.Services
         public const string stockpath = @"DAL\Stock.json";
 
     }
+    //test
 }
