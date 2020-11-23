@@ -59,9 +59,15 @@ namespace GUI.UserControls
             {
                 jsonFile = reader.ReadToEnd();
             }
-
-            var jsonRead = JsonConvert.DeserializeObject<List<Errands>>(jsonFile);
-            errands = jsonRead;
+            if (jsonFile == "")
+            {
+                errands = new List<Errands>();
+            }
+            else
+            {
+                var jsonRead = JsonConvert.DeserializeObject<List<Errands>>(jsonFile);
+                errands = jsonRead;
+            }
             
 
             string jsonFromFile6;
@@ -74,14 +80,21 @@ namespace GUI.UserControls
             DataContext = stockread;
             //errands = jsonRead;
 
-            var orderList = jsonRead.OrderBy(x => x.ErrandStatus);
+            //var orderList = jsonRead.OrderBy(x => x.ErrandStatus);
 
-            DataContext = orderList;
-            lv_Errand.ItemsSource = orderList;
+            //DataContext = orderList;
+            //lv_Errand.ItemsSource = orderList;
+
+            if (errands != null)
+            {
+                var orderList = errands.OrderBy(x => x.ErrandStatus);
+                DataContext = orderList;
+                lv_Errand.ItemsSource = orderList;
+            }
 
 
-           
-            
+
+
 
         }
 

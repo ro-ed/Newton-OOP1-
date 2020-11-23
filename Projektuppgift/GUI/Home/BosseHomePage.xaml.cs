@@ -37,7 +37,11 @@ namespace GUI.Home
             }
             var readFromJson = JsonConvert.DeserializeObject<List<Mechanic>>(jsonFromFile);
             // Lägger till i listan.
-            mechanics.AddRange(readFromJson);
+            //mechanics.AddRange(readFromJson);
+            if (mechanics.Count >= 1)
+            {
+                mechanics.AddRange(readFromJson);
+            }
             // Läser från JSON.
             string jsonFromFile2;
             using (var reader = new StreamReader(stockpath))
@@ -63,7 +67,11 @@ namespace GUI.Home
             }
             var readFromJson4 = JsonConvert.DeserializeObject<List<Errands>>(jsonFromFile4);
             //// Lägger till i listan.
-             errands.AddRange(readFromJson4);
+             //errands.AddRange(readFromJson4);
+            if (errands.Count >= 1)
+            {
+                errands.AddRange(readFromJson4);
+            }
         }
 
         private void SignOutButton_Click(object sender, RoutedEventArgs e)

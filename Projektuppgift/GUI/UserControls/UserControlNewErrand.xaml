@@ -119,7 +119,7 @@
                                     <GridViewColumn DisplayMemberBinding="{Binding HasTowbar}" Header="Has towbar" Width="150"/>
                                     <GridViewColumn DisplayMemberBinding="{Binding MaxNrPassengers}" Header="Max passengers" Width="150"/>
                                     <GridViewColumn DisplayMemberBinding="{Binding MaxLoad}" Header="Max load" Width="150"/>
-                                    <GridViewColumn DisplayMemberBinding="{Binding Description}" Header="Max load" Width="150"/>
+                                    <GridViewColumn DisplayMemberBinding="{Binding Description}" Header="Description" Width="150"/>
                                 </GridView>
                             </ListView.View>
                         </ListView>
