@@ -21,22 +21,6 @@
         <Button x:Name="DeleteUser" Content="DELETE USER" HorizontalAlignment="Left" Margin="540,290,0,0" VerticalAlignment="Top" Click="DeleteUser_Click_1"/>
         <TextBlock HorizontalAlignment="Left" Margin="22,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="185"><Run Language="sv-se" Text="Select Mechanic" FontFamily="Century Gothic" FontSize="20"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="531,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="121"><Run Language="sv-se" Text="Delete User" FontFamily="Century Gothic" FontSize="20"/></TextBlock>
-        <ListView  Name="MechUserView" Margin="17,341,23,16">
-            <ListView.View>
-                <GridView>
-
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
-        </ListView>
-
-
-
-
-
-
-
-
-
+       
     </Grid>
 </UserControl>

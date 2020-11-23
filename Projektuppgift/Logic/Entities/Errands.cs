@@ -25,7 +25,7 @@ namespace Logic.Entities
         public int MaxLoad { get; set; }
         public string HasTowbar { get; set; }
         public int MaxNrPassengers { get; set; }
-        //Test
+
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Description { get; set; }

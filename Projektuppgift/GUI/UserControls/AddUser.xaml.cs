@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows;
@@ -48,7 +49,6 @@ namespace GUI.UserControls
             MechanicCb.ItemsSource = mechanics;
             UserCb.ItemsSource = usersList;
 
-            //listview för att kunna se vilka mek som har user och vilka som inte har
 
 
 
@@ -133,13 +133,35 @@ namespace GUI.UserControls
 
             if (MessageBox.Show("Sure ??", "DELETE", MessageBoxButton.OKCancel, MessageBoxImage.Warning) == MessageBoxResult.OK)
             {
+                string jsonFromFileMech;
+                using (var reader = new StreamReader(mechpath))
+                    {
+                        jsonFromFileMech = reader.ReadToEnd();
+                    }
+                    var mechanicsRead = JsonConvert.DeserializeObject<List<Mechanic>>(jsonFromFileMech);
+                mechanics = mechanicsRead;
 
                 User selectedUser = UserCb.SelectedItem as User;
                 if (selectedUser != null)
                 {
+
+                    Mechanic mechanic = mechanicsRead.FirstOrDefault(x => x.UserID == selectedUser.UserID);
+
+                    var findIndexOfMechanic = mechanics.FindIndex(x => x.UserID == selectedUser.UserID);
+
+                    mechanics[findIndexOfMechanic] = mechanic;
+
+                    mechanic.UserID = null;
+
                     usersList.Remove(selectedUser);
                 }
+                
+                var jsonToWrite2 = JsonConvert.SerializeObject(mechanics, Formatting.Indented);
+                using (var writer = new StreamWriter(mechpath))
+                {
+                    writer.Write(jsonToWrite2);
 
+                }
 
                 var jsonToWrite = JsonConvert.SerializeObject(usersList, Formatting.Indented);
                 using (var writer = new StreamWriter(userpath))

@@ -19,6 +19,11 @@
                 <TextBlock Width="100" Height="20" Margin="-510 -40 0 0" Text="GO BACK"></TextBlock>
                 <StackPanel Height="462" Width="754" HorizontalAlignment="Center" Margin="0,20,0,0">
                     <ListView x:Name="MechanicChoose"  Height="380" Margin="20,0,20,0" SelectionChanged="MechanicChoose_SelectionChanged">
+                        <ListView.Resources>
+                            <Style TargetType="{x:Type GridViewColumnHeader}">
+                                <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                            </Style>
+                        </ListView.Resources>
                         <ListView.View>
                         <GridView x:Name="Mechanic_List">
                                 <GridViewColumn DisplayMemberBinding="{Binding FirstName}" Header="First name" Width="150"></GridViewColumn>
@@ -28,7 +33,7 @@
                                 <GridViewColumn DisplayMemberBinding="{Binding CanFixTires}" Header="CanFixTires" Width="150"/>
                                 <GridViewColumn DisplayMemberBinding="{Binding CanFixWindshields}" Header="CanFixWindshields" Width="150"/>
                                 <GridViewColumn DisplayMemberBinding="{Binding CanFixVehicleBody}" Header="CanFixVehicleBody" Width="150"/>
-                                <GridViewColumn DisplayMemberBinding="{Binding ErrandName}" Header="Errands" Width="150"/>
+                                <GridViewColumn DisplayMemberBinding="{Binding ErrandAmount}" Header="ActiveErrands" Width="150"/>
                                 <GridViewColumn DisplayMemberBinding="{Binding MechID}" Header="ID" Width="200"/>
                             
                         </GridView>

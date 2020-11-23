@@ -35,6 +35,7 @@ namespace GUI.UserControls
         public static int _index;
 
         public static Errands _test;
+        public static Mechanic _mechanic;
         
         //private static Errands _selectedErrand;
         public ChooseMechanicToErrand()
@@ -51,9 +52,8 @@ namespace GUI.UserControls
             DataContext = this;
             MechanicChoose.ItemsSource = mechanics;
 
-            
 
-           
+
 
 
         }
@@ -72,11 +72,6 @@ namespace GUI.UserControls
 
             errands1.FirstName = mechanic.FirstName;
             errands1.LastName = mechanic.SurName;
-            //errands1.ComponentsNeeded = mechanic.CanFixBrakes;
-            //errands1.ComponentsNeeded = mechanic.CanFixEngines;
-            //errands1.ComponentsNeeded = mechanic.CanFixTires;
-            //errands1.ComponentsNeeded = mechanic.CanFixVehicleBody;
-            //errands1.ComponentsNeeded = mechanic.CanFixWindshields;
             string CFB = mechanic.CanFixBrakes;
             string CFE = mechanic.CanFixEngines;
             string CFT = mechanic.CanFixTires;
@@ -85,9 +80,13 @@ namespace GUI.UserControls
             string compNeed = errands1.ComponentsNeeded;
 
             //=========================================================================================
+            _mechanic = mechanic;
+
             var totalElementsInArray = mechanic.ErrandIDArray;
-           
-            var numberOfElements = (bool)mechanic.HasErrands ? totalElementsInArray.Count(): 0;                                                                 
+
+            var numberOfElements = (bool)mechanic.HasErrands ? totalElementsInArray.Count() : 0;
+
+       
 
             if (mechanic.ErrandIDArray[0].Equals(Guid.Empty))
             {
@@ -111,9 +110,24 @@ namespace GUI.UserControls
                 MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
             }
-          
+
             //=========================================================================================
-          
+
+            if ((totalElementsInArray[0].Equals(Guid.Empty)) && (totalElementsInArray[1].Equals(Guid.Empty)))
+            {
+                mechanic.ErrandAmount = 0;
+            }
+            else if ((totalElementsInArray[0] != (Guid.Empty)) && (totalElementsInArray[1] != (Guid.Empty)))
+            {
+                mechanic.ErrandAmount = 2;
+            }
+            else if ((totalElementsInArray[0] != (Guid.Empty)) || (totalElementsInArray[1] != (Guid.Empty)))
+            {
+                mechanic.ErrandAmount = 1;
+            }
+            
+            //=========================================================================================
+
             if (mechanics.Count >= 1)
             {
                 string jsonFromFile;
@@ -130,74 +144,15 @@ namespace GUI.UserControls
                     await writer.WriteAsync(jsonToWrite);
 
 
-
-            //mechanic.ActiveErrands++;
-
-            //if (mechanic.ActiveErrands == 2)
-            //{
-            //    //MessageBox.Show("Sure ??", "DELETE", MessageBoxButton.OK, MessageBoxImage.Warning) == MessageBoxResult.OK;
-            //    MessageBox.Show("This mechanic already has 2 active errands. Please select another mechanic.",
-            //        "Exception", MessageBoxButton.OK, MessageBoxImage.Error);
-            //    ChooseMechanic.Children.Clear();
-            //    ChooseMechanic.Children.Add(new ChooseMechanicToErrand());
-
-            //}
-
-            //errands.Remove(_selectedErrand);
-
-
-            //if (errands1.Competence == "No")
-            //{
-
-
-            //    MessageBox.Show("Does not have the competence, choose another mechanic!");
-
-            //}
-
-            //else
-            //{
-
-            //if (errands.Count >= 1)
-            //{
-            //    string jsonFromFile;
-            //    using (var reader = new StreamReader(pathforErrand))
-            //    {
-            //        jsonFromFile = reader.ReadToEnd();
-            //    }
-            //    var readFromJson = JsonConvert.DeserializeObject<List<Mechanic>>(jsonFromFile);
-            //    errands.Add(errands1);
-            //    var jsonToWrite = JsonConvert.SerializeObject(errands, Formatting.Indented);
-            //    using (var writer = new StreamWriter(pathforErrand))
-            //    {
-            //        await writer.WriteAsync(jsonToWrite);
-
-            //    }
-
                 }
             }
             //ADD        
 
             errands.Remove(_selectedErrand);
 
-            //}
-            ////ADD
-            //else
-            //{
-            //    errands.Add(errands1);
-            //    var jsonToWrite = JsonConvert.SerializeObject(errands, Formatting.Indented);
-            //    var fs = File.OpenWrite(pathforErrand);
-            //    using (var writer = new StreamWriter(fs))
-            //    {
-            //        await writer.WriteAsync(jsonToWrite);
+               
 
-            //    }
-
-            //}
-            //ChooseMechanic.Children.Clear();
-            //ChooseMechanic.Children.Add(new UserControlNewErrand());
-
-
-            if (((compNeed == "CarTires" || compNeed == "MCTires" || compNeed == "BusTires" || compNeed == "TruckTires") && CFT == "Yes") ||
+            if (((compNeed == "CarTires" || compNeed ==  "MCTires" || compNeed == "BusTires" || compNeed == "TruckTires") && CFT == "Yes") ||
                 ((compNeed == "CarBrakes" || compNeed == "MCBrakes" || compNeed == "BusBrakes" || compNeed == "TruckBrakes") && CFB == "Yes") ||
                 ((compNeed == "CarMotors" || compNeed == "MCMotors" || compNeed == "BusMotors" || compNeed == "TruckMotors") && CFE == "Yes") ||
                 ((compNeed == "CarWindshields" || compNeed == "MCWindshields" || compNeed == "BusWindshields" || compNeed == "TruckWindshields") && CFW == "Yes") ||
@@ -217,9 +172,9 @@ namespace GUI.UserControls
                     {
                         await writer.WriteAsync(jsonToWrite);
 
-                    }
+                    }   
                 }
-                //ADD
+          
                 else
                 {
                     errands.Add(errands1);
@@ -228,15 +183,10 @@ namespace GUI.UserControls
                     using (var writer = new StreamWriter(fs))
                     {
                         await writer.WriteAsync(jsonToWrite);
+
                     }
 
-
                 }
-            
-            //ADD
-           
-
-            
                 ChooseMechanic.Children.Clear();
                 ChooseMechanic.Children.Add(new UserControlNewErrand());
             }
@@ -244,117 +194,6 @@ namespace GUI.UserControls
             {
                 MessageBox.Show("Does not have the competence, choose another mechanic!");
             }
-
-            //mechanic.ErrandIDs.Append(_selectedErrand.ErrandID);
-
-            //var indexOfMechanic = mechanics.FindIndex(x => x.MechID == mechanic.MechID);
-
-            //mechanics[indexOfMechanic] = mechanic;
-
-            ////spara mekanikern;
-
-            //Errands errand = new Errands
-            //{
-            //    FirstName = mechanic.FirstName
-            //};
-
-            //foreach (var item in errands)
-            //{
-            //    if (errand.FirstName == mechanic.FirstName)
-            //    {
-            //        string json = File.ReadAllText(pathforErrand);
-            //        dynamic jsonOB = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
-            //        jsonOB[0]["FirstName"] = mechanic.FirstName;
-            //        string test = Newtonsoft.Json.JsonConvert.SerializeObject(jsonOB, Newtonsoft.Json.Formatting.Indented);
-            //        using (var jsonWriter = new StreamWriter(pathforErrand))
-            //        {
-            //            jsonWriter.Write(jsonOB);
-            //        }
-            //    }
-            //}
-
-            //string json = File.ReadAllText(pathforErrand);
-            //dynamic jsonOB = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
-            ////jsonOB[0]["FirstName"] = mechanic.FirstName + " " + mechanic.SurName;
-            //jsonOB[0]["FirstName"] = mechanic.FirstName + " " + mechanic.SurName;                
-            //string test = Newtonsoft.Json.JsonConvert.SerializeObject(jsonOB, Newtonsoft.Json.Formatting.Indented);
-            //using (var jsonWriter = new StreamWriter(pathforErrand))
-            //{
-            //    jsonWriter.Write(jsonOB);
-            //}
-
-
-            //Errands errands = new Errands();
-            //string json = File.ReadAllText(pathforErrand);
-            //dynamic jsonOB = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
-            //jsonOB[0]["FirstName"] = mechanic.FirstName + " " + mechanic.SurName;
-            ////jsonOB[errands.FirstName = "FirstName"] = mechanic.FirstName;
-
-            //string test = Newtonsoft.Json.JsonConvert.SerializeObject(jsonOB, Newtonsoft.Json.Formatting.Indented);
-            //File.WriteAllText(pathforErrand, test);
-            //using (var jsonWriter = new StreamWriter(pathforErrand))
-            //{
-            //    jsonWriter.Write(jsonOB);
-            //}
-
-
-
-
-
-
-
-
-            //string json = File.ReadAllText(pathforErrand);
-            //dynamic jsonOB = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
-            //jsonOB[0]["FirstName"] = mechanic.FirstName;
-            //string test = Newtonsoft.Json.JsonConvert.SerializeObject(jsonOB, Newtonsoft.Json.Formatting.Indented);
-            //using (var jsonWriter = new StreamWriter(pathforErrand))
-            //{
-            //        jsonWriter.Write(jsonOB);
-            //}
-
-            //Errands errand = new Errands
-            //{
-
-            //    FirstName = mechanic.FirstName
-
-            //};
-
-            //if (errands.Count >= 1)
-            //{
-            //    string jsonFile;
-
-            //    using (var reader = new StreamReader(pathforErrand))
-            //    {
-            //        jsonFile = reader.ReadToEnd();
-            //    }
-
-            //    var jsonRead = JsonConvert.DeserializeObject<List<Errands>>(jsonFile);
-            //    //errands.Add(errand);
-            //    var jsonWrite = JsonConvert.SerializeObject(errands, Formatting.Indented);
-            //    using (var jsonWriter = new StreamWriter(pathforErrand))
-            //    {
-            //        jsonWriter.Write(jsonWrite);
-            //    }
-
-            //}
-
-            //else
-            //{
-            //    //errands.Add(errand);
-            //    var jsonWrite = JsonConvert.SerializeObject(errands, Formatting.Indented);
-            //    using (var jsonWriter = new StreamWriter(pathforErrand))
-            //    {
-            //        jsonWriter.Write(jsonWrite);
-            //    }
-            //}
-
-
-
-
-
-
-
 
         }
 

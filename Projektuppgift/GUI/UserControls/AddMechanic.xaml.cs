@@ -21,15 +21,7 @@ namespace Projektuppgift.GUI.UserControls
         public AddMechanic()
         {
             InitializeComponent();
-            //Hämta mekaniker från JSON.           
-            //string jsonFromFile;
-            //using (var reader = new StreamReader(mechpath))
-            //{
-            //    jsonFromFile = reader.ReadToEnd();
-            //}
-            //var readFromJson = JsonConvert.DeserializeObject<List<Mechanic>>(jsonFromFile);
-            
-            
+ 
             
 
         }
@@ -63,12 +55,7 @@ namespace Projektuppgift.GUI.UserControls
 
 
 
-            //if (!Regex.IsMatch(tbDateOfBirth.Text, @"^\d{4}-((0\d)|(1[012]))-(([012]\d)|3[01])$"))
-            //{
-            //    MessageBox.Show("Enter a valid date for Date of birth. YYYY-MM-DD");
-            //    return;
-            //}
-
+        
             if (!Regex.IsMatch(tbDateOfEmployment.Text, @"^\d{4}-((0\d)|(1[012]))-(([012]\d)|3[01])$"))
             {
                 MessageBox.Show("Enter a valid date for Date of Employment. YYYY-MM-DD");
@@ -93,19 +80,7 @@ namespace Projektuppgift.GUI.UserControls
             string WindshieldsAreChecked = ((bool)cbWindshieldsYes.IsChecked) ? "Yes" : "No";
             string VehicleBodyIsChecked = ((bool)cbVehicleBodyYes.IsChecked) ? "Yes" : "No";
 
-            //string firstName = this.tbFirstName.Text;
-            //string surName = this.tbSurName.Text;
-            //string dateOfBirth = this.tbDateOfBirth.Text;
-            //string dateOfEmployment = this.tbDateOfEmployment.Text;
-            //string employmentEnds = this.tbEmploymentEnds.Text;
-            //string EnginesAreChecked = ((bool)cbEnginesYes.IsChecked) ? "CanFixEngines" : "";
-            //string TiresAreChecked = ((bool)cbTiresYes.IsChecked) ? "CanFixTires" : "";
-            //string BrakesAreChecked = ((bool)cbBrakesYes.IsChecked) ? "CanFixBrakes" : "";
-            //string WindshieldsAreChecked = ((bool)cbWindshieldsYes.IsChecked) ? "CanFixWindshields" : "";
-            //string VehicleBodyIsChecked = ((bool)cbVehicleBodyYes.IsChecked) ? "CanFixVehicleBody" : "";
-
-
-
+         
             Mechanic mechanic = new Mechanic
             {
                 FirstName = firstName,
@@ -124,8 +99,7 @@ namespace Projektuppgift.GUI.UserControls
 
             };
 
-            //mechanic.ErrandIDMech = Guid.NewGuid();
-
+     
 
 
             //READ
@@ -172,39 +146,5 @@ namespace Projektuppgift.GUI.UserControls
     }
 }     
 
-   
-
-
-            //if (File.Exists(mechpath))
-            //{
-            //    File.OpenRead(mechpath);              
-            //    var readText = File.ReadAllText(mechpath);
-            //    if (readText.Length > 0)
-            //    {
-            //        JsonConvert.DeserializeObject(mechpath);
-            //        mechanics.Add(mechanic);
-            //        File.WriteAllText(mechpath, JsonConvert.SerializeObject(mechanics));
-            //    }
-            //}
-            //else
-            //{
-            //    File.Create(mechpath);
-            //    mechanics.Add(mechanic);
-            //    File.WriteAllText(mechpath, JsonConvert.SerializeObject(mechanics));
-            //}
-
-            //AddMechanicService.SaveMechanic(AddMechanicService.mechanics);
-
-            
- 
-            //if (File.Exists(AddMechanicService.mechpath) && AddMechanicService.mechanics.Count > 1)
-            //{
-            //    var jsonString = File.ReadAllText(AddMechanicService.mechpath);
-            //    var list = JsonConvert.DeserializeObject<List<Mechanic>>(jsonString);
-            //    list.Add(mechanic);             
-            //    File.WriteAllText(AddMechanicService.mechpath, JsonConvert.SerializeObject(list, Formatting.Indented));
-
-            //}
-        
-    
+  
 

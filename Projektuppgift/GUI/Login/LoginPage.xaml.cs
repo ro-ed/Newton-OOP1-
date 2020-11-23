@@ -38,6 +38,24 @@ namespace GUI.Login
            
             _loginService = new LoginService();
             ShowsNavigationUI = false;
+
+            var fsMech = File.OpenWrite(mechpath);
+            fsMech.Close();
+
+            var fsErrand = File.OpenWrite(pathforErrand);
+            fsErrand.Close();
+
+            var fsStock = File.OpenWrite(stockpath);
+            fsStock.Close();
+
+            string jsonFromFileUser;
+            var fsUser = File.OpenWrite(userpath);
+            fsUser.Close();
+            using (var reader = new StreamReader(userpath))
+            {
+                jsonFromFileUser = reader.ReadToEnd();
+            }
+            var readFromJsonUser = JsonConvert.DeserializeObject<List<User>>(jsonFromFileUser);
         }
 
         private void SignIn_Button(object sender, RoutedEventArgs e)
@@ -69,10 +87,7 @@ namespace GUI.Login
 
 
                 }
-                //await LoadingScreenMethod();
-
-                //HomePage homePage = new HomePage();
-                //this.NavigationService.Navigate(homePage);
+                
             }
             else
             {
@@ -84,10 +99,7 @@ namespace GUI.Login
 
         }
         private void Close_Button(object sender, RoutedEventArgs e)
-        {
-            //Home.HomePage homePage = new HomePage();
-            //homePage.Visibility = Visibility.Hidden; 
-
+        {        
             Application.Current.Shutdown();
         }
         

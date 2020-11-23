@@ -53,7 +53,15 @@ namespace GUI.UserControls
             {
                 jsonFromFile = reader.ReadToEnd();
             }
-            var stock = JsonConvert.DeserializeObject<Stock>(jsonFromFile);
+            Stock stock;
+            if (jsonFromFile == "")
+            {
+                stock = new Stock();
+            }
+            else
+            {
+                stock = JsonConvert.DeserializeObject<Stock>(jsonFromFile);
+            }
 
             switch (_selectedIndex)
             {

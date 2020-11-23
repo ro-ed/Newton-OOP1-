@@ -59,16 +59,16 @@ namespace GUI.UserControls
             {
                 jsonFile = reader.ReadToEnd();
             }
-
-            var jsonRead = JsonConvert.DeserializeObject<List<Errands>>(jsonFile);
-            errands = jsonRead;
-            //jsonRead.ForEach(x =>
-            //{
-            //    var m = mechanics.FirstOrDefault(y => y.ErrandIDs.Contains(x.ErrandID));
-            //    x.FirstName = m?.FirstName ?? "";
-            //    x.LastName = m?.SurName ?? "";
-
-            //});
+            if (jsonFile == "")
+            {
+                errands = new List<Errands>();
+            }
+            else
+            {
+                var jsonRead = JsonConvert.DeserializeObject<List<Errands>>(jsonFile);
+                errands = jsonRead;
+            }
+            
 
             string jsonFromFile6;
             using (var reader = new StreamReader(stockpath))
@@ -80,18 +80,21 @@ namespace GUI.UserControls
             DataContext = stockread;
             //errands = jsonRead;
 
-            var orderList = jsonRead.OrderBy(x => x.ErrandStatus);
+            //var orderList = jsonRead.OrderBy(x => x.ErrandStatus);
 
-            DataContext = orderList;
-            lv_Errand.ItemsSource = orderList;
+            //DataContext = orderList;
+            //lv_Errand.ItemsSource = orderList;
+
+            if (errands != null)
+            {
+                var orderList = errands.OrderBy(x => x.ErrandStatus);
+                DataContext = orderList;
+                lv_Errand.ItemsSource = orderList;
+            }
 
 
-            //errands.AddRange(jsonRead);
-            //listRead.AddRange(jsonRead);
 
-            //DataContext = this;
-            //lv_Errand.ItemsSource = errands;
-            
+
 
         }
 
@@ -134,8 +137,7 @@ namespace GUI.UserControls
             string errandStart = this.tbErrandStart.Text;
             string errandEnd = this.tbErrandEnd.Text;
             string componentsNeed = this.InvComboBox.Text;
-            //string typeCar = this.tbTypeOfCar.Text;
-            //string errandStatus = ((bool)cbStatusStart.IsChecked) ? "New" : "Finished";
+           
             string vehicleType = this.VehicleComboBox.Text;
             string carType = this.TypeCarComboBox.Text;
             
@@ -149,20 +151,7 @@ namespace GUI.UserControls
             int loadMax = int.Parse(this.tbMaxLoad.Text);
             string writeDescription = this.tbDescription.Text;
             int amountOfComp = int.Parse(this.tbAmount.Text);
-            //if ((bool)cbStatusNew.IsChecked)
-            //{
-            //    errandStatus = "New";
-            //}
-            //else if ((bool)cbStatusOnGoing.IsChecked)
-            //{
-            //    errandStatus = "Ongoing";
-            //}
-            //else if ((bool)cbStatusFinished.IsChecked)
-            //{
-            //    errandStatus = "Finished";
-            //}
-
-            //hej
+            
 
             Errands errand = new Errands
             {
@@ -258,27 +247,14 @@ namespace GUI.UserControls
             ErrandViewer.Children.Clear();
             ErrandViewer.Children.Add(new UserControlNewErrand());
 
+           
+
 
 
         }
 
 
-        //public void Test()
-        //{
-        //    List<Errands> listRead;
-
-        //    listRead = new List<Errands>();
-        //    string jsonFile;
-        //    using (var reader = new StreamReader(pathforErrand))
-        //    {
-        //        jsonFile = reader.ReadToEnd();
-        //    }
-        //    var readFromJson = JsonConvert.DeserializeObject<List<Errands>>(jsonFile);
-
-        //    listRead.AddRange(readFromJson);
-
-        //    DataContext = this;
-        //}
+     
 
         private void ErrandView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -288,6 +264,8 @@ namespace GUI.UserControls
 
         private void DeleteTheErrand()
         {
+            //_selectedMechanic.ErrandIDArray = 
+
             File.WriteAllText(pathforErrand, JsonConvert.SerializeObject(errands));
             string ErrandJsonFile;
             using (var writer = new StreamReader(pathforErrand))
@@ -308,10 +286,7 @@ namespace GUI.UserControls
                 ErrandViewer.Children.Clear();
                 ErrandViewer.Children.Add(new ChooseMechanicToErrand());
             }
-            //errands.ErrandStatus = "OnGoing";
-            //ErrandViewer.Children.Clear();
-            //ErrandViewer.Children.Add(new ChooseMechanicToErrand());
-
+            
 
             
         }
@@ -428,9 +403,7 @@ namespace GUI.UserControls
             Errands errands = lv_Errand.SelectedItem as Errands;
             _selectedErrand = errands;
 
-            ////Mechanic mechanic = lv_Errand.SelectedItem as Mechanic;
-            ////_selectedMechanic = mechanic;
-
+           
 
             ErrandViewer.Children.Clear();
             var child = new ErandMechanicDetail();
@@ -438,21 +411,9 @@ namespace GUI.UserControls
             //child.DataContext = selectedMechanic;
             ErrandViewer.Children.Add(child);
 
-            ////ErrandViewer.Children.Clear();
-            ////ErrandViewer.Children.Add(new ErandMechanicDetail());
-            ///
-            //Errands errands = lv_Errand.SelectedItem as Errands;
-
-            //_selectedErrand = errands;
-
-            //ErrandViewer.Children.Clear();
-            //ErrandViewer.Children.Add(new ErandMechanicDetail());
+           
         }
 
-        //public void ChooseVehicle()
-        //{
-
-        //}
 
         private void TypeCarComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -464,7 +425,7 @@ namespace GUI.UserControls
     }
 
   
-    }
+}
 
 
 

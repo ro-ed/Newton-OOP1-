@@ -6,12 +6,13 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
+using static Logic.Services.StaticLists;
 
 namespace Logic.DAL
 {
     public class UserDataAccess
     {
-        private const string path = @"DAL\User.json";
+        private const string path = @"User.json";
 
         /// <summary>
         /// https://docs.microsoft.com/en-us/dotnet/standard/serialization/system-text-json-how-to
@@ -22,7 +23,11 @@ namespace Logic.DAL
         public List<User> GetUsers()
         {
 
-            string jsonString = File.ReadAllText(path);
+            string jsonString = File.ReadAllText(userpath);
+            if (jsonString == "")
+            {
+                return new List<User>();
+            }
             List<User> users = JsonSerializer.Deserialize<List<User>>(jsonString);
             
             return users;

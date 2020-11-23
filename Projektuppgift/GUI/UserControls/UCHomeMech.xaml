@@ -8,6 +8,7 @@
              d:DesignHeight="530" d:DesignWidth="754">
     <Grid>
         <Label Content="Welcome Mechanic!" HorizontalAlignment="Left" Margin="180,26,0,0" VerticalAlignment="Top" Height="57" Width="381" FontFamily="Century Gothic" FontSize="35"/>
+        <Image Margin="100,83,100,10" Stretch="Uniform" Source="/Verkstad.png"/>
 
     </Grid>
 </UserControl>

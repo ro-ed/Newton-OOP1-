@@ -32,13 +32,22 @@ namespace GUI.UserControls
                 jsonFromFile = reader.ReadToEnd();
             }
             var readFromJson = JsonConvert.DeserializeObject<List<Mechanic>>(jsonFromFile);
+            mechanics = readFromJson;
             //// Lägger till i listan.
             //mechanics.AddRange(readFromJson);
 
-            var orderList = mechanics.OrderBy(x => x.FirstName).ToList();
+            //var orderList = mechanics.OrderBy(x => x.FirstName).ToList();
+            //DataContext = orderList;
+            //lv_data.ItemsSource = orderList;
 
-            DataContext = orderList;
-            lv_data.ItemsSource = orderList;
+            if (mechanics != null)
+            {
+                var orderList = mechanics.OrderBy(x => x.FirstName).ToList();
+                DataContext = orderList;
+                lv_data.ItemsSource = orderList;
+            }
+
+            
         }
 
         private void ChangeToAdd_Click(object sender, RoutedEventArgs e)
@@ -83,8 +92,7 @@ namespace GUI.UserControls
             
         }
 
-        //Metod som används när man tar bort mekaniker.
-        
+       
 
 
     }

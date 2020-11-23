@@ -16,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using static Logic.Services.StaticLists;
+using static Logic.DAL.GenericClass;
 
 namespace GUI.UserControls
 {
@@ -24,6 +25,7 @@ namespace GUI.UserControls
     /// </summary>
     public partial class UCErrandsMech : UserControl
     {
+        public static Errands _selectedErrand;
         public UCErrandsMech()
         {
             InitializeComponent();
@@ -41,52 +43,58 @@ namespace GUI.UserControls
             {
                 jsonFromFile2 = reader.ReadToEnd();
             }
-            var readFromJson2 = JsonConvert.DeserializeObject<List<Mechanic>>(jsonFromFile);
-            mechanics = readFromJson2;
-            
-            Mechanic MechErrands = readFromJson2.FirstOrDefault(x => x.MechID == LoggedInUserService.LoggedInUser.UserID);
-            
-            
 
-            DataContext = MechErrands;
-            MechLV.ItemsSource = (System.Collections.IEnumerable)MechErrands;
+            var readFromJson2 = JsonConvert.DeserializeObject<List<Mechanic>>(jsonFromFile2);
+            mechanics = readFromJson2;
+
+            Mechanic mechanic = readFromJson2.FirstOrDefault(x => x.UserID == LoggedInUserService.LoggedInUser.UserID);
+
+            List<Errands> errandsOfMech = new List<Errands>();
+
+            foreach (var id in mechanic.ErrandIDArray)
+            {
+
+                Errands errand = readFromJson.FirstOrDefault(e => e.ErrandID == id);
+
+                if (errand != null)
+                {
+                    errandsOfMech.Add(errand);
+                }
+            }
+
+
+
+            DataContext = errandsOfMech;
+            MechListView.ItemsSource = errandsOfMech;
         }
 
 
         private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-
         {
-            //    var MechErrands = DataContext as Errands;
-            //    {
-            //        MechErrands.ErrandName =
-            //        MechErrands.ErrandStartDate =
-            //        MechErrands.ErrandEndDate =
-            //        MechErrands.ErrandID =
-            //        MechErrands.ErrandStatus =
-            //        MechErrands.ComponentsNeeded =
-            //        MechErrands.TypeOfVehicle =
-            //        MechErrands.TypOfCar =
-            //        MechErrands.ModelName =
-            //        MechErrands.RegistrationNumber =
-            //        MechErrands.Odometer =
-            //        MechErrands.RegistrationDate =
-            //        MechErrands.Propellant =
-            //        MechErrands.HasTowbar =
-            //        MechErrands.MaxNrPassengers =
-            //        MechErrands.MaxLoad =
-            //        MechErrands.Description =
-            //        MechErrands.Amount =;
 
-
-            //    }
-
-            //var index = errands.FindIndex(x => x.ErrandID == MechErrands.ErrandID);
-            //errands[index] = MechErrands;
-            //DataContext = MechErrands;
 
         }
 
+        private void ChangeStatus_Click(object sender, RoutedEventArgs e)
+        {
+            Errands errand = MechListView.SelectedItem as Errands;
 
+            errand.Finished = true;
+
+            errand.ErrandStatus = errand.Finished ? "Finished" : "OnGoing";
+
+
+            Overrite<Errands>(pathforErrand, errands);
+            MessageBox.Show("Errand Finished!");
+
+            ErrandMechanic.Children.Clear();
+            ErrandMechanic.Children.Add(new UCErrandsMech());
+
+
+
+        }
     }
 }
+
+
 
