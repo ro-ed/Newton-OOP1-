@@ -27,10 +27,18 @@ namespace Logic.Entities
         public Guid ErrandIDMech { get; set; }
         public int ActiveErrands { get; set; }
 
-        public bool HasErrands { get 
+        public bool? HasErrands { get 
             {
-                return !(ErrandIDArray[0].Equals(Guid.Empty) && ErrandIDArray[1].Equals(Guid.Empty));
-            } 
+                if (HasErrands != null)
+                {
+                    return !(ErrandIDArray[0].Equals(Guid.Empty) && ErrandIDArray[1].Equals(Guid.Empty));
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            
         }
 
 

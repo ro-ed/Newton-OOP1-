@@ -87,7 +87,7 @@ namespace GUI.UserControls
             //=========================================================================================
             var totalElementsInArray = mechanic.ErrandIDArray;
            
-            var numberOfElements = mechanic.HasErrands ? totalElementsInArray.Count():0;                                                                 
+            var numberOfElements = (bool)mechanic.HasErrands ? totalElementsInArray.Count(): 0;                                                                 
 
             if (mechanic.ErrandIDArray[0].Equals(Guid.Empty))
             {
@@ -177,7 +177,7 @@ namespace GUI.UserControls
             }
             //ADD        
 
-            errands.Remove(_selectedErrand);        
+            errands.Remove(_selectedErrand);
 
             //}
             ////ADD
@@ -195,9 +195,9 @@ namespace GUI.UserControls
             //}
             //ChooseMechanic.Children.Clear();
             //ChooseMechanic.Children.Add(new UserControlNewErrand());
-        
 
-            if (((compNeed == "CarTires" || compNeed ==  "MCTires" || compNeed == "BusTires" || compNeed == "TruckTires") && CFT == "Yes") ||
+
+            if (((compNeed == "CarTires" || compNeed == "MCTires" || compNeed == "BusTires" || compNeed == "TruckTires") && CFT == "Yes") ||
                 ((compNeed == "CarBrakes" || compNeed == "MCBrakes" || compNeed == "BusBrakes" || compNeed == "TruckBrakes") && CFB == "Yes") ||
                 ((compNeed == "CarMotors" || compNeed == "MCMotors" || compNeed == "BusMotors" || compNeed == "TruckMotors") && CFE == "Yes") ||
                 ((compNeed == "CarWindshields" || compNeed == "MCWindshields" || compNeed == "BusWindshields" || compNeed == "TruckWindshields") && CFW == "Yes") ||
@@ -217,20 +217,7 @@ namespace GUI.UserControls
                     {
                         await writer.WriteAsync(jsonToWrite);
 
-                }
-            }
-            //ADD
-            else
-            {
-                errands.Add(errands1);
-                var jsonToWrite = JsonConvert.SerializeObject(errands, Formatting.Indented);
-                var fs = File.OpenWrite(pathforErrand);
-                using (var writer = new StreamWriter(fs))
-                {
-                    await writer.WriteAsync(jsonToWrite);
                     }
-
-
                 }
                 //ADD
                 else
@@ -241,10 +228,15 @@ namespace GUI.UserControls
                     using (var writer = new StreamWriter(fs))
                     {
                         await writer.WriteAsync(jsonToWrite);
-
                     }
 
+
                 }
+            
+            //ADD
+           
+
+            
                 ChooseMechanic.Children.Clear();
                 ChooseMechanic.Children.Add(new UserControlNewErrand());
             }

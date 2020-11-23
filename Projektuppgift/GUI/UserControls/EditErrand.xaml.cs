@@ -150,10 +150,10 @@ namespace GUI.UserControls
                 mechanics = readFromJson;
 
             errands.Add(errand);
-            var jsonWrite = JsonConvert.SerializeObject(errands, Formatting.Indented);
+            var jsonWrite5 = JsonConvert.SerializeObject(errands, Formatting.Indented);
             using (var jsonWriter = new StreamWriter(pathforErrand))
             {
-                jsonWriter.Write(jsonWrite);
+                jsonWriter.Write(jsonWrite5);
             }
 
 
