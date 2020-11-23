@@ -9,19 +9,19 @@ namespace Logic.Services
     {
         public static List<Errands> errands = new List<Errands>();
 
-        public const string pathforErrand = @"DAL\Errand.json";
+        public const string pathforErrand = @"Errand.json";
 
         public static List<User> usersList = new List<User>();
 
-        public const string userpath = @"DAL\User.json";
+        public const string userpath = @"User.json";
 
         public static List<Mechanic> mechanics = new List<Mechanic>();
 
-        public const string mechpath = @"DAL\Mechanic.json";
+        public const string mechpath = @"Mechanic.json";
 
         public static object stockobject = new object();
 
-        public const string stockpath = @"DAL\Stock.json";
+        public const string stockpath = @"Stock.json";
 
     }
     //test

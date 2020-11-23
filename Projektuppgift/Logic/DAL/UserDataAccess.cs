@@ -12,7 +12,7 @@ namespace Logic.DAL
 {
     public class UserDataAccess
     {
-        private const string path = @"DAL\User.json";
+        private const string path = @"User.json";
 
         /// <summary>
         /// https://docs.microsoft.com/en-us/dotnet/standard/serialization/system-text-json-how-to
