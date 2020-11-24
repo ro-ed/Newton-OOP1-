@@ -33,17 +33,17 @@ namespace Projektuppgift.GUI.UserControls
             string someString = tbDateOfBirth.Text;
             DateTime DateOfBirth;
             DateTime.Now.ToString("yyyy-MM-dd");
-            
+
             try
             {
-                DateOfBirth= DateTime.Parse(someString); 
-                
-                
+                DateOfBirth = DateTime.Parse(someString);
+
+
             }
             catch (FormatException)
             {
                 throw new DateTimeException();
-             
+
             }
             catch (Exception ex)
             {
@@ -51,11 +51,11 @@ namespace Projektuppgift.GUI.UserControls
                 return;
             }
 
- 
 
 
 
-        
+
+
             if (!Regex.IsMatch(tbDateOfEmployment.Text, @"^\d{4}-((0\d)|(1[012]))-(([012]\d)|3[01])$"))
             {
                 MessageBox.Show("Enter a valid date for Date of Employment. YYYY-MM-DD");
@@ -80,7 +80,7 @@ namespace Projektuppgift.GUI.UserControls
             string WindshieldsAreChecked = ((bool)cbWindshieldsYes.IsChecked) ? "Yes" : "No";
             string VehicleBodyIsChecked = ((bool)cbVehicleBodyYes.IsChecked) ? "Yes" : "No";
 
-         
+
             Mechanic mechanic = new Mechanic
             {
                 FirstName = firstName,
@@ -94,47 +94,66 @@ namespace Projektuppgift.GUI.UserControls
                 CanFixBrakes = BrakesAreChecked,
                 CanFixWindshields = WindshieldsAreChecked,
                 CanFixVehicleBody = VehicleBodyIsChecked,
-                ErrandIDArray = new Guid[2],                   
+                ErrandIDArray = new Guid[2],
                 ActiveErrands = 0
 
             };
-
-     
-
-
-            //READ
-            if (mechanics.Count >= 1)
+            //hej
+            string jsonFromFile1;
+            using (var reader = new StreamReader(mechpath))
             {
-                string jsonFromFile;
-                using (var reader = new StreamReader(mechpath))
-                {
-                    jsonFromFile = reader.ReadToEnd();
-                }
-                var readFromJson = JsonConvert.DeserializeObject<List<Mechanic>>(jsonFromFile);
-                mechanics.Add(mechanic);
-                var jsonToWrite = JsonConvert.SerializeObject(mechanics, Formatting.Indented);
-                using (var writer = new StreamWriter(mechpath)) 
-                {   
-                await writer.WriteAsync(jsonToWrite);
-                
-                }
+                jsonFromFile1 = reader.ReadToEnd();
             }
-            //ADD
+            List<Mechanic> mechanics1;
+            if (jsonFromFile1 == "")
+            {
+                mechanics1 = new List<Mechanic>();
+                mechanics = mechanics1;
+            }
             else
             {
-                mechanics.Add(mechanic);
-                var jsonToWrite = JsonConvert.SerializeObject(mechanics, Formatting.Indented);
-                var fs = File.OpenWrite(mechpath);
-                using (var writer = new StreamWriter(fs))
-                {
-                   await writer.WriteAsync(jsonToWrite);
-
-                }
+                mechanics1 = JsonConvert.DeserializeObject<List<Mechanic>>(jsonFromFile1);
             }
-            AddMechView.Children.Clear();
-            AddMechView.Children.Add(new AddMechanic());
 
-            MessageBox.Show(AddMessage);
+
+            if (mechanics != null)
+            {
+
+
+                //READ
+                if (mechanics.Count >= 1)
+                {
+                    string jsonFromFile;
+                    using (var reader = new StreamReader(mechpath))
+                    {
+                        jsonFromFile = reader.ReadToEnd();
+                    }
+                    var readFromJson = JsonConvert.DeserializeObject<List<Mechanic>>(jsonFromFile);
+                    mechanics.Add(mechanic);
+                    var jsonToWrite = JsonConvert.SerializeObject(mechanics, Formatting.Indented);
+                    using (var writer = new StreamWriter(mechpath))
+                    {
+                        await writer.WriteAsync(jsonToWrite);
+
+                    }
+                }
+                //ADD
+                else
+                {
+                    mechanics.Add(mechanic);
+                    var jsonToWrite = JsonConvert.SerializeObject(mechanics, Formatting.Indented);
+                    var fs = File.OpenWrite(mechpath);
+                    using (var writer = new StreamWriter(fs))
+                    {
+                        await writer.WriteAsync(jsonToWrite);
+
+                    }
+                }
+                AddMechView.Children.Clear();
+                AddMechView.Children.Add(new AddMechanic());
+
+                MessageBox.Show(AddMessage);
+            }
         }
 
         private void GoBackButton_Click(object sender, RoutedEventArgs e)

@@ -57,6 +57,7 @@ namespace GUI.UserControls
             if (jsonFromFile == "")
             {
                 stock = new Stock();
+                stockobject = stock;
             }
             else
             {

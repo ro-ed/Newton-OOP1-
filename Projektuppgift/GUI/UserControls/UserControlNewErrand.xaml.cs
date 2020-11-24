@@ -312,13 +312,21 @@ namespace GUI.UserControls
         public void StockChange()
         {
 
-            string jsonFromFile;
+            string jsonFromFile1;
             using (var reader = new StreamReader(stockpath))
             {
-                jsonFromFile = reader.ReadToEnd();
+                jsonFromFile1 = reader.ReadToEnd();
             }
-            var stock = JsonConvert.DeserializeObject<Stock>(jsonFromFile);
-
+            Stock stock;
+            if (jsonFromFile1 == "")
+            {
+                stock = new Stock();
+                stockobject = stock;
+            }
+            else
+            {
+                stock = JsonConvert.DeserializeObject<Stock>(jsonFromFile1);
+            }
             switch (_selectedIndex)
             {
 
