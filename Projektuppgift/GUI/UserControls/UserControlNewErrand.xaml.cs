@@ -40,6 +40,7 @@ namespace GUI.UserControls
         public static Errands _newSelectedErrandTest;
         public static Errands _selectedErrand;
         public static Mechanic _selectedMechanic;
+        public static int _testAmount = 0;
         public UserControlNewErrand()
         {
             InitializeComponent();
@@ -106,7 +107,7 @@ namespace GUI.UserControls
             if (!Regex.IsMatch(tbRegistrationDate.Text, @"^\d{4}-((0\d)|(1[012]))-(([012]\d)|3[01])$"))
             {
                 MessageBox.Show("Enter a valid date for Registration Date. YYYY-MM-DD");
-                
+                return;
             }
 
             if (!Regex.IsMatch(tbErrandStart.Text, @"^\d{4}-((0\d)|(1[012]))-(([012]\d)|3[01])$"))
@@ -128,6 +129,65 @@ namespace GUI.UserControls
             }
 
 
+            if (InvComboBox.SelectedItem == null)
+            {
+                MessageBox.Show("Välj en komponent.");
+                return;
+            }
+
+            if (VehicleComboBox.SelectedItem == null)
+            {
+                MessageBox.Show("Välj en fordonstyp.");
+                return;
+            }
+
+            if (TypeCarComboBox.SelectedItem == null)
+            {
+                MessageBox.Show("Välj en bilmodell.");
+                return;
+            }
+
+            if (TypePropellantComboBox.SelectedItem == null)
+            {
+                MessageBox.Show("Välj en bränsletyp.");
+                return;
+            }
+
+            
+            if (tbOdometer.Text == "" || tbOdometer.Text == null)
+            {
+              
+                MessageBox.Show("Gå in i edit och välj miltal.");
+                return;
+            }
+
+            if (tbMaxNrPass.Text == "" || tbMaxNrPass.Text == null)
+            {
+
+                MessageBox.Show("Gå in i edit och mata in antal passagerare.");
+                return;
+            }
+
+            if (tbMaxLoad.Text == "" || tbMaxLoad.Text == null)
+            {
+
+                MessageBox.Show("Gå in i edit och mata in vikt.");
+                return;
+            }
+
+            if (tbAmount.Text == "" || tbAmount.Text == null)
+            {
+                tbAmount.Text = "0";
+
+                MessageBox.Show("Gå in i edit och välj komponenter.");
+            }
+
+            if (string.IsNullOrEmpty(tbErrandName.Text) || string.IsNullOrEmpty(tbModel.Text) || string.IsNullOrEmpty(tbHasTowbar.Text) || string.IsNullOrEmpty(tbDescription.Text))
+            {
+                MessageBox.Show("Ange Namn, model, dragkrok och beskrivning.");
+                return;
+            }
+
 
             StockChange();
             //ChooseVehicle();
@@ -144,13 +204,15 @@ namespace GUI.UserControls
             string modelType = this.tbModel.Text;
             string regNr = this.tbRegistrationNumber.Text;
             int odoMeterm = int.Parse(this.tbOdometer.Text);
-            DateTime regDate = DateTime.Parse(this.tbRegistrationDate.Text);
+            string regDate = this.tbRegistrationDate.Text;
             string typePropellant = this.TypePropellantComboBox.Text;
             string hasTow = this.tbHasTowbar.Text;
             int maxPass = int.Parse(this.tbMaxNrPass.Text);
             int loadMax = int.Parse(this.tbMaxLoad.Text);
             string writeDescription = this.tbDescription.Text;
             int amountOfComp = int.Parse(this.tbAmount.Text);
+            
+
             
 
             Errands errand = new Errands

@@ -51,7 +51,9 @@ namespace GUI.UserControls
 
             mechanics[findIndexOfMechanic] = selectedMechanic;
 
+         
             mechanics.Remove(selectedMechanic);
+            File.WriteAllText(mechpath, string.Empty);
 
             string firstName = this.tbFirstName2.Text;
             string surName = this.tbSurName2.Text;         
@@ -88,28 +90,7 @@ namespace GUI.UserControls
 
             };
 
-            //READ
-            if (mechanics.Count >= 1)
-            {
-                string jsonFromFile;
-                using (var reader = new StreamReader(mechpath))
-                {
-                    jsonFromFile = reader.ReadToEnd();
-                }
-                var readFromJson = JsonConvert.DeserializeObject<List<Mechanic>>(jsonFromFile);
-                mechanics.Add(mechanic);
-                var jsonToWrite = JsonConvert.SerializeObject(mechanics, Formatting.Indented);
-                using (var writer = new StreamWriter(mechpath))
-                {
-                   await writer.WriteAsync(jsonToWrite);
-
-                }
-
-               
-            }
-            //ADD
-            else
-            {
+          
                 mechanics.Add(mechanic);
                 var jsonToWrite = JsonConvert.SerializeObject(mechanics, Formatting.Indented);
                 var fs = File.OpenWrite(mechpath);
@@ -119,9 +100,9 @@ namespace GUI.UserControls
 
                 }
 
-            }
+            
             EditMechanicView.Children.Clear();
-            EditMechanicView.Children.Add(new EditMechanic());
+            EditMechanicView.Children.Add(new MechanicHome());
 
             MessageBox.Show(EditMessage);
         }

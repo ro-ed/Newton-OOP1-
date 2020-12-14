@@ -22,6 +22,7 @@ using Microsoft.VisualBasic;
 using Newtonsoft.Json.Serialization;
 using static Logic.Entities.Stock;
 using static Logic.DAL.GenericClass;
+using System.Text.RegularExpressions;
 
 namespace GUI.UserControls
 {
@@ -88,6 +89,79 @@ namespace GUI.UserControls
             StockChangeNeed();
             StockChangeAdd();
 
+            if (!Regex.IsMatch(tbRegistrationDate.Text, @"^\d{4}-((0\d)|(1[012]))-(([012]\d)|3[01])$"))
+            {
+                MessageBox.Show("Enter a valid date for Registration Date. YYYY-MM-DD");
+                return;
+            }
+
+            if (!Regex.IsMatch(tbStartDate.Text, @"^\d{4}-((0\d)|(1[012]))-(([012]\d)|3[01])$"))
+            {
+                MessageBox.Show("Enter a valid date for Errand Start. YYYY-MM-DD");
+                return;
+            }
+
+            if (!Regex.IsMatch(tbEndDate.Text, @"^\d{4}-((0\d)|(1[012]))-(([012]\d)|3[01])$"))
+            {
+                MessageBox.Show("Enter a valid date for Errand End. YYYY-MM-DD");
+                return;
+            }
+
+            if (!Regex.IsMatch(tbRegistrationNumber.Text, @"^[A-Z0-9]*$"))
+            {
+                MessageBox.Show("Invalid Registration number. The letters must be in capitals A-Z");
+                return;
+            }
+
+
+            if (InvComboBoxNeed.SelectedItem == null)
+            {
+                MessageBox.Show("Välj en komponent.");
+                return;
+            }
+            
+            if (InvComboBoxReturned.SelectedItem == null)
+            {
+                MessageBox.Show("Välj en komponent.");
+                return;
+            }
+
+            if (VehicleComboBox.SelectedItem == null)
+            {
+                MessageBox.Show("Välj en fordonstyp.");
+                return;
+            }
+
+            if (TypeCarComboBox.SelectedItem == null)
+            {
+                MessageBox.Show("Välj en bilmodell.");
+                return;
+            }
+
+            if (TypePropellantComboBox.SelectedItem == null)
+            {
+                MessageBox.Show("Välj en bränsletyp.");
+                return;
+            }
+
+            if (tbAmountNeed.Text == "" || tbAmountNeed.Text == null)
+            {
+                tbAmountNeed.Text = "0";
+
+                MessageBox.Show("Gå in i edit och välj komponenter.");
+            }
+
+            if (tbAmount.Text == "" || tbAmount.Text == null)
+            {
+                tbAmount.Text = "0";
+
+                MessageBox.Show("Gå in i edit och välj komponenter.");
+            }
+
+
+
+
+
             string errandName = this.tbErrandName.Text;
             string errandStart = this.tbStartDate.Text;
             string errandEnd = this.tbEndDate.Text;
@@ -101,7 +175,8 @@ namespace GUI.UserControls
             string modelType = this.tbModel.Text;
             string regNr = this.tbRegistrationNumber.Text;
             int odoMeterm = int.Parse(this.tbOdometer.Text);
-            DateTime regDate = DateTime.Parse(this.tbRegistrationDate.Text);
+            //DateTime regDate = DateTime.Parse(this.tbRegistrationDate.Text);
+            string regDate = this.tbRegistrationDate.Text;
             string typePropellant = this.TypePropellantComboBox.Text;
             string hasTow = this.tbHasTowbar.Text;
             int maxPass = int.Parse(this.tbMaxNrPass.Text);
